@@ -9,7 +9,7 @@
 body {
   /* Your updated global font styles */
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,7 +17,7 @@ body {
   
   /* Original layout properties */
   font-family: 'Quicksand', sans-serif;       /* Canva font */
-  font-weight: 700;                           /* Default body weight */
+  font-weight: 400;                           /* Default body weight */
   letter-spacing: -0.01em;                    /* Slightly tighter */
   -webkit-font-smoothing: antialiased;        /* Canva-style smoothing */
   -moz-osx-font-smoothing: grayscale;         /* Canva-style smoothing */
