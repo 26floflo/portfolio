@@ -347,6 +347,8 @@ body {
 }
 
 .section_footer {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400; /* stays medium */
   color: var(--blue);
   text-align: center;
   background-image: linear-gradient(90deg, #6f9d82, #d6e8ce);
@@ -377,7 +379,7 @@ body {
   margin-bottom: 0;
   font-family: 'Quicksand', sans-serif;   /* Canva Quicksand */
   font-size: 2.5rem;
-  font-weight: 400;                        /* Keep bold for hierarchy */
+  font-weight: 800;                        /* Keep bold for hierarchy */
   letter-spacing: -0.02em;                 /* Tighter for Canva headline */
   line-height: 1.2;
 }
