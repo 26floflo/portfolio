@@ -348,7 +348,7 @@ body {
 
 .section_footer {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400; /* stays medium */
+  font-weight: 500; /* stays medium */
   color: var(--blue);
   text-align: center;
   background-image: linear-gradient(90deg, #6f9d82, #d6e8ce);
