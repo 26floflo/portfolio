@@ -1,4 +1,4 @@
-/* Removed local @font-face rules since you are using Google Fonts <link> */
+/* Removed local @font-face rules - using Google Fonts <link> from HTML */
 
 :root {
   --blue: #004b18;
@@ -6,9 +6,14 @@
   --blue-3: #6f9c80;
 }
 
-.body {
-  /* Applied Quicksand as the global font */
+body {
+  /* Your updated global font styles */
   font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  
+  /* Original layout properties */
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   flex-flow: column;
@@ -435,148 +440,39 @@
   color: #99817c;
 }
 
+/* Media Queries remain unchanged */
 @media screen and (max-width: 991px) {
-  .navbar {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-
-  .nav-menu {
-    background-color: #558875;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 2rem;
-  }
-
-  .container-2 {
-    justify-content: flex-start;
-    align-items: center;
-    display: flex;
-  }
-
-  .div-block-2 {
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .menu-button {
-    color: #fff;
-  }
-
-  .menu-button.w--open {
-    color: var(--blue);
-    background-color: #fff;
-    border-radius: .25rem;
-    padding: .875rem;
-  }
-
-  .div-block-3 {
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .menu-button-2 {
-    color: #fff;
-  }
-
-  .menu-button-2.w--open {
-    color: #004b18;
-    background-color: #fff;
-    border-radius: .25rem;
-    padding: .875rem;
-  }
+  .navbar { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .nav-menu { background-color: #558875; padding-top: 1rem; padding-bottom: 1rem; padding-left: 2rem; }
+  .container-2 { justify-content: flex-start; align-items: center; display: flex; }
+  .div-block-2 { justify-content: flex-end; align-items: center; }
+  .menu-button { color: #fff; }
+  .menu-button.w--open { color: var(--blue); background-color: #fff; border-radius: .25rem; padding: .875rem; }
+  .div-block-3 { justify-content: flex-end; align-items: center; }
+  .menu-button-2 { color: #fff; }
+  .menu-button-2.w--open { color: #004b18; background-color: #fff; border-radius: .25rem; padding: .875rem; }
 }
 
 @media screen and (max-width: 767px) {
-  .navbar {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  .link-block {
-    min-width: 24px;
-    min-height: 24px;
-  }
-
-  .div-block-2 {
-    grid-column-gap: .5rem;
-    grid-row-gap: .5rem;
-  }
-
-  .padding-global {
-    padding: 1.25rem;
-  }
-
-  .client_comp {
-    grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
-    flex-flow: wrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .logo-heading {
-    font-size: 1.5rem;
-  }
-
-  .image-2 {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .div-block-3 {
-    grid-column-gap: .5rem;
-    grid-row-gap: .5rem;
-  }
-
-  .image-4 {
-    width: 4rem;
-    height: 4rem;
-  }
+  .navbar { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .link-block { min-width: 24px; min-height: 24px; }
+  .div-block-2 { grid-column-gap: .5rem; grid-row-gap: .5rem; }
+  .padding-global { padding: 1.25rem; }
+  .client_comp { grid-column-gap: 3rem; grid-row-gap: 3rem; flex-flow: wrap; justify-content: flex-start; align-items: center; }
+  .logo-heading { font-size: 1.5rem; }
+  .image-2 { width: 4rem; height: 4rem; }
+  .div-block-3 { grid-column-gap: .5rem; grid-row-gap: .5rem; }
+  .image-4 { width: 4rem; height: 4rem; }
 }
 
 @media screen and (max-width: 479px) {
-  .navbar {
-    border-radius: 1.5rem;
-    padding: 1rem;
-  }
-
-  .link-block {
-    min-width: 16px;
-    min-height: 16px;
-  }
-
-  .padding-global {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  .client_wrap, .client_content_wrap {
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 1.5rem;
-  }
-
-  .link_logo {
-    grid-column-gap: .75rem;
-    grid-row-gap: .75rem;
-  }
-
-  .logo-heading {
-    font-size: 1.25rem;
-  }
-
-  .image-2 {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  .nav_wrap {
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-  }
-
-  .image-4 {
-    width: 3rem;
-    height: 3rem;
-  }
+  .navbar { border-radius: 1.5rem; padding: 1rem; }
+  .link-block { min-width: 16px; min-height: 16px; }
+  .padding-global { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .client_wrap, .client_content_wrap { grid-column-gap: 1.5rem; grid-row-gap: 1.5rem; }
+  .link_logo { grid-column-gap: .75rem; grid-row-gap: .75rem; }
+  .logo-heading { font-size: 1.25rem; }
+  .image-2 { width: 3rem; height: 3rem; }
+  .nav_wrap { grid-column-gap: 1rem; grid-row-gap: 1rem; }
+  .image-4 { width: 3rem; height: 3rem; }
 }
