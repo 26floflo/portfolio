@@ -380,7 +380,7 @@ body {
   font-family: 'Quicksand', sans-serif;   /* Canva Quicksand */
   font-size: 2.5rem;
   font-weight: 800;                        /* Keep bold for hierarchy */
-  letter-spacing: 0.03em;                 /* Tighter for Canva headline */
+  letter-spacing: 0.05em;                 /* Tighter for Canva headline */
   line-height: 1.2;
 }
 
