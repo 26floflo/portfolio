@@ -16,6 +16,13 @@ body {
 }
   
   /* Original layout properties */
+  font-family: 'Quicksand', sans-serif;       /* Canva font */
+  font-weight: 400;                           /* Default body weight */
+  letter-spacing: -0.01em;                    /* Slightly tighter */
+  -webkit-font-smoothing: antialiased;        /* Canva-style smoothing */
+  -moz-osx-font-smoothing: grayscale;         /* Canva-style smoothing */
+
+  /* Keep original layout lines */
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   flex-flow: column;
@@ -25,7 +32,6 @@ body {
   display: block;
   overflow: visible;
 }
-
 .w-layout-blockcontainer {
   max-width: 940px;
   margin-left: auto;
@@ -92,8 +98,10 @@ body {
 .nav-link {
   color: #fff;
   padding: 0 18px 0 3px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;  /* Canva Quicksand */
+  font-weight: 500;                        /* Medium weight for clarity */
   font-size: 16px;
+  letter-spacing: 0.02em;                  /* Slightly more open */
 }
 
 .text-span {
@@ -326,8 +334,9 @@ body {
   align-items: center;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;   /* Canva font */
   font-weight: 600;
+  letter-spacing: -0.015em;               /* Canva tighter style */
   display: flex;
 }
 
@@ -366,9 +375,10 @@ body {
 .logo-heading {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;   /* Canva Quicksand */
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 700;                        /* Keep bold for hierarchy */
+  letter-spacing: -0.02em;                 /* Tighter for Canva headline */
   line-height: 1.2;
 }
 
