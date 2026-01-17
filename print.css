@@ -1,111 +1,87 @@
-/* Combined Stylesheet: Navbar, Portfolio Grid, and Footer */
-
+/* --- GLOBAL STYLES & VARIABLES --- */
 :root {
+  --white: white;
   --blue: #004b18;
   --blue-2: #558875;
   --blue-3: #6f9c80;
-  --white: white;
 }
 
-/* 1. Global Styles - Standardizing on Quicksand Font */
 body {
+  /* Set global font to Footer's Quicksand */
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   letter-spacing: 0.015em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Background from Print page */
+  background-image: url('../images/home.svg');
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   display: block;
 }
 
-/* 2. Navbar Styles (from print.css) */
-.navbar3_component {
-  background-image: linear-gradient(#2b6560, #2b6560);
-  border: 1px #000;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+/* --- NAVBAR SECTION (Originally from print.css) --- */
+.navbar_comp {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  border: 2px solid #2b3d2d;
+  border-radius: 2.2rem;
+  flex-flow: column;
   justify-content: flex-start;
   align-items: center;
+  margin: 0 100px;
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.navbar3_component {
+  background-image: linear-gradient(#2b6560, #2b6560);
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   width: 100%;
   min-height: 4.5rem;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 0 5%;
   display: flex;
+  align-items: center;
 }
 
 .navbar3_container {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr max-content 1fr;
-  grid-auto-columns: 1fr;
-  justify-content: space-between;
-  place-items: center stretch;
-  width: 100%;
-  max-width: 90rem; /* Target width for images */
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
   display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
 }
 
-.navbar3_link {
-  grid-column-gap: 7px;
-  grid-row-gap: 7px;
-  color: #fff;
-  justify-content: center;
-  align-items: center;
-  padding: .75rem;
-  font-family: 'Quicksand', sans-serif; /* Updated Font */
+/* Updated Font for Navbar Links */
+.navbar3_link, .nav-link-2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
   font-size: 22px;
+  color: #fff;
   text-decoration: none;
   display: flex;
+  align-items: center;
+  padding: .75rem;
 }
 
+/* Updated Font for Print Heading */
 .heading_print {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 70px;
   color: #2b6560;
   margin: 16px 40px 0 0;
   padding-bottom: 16px;
-  font-family: 'Quicksand', sans-serif; /* Updated Font */
-  font-size: 70px;
-  line-height: 1.2;
 }
 
-/* 3. New Portfolio Image Grid Section */
-/* Matches the navbar3_container width and alignment */
-.portfolio-grid {
-  width: 100%;
-  max-width: 90rem; 
-  margin: 60px auto; /* Creates room between navbar and footer */
-  padding: 0 5%;     /* Matches navbar horizontal padding */
-  display: flex;
-  flex-direction: column;
-  gap: 40px;         /* Vertical space between the 8 images */
-}
-
-.portfolio-image {
-  width: 100%;       /* Same width as navbar container */
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 12px; /* Smooth corners for the images */
-}
-
-/* 4. Client & Footer Styles (from footor.css) */
+/* --- CLIENT & FOOTER SECTION (Originally from footor.css) --- */
 .section_client {
-  border: 1px solid #fff;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.container-large {
-  width: 100%;
-  max-width: 90rem;
-}
-
-.padding-global {
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding: 1rem 0;
 }
 
 .client_comp {
@@ -116,11 +92,16 @@ body {
   display: flex;
 }
 
+.client_content_wrap {
+  grid-column-gap: 3rem;
+  display: flex;
+}
+
 .heading-client {
   color: var(--blue);
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
-  letter-spacing: 0.015em;
+  margin: 0;
   display: flex;
 }
 
@@ -130,27 +111,47 @@ body {
   color: var(--blue);
   text-align: center;
   background-image: linear-gradient(90deg, #6f9d82, #d6e8ce);
-  padding-top: .375rem;
-  padding-bottom: .375rem;
+  padding: .375rem 0;
 }
 
-/* Responsive Overrides */
+/* --- UTILITIES & LAYOUT --- */
+.w-layout-blockcontainer {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.padding-global {
+  padding: 0 4rem;
+}
+
+._2, .text-span-3, .text-span-4, .text-span-5 {
+  font-size: 50px;
+  position: relative;
+  top: 2px;
+}
+
+/* Dot Colors */
+._2 { color: #bf9d86; }
+.text-span-3 { color: #e8dfce; }
+.text-span-4 { color: #74ad8c; }
+.text-span-5 { color: #d6e8ce; }
+
+.image-social {
+  width: 40px;
+}
+
+/* --- RESPONSIVE DESIGN --- */
 @media screen and (max-width: 991px) {
   .navbar3_menu {
     background-color: #2b6560;
+    flex-direction: column;
     width: 80vw;
-    font-family: 'Quicksand', sans-serif;
+    height: 100dvh;
+    position: absolute;
+    inset: 0% auto 0% 0%;
   }
-  .portfolio-grid {
-    margin: 30px auto;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .heading_print {
-    font-size: 3rem;
-  }
+  
   .padding-global {
-    padding: 1.25rem;
+    padding: 0 1.25rem;
   }
 }
