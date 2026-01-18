@@ -6,9 +6,10 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   
 <script type="text/javascript">
-  if (window.innerWidth <= 767 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    // We are removing the 'www' to prevent the 4-w copy/paste glitch
-    window.location.replace("https://flourish-graphics.com");
+  // This version doesn't use the string "www" at all to avoid the glitch
+  if (window.innerWidth <= 767 || /Android|iPhone|iPod/i.test(navigator.userAgent)) {
+    var d = "flourish-graphics.com";
+    window.location.replace("https://" + d);
   }
 </script>
   <meta content="Webflow" name="generator">
