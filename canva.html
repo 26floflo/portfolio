@@ -1,31 +1,31 @@
 <style>
-  /* This section removes all default browser margins and scrollbars */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
   body, html {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 100% !important;
-    width: 100% !important;
-    overflow: hidden; /* Keeps the page sleek and unscrollable */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff; /* Change this to match your SVG's main color */
   }
 
-  /* This container forces your Canva site to the absolute edges */
-  .full-bleed-container {
-    position: fixed;
+  .canva-wrapper {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff; /* Matches your white background */
   }
 
   iframe {
     width: 100% !important;
     height: 100% !important;
     border: none !important;
+    /* This forces the content to fill the container */
+    display: block;
   }
 </style>
 
-<div class="full-bleed-container">
+<div class="canva-wrapper">
   <iframe 
     src="https://www.canva.com/design/DAGQGLL1zmY/cwfHYD4kTO5yHSFBXAtx4w/view?embed" 
     allowfullscreen="allowfullscreen" 
