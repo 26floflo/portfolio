@@ -1,0 +1,34 @@
+<style>
+  /* This section removes all default browser margins and scrollbars */
+  body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    overflow: hidden; /* Keeps the page sleek and unscrollable */
+  }
+
+  /* This container forces your Canva site to the absolute edges */
+  .full-bleed-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff; /* Matches your white background */
+  }
+
+  iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+  }
+</style>
+
+<div class="full-bleed-container">
+  <iframe 
+    src="https://www.canva.com/design/DAGQGLL1zmY/cwfHYD4kTO5yHSFBXAtx4w/view?embed" 
+    allowfullscreen="allowfullscreen" 
+    allow="fullscreen">
+  </iframe>
+</div>
