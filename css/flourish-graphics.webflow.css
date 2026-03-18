@@ -678,7 +678,6 @@
   font-style: normal;
   font-display: swap;
 }
-h1, .heading, .brand, .logo-text {
-  font-family: 'Quicksand', sans-serif;
+.bold-text {
   font-weight: 700 !important;
 }
