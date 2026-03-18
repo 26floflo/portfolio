@@ -4,14 +4,22 @@
     <meta charset="utf-8">
 
    <script type="text/javascript">
-  (function() {
-    // Regex to detect common mobile and tablet identifiers
-    var isMobileOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+(function() {
+    var host = window.location.hostname;
+    // STOP: If we are already on a subdomain, do nothing.
+    if (host.includes("studio.") || host.includes("www.")) {
+        return;
+    }
 
+    var isMobileOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
     if (isMobileOrTablet) {
         window.location.replace("https://studio.flourish-graphics.com");
+    } else {
+        // ADD THIS: Sends desktop users to the 'www' Canva site
+        window.location.replace("https://www.flourish-graphics.com");
     }
-  })();
+})();
 </script>
 
   <title>Flourish Graphics</title>
