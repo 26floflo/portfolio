@@ -679,10 +679,6 @@
   font-display: swap;
 }
 .logo-heading,
-.logo-heading *,
-.bold-text {
-  font-weight: 700 !important;
-}
-.logo-heading span {
+.logo-heading * {
   font-weight: 700 !important;
 }
