@@ -3,20 +3,23 @@
 <head>
     <meta charset="utf-8">
 
-   <script type="text/javascript">
+ <script type="text/javascript">
 (function() {
     var host = window.location.hostname;
-    // STOP: If we are already on a subdomain, do nothing.
-    if (host.includes("studio.") || host.includes("www.")) {
+    
+    // STOP: If we are already on a subdomain (Canva), don't redirect.
+    if (host.includes("www.") || host.includes("studio.")) {
         return;
     }
 
+    // Using your working Regex - added Tablet/iPad specifically
     var isMobileOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+
     if (isMobileOrTablet) {
+        // Phones and Tablets -> Canva Mobile (studio)
         window.location.replace("https://studio.flourish-graphics.com");
     } else {
-        // ADD THIS: Sends desktop users to the 'www' Canva site
+        // Laptops and Desktops -> Canva Desktop (www)
         window.location.replace("https://www.flourish-graphics.com");
     }
 })();
