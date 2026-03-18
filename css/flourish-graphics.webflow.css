@@ -678,6 +678,9 @@
   font-style: normal;
   font-display: swap;
 }
+.header-bold {
+  font-weight: 700;
+}
 .logo-heading,
 .logo-heading * {
   font-weight: 700 !important;
