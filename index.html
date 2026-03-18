@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html data-wf-page="..." data-wf-site="...">
+<html data-wf-page="64..." data-wf-site="64...">
 <head>
-  <meta charset="utf-8">
-  <script type="text/javascript">
-      (function() {
-          var width = window.innerWidth || document.documentElement.clientWidth;
-          if (width <= 768) {
-              window.location.href = "https://studio.flourish-graphics.com";
-          } else {
-              window.location.href = "https://www.flourish-graphics.com";
-          }
-      })();
-  </script>
+    <meta charset="utf-8">
+
+    <script type="text/javascript">
+        (function() {
+            var host = window.location.hostname;
+            var width = window.innerWidth || document.documentElement.clientWidth;
+
+            // 1. STOP THE LOOP: If the browser is already at a subdomain, exit the script.
+            if (host.includes("www.") || host.includes("studio.")) {
+                return; 
+            }
+
+            // 2. REDIRECT: Only runs if the user is on the "naked" flourish-graphics.com
+            if (width <= 768) {
+                window.location.replace("https://studio.flourish-graphics.com");
+            } else {
+                window.location.replace("https://www.flourish-graphics.com");
+            }
+        })();
+    </script>
 
   <title>Flourish Graphics</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
