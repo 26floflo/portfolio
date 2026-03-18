@@ -5,26 +5,18 @@
 
  <script type="text/javascript">
 (function() {
-    var host = window.location.hostname;
-    
-    // STOP: If we are already on a subdomain (Canva), don't redirect.
-    if (host.includes("www.") || host.includes("studio.")) {
-        return;
-    }
-
-    // Using your working Regex - added Tablet/iPad specifically
+    // 1. Detect Mobiles and Tablets using your working Regex
     var isMobileOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     if (isMobileOrTablet) {
-        // Phones and Tablets -> Canva Mobile (studio)
+        // Force jump to Mobile Canva
         window.location.replace("https://studio.flourish-graphics.com");
     } else {
-        // Laptops and Desktops -> Canva Desktop (www)
+        // Force jump to Desktop Canva
         window.location.replace("https://www.flourish-graphics.com");
     }
 })();
 </script>
-
   <title>Flourish Graphics</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
