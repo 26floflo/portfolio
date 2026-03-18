@@ -6,19 +6,26 @@
     <script type="text/javascript">
         (function() {
     var host = window.location.hostname;
-    var width = window.innerWidth || document.documentElement.clientWidth;
+    var urlParams = new URLSearchParams(window.location.search);
+    
+    // 1. If we already redirected once in this session, STOP.
+    if (sessionStorage.getItem('redirected') === 'true') {
+        return;
+    }
 
-    // IF THE URL ALREADY HAS 'WWW' OR 'STUDIO', STOP IMMEDIATELY
+    // 2. If we are already on a subdomain, STOP.
     if (host.startsWith("www.") || host.startsWith("studio.")) {
-        console.log("Already at destination. Stopping redirect.");
         return; 
     }
 
-    // REDIRECT ONLY IF ON THE NAKED DOMAIN
+    // 3. Mark that we are redirecting to prevent the loop
+    sessionStorage.setItem('redirected', 'true');
+
+    var width = window.innerWidth || document.documentElement.clientWidth;
     if (width <= 768) {
         window.location.replace("https://studio.flourish-graphics.com");
     } else {
-        window.location.replace("https://flourish-graphics.com");
+        window.location.replace("https://www.flourish-graphics.com");
     }
 })();
     </script>
