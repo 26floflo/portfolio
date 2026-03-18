@@ -5,21 +5,22 @@
 
     <script type="text/javascript">
         (function() {
-            var host = window.location.hostname;
-            var width = window.innerWidth || document.documentElement.clientWidth;
+    var host = window.location.hostname;
+    var width = window.innerWidth || document.documentElement.clientWidth;
 
-            // 1. STOP THE LOOP: If the browser is already at a subdomain, exit the script.
-            if (host.includes("www.") || host.includes("studio.")) {
-                return; 
-            }
+    // IF THE URL ALREADY HAS 'WWW' OR 'STUDIO', STOP IMMEDIATELY
+    if (host.startsWith("www.") || host.startsWith("studio.")) {
+        console.log("Already at destination. Stopping redirect.");
+        return; 
+    }
 
-            // 2. REDIRECT: Only runs if the user is on the "naked" flourish-graphics.com
-            if (width <= 768) {
-                window.location.replace("https://studio.flourish-graphics.com");
-            } else {
-                window.location.replace("https://flourish-graphics.com");
-            }
-        })();
+    // REDIRECT ONLY IF ON THE NAKED DOMAIN
+    if (width <= 768) {
+        window.location.replace("https://studio.flourish-graphics.com");
+    } else {
+        window.location.replace("https://www.flourish-graphics.com");
+    }
+})();
     </script>
 
   <title>Flourish Graphics</title>
