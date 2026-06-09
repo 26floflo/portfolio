@@ -9,7 +9,35 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/flourish-graphics.webflow.css" rel="stylesheet" type="text/css">
-  <style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="48adcd42-aa0f-8297-1368-802e77db1a0a"] {display:none;}html.w-mod-js:not(.w-mod-ix) [data-w-id="48adcd42-aa0f-8297-1368-802e77db1a0b"] {display:block;}}</style>
+  <style>
+/* 1. Keep your original desktop interaction logic */
+@media (min-width:992px) {
+  html.w-mod-js:not(.w-mod-ix) [data-w-id="48adcd42-aa0f-8297-1368-802e77db1a0a"] { display:none; }
+  html.w-mod-js:not(.w-mod-ix) [data-w-id="48adcd42-aa0f-8297-1368-802e77db1a0b"] { display:block; }
+}
+
+/* 2. Add the new Tablet & Mobile touch fix */
+@media (max-width: 991px) {
+  /* Prevent sticky hovers during a swipe and optimize touch delay */
+  .link_image {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Force the hover overlay to ONLY show when actively pressed or focused */
+  .link_image:active .image-01-hover,
+  .link_image:focus .image-01-hover {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  /* Hide the base image ONLY during the active touch/tap */
+  .link_image:active .image-01,
+  .link_image:focus .image-01 {
+    display: none !important;
+  }
+}
+</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
