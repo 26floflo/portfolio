@@ -171,6 +171,27 @@
   <script src="js/webflow.js" type="text/javascript"></script>
 
 <style>
+    /* FIX 1: Kills Webflow's automatic dark transparent backdrop completely */
+    .w-nav-overlay {
+      background-color: transparent !important;
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    /* FIX 2: Prevents Webflow from forcing the menu to fill 100vh height on phones */
+    @media screen and (max-width: 991px) {
+      .navbar3_menu.w-nav-menu {
+        height: auto !important;
+        max-height: none !important;
+        min-height: auto !important;
+        position: absolute !important;
+        background-color: #1e5a53 !important; /* Locks your clean green background color */
+        box-shadow: none !important;
+      }
+    }
+
+    /* YOUR NEW ZOOM LOGIC STAYS INTACT BELOW */
     /* Base settings for smooth scaling */
     .section_picture .div-block {
       transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out !important;
