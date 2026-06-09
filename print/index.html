@@ -171,21 +171,27 @@
   <script src="js/webflow.js" type="text/javascript"></script>
 
  <style>
-    /* Base styles for the inner project wrapper */
+    /* Setup smooth, simultaneous layout adjustments */
+    .section_picture {
+      transition: max-height 0.4s ease-in-out, padding-bottom 0.4s ease-in-out !important;
+      max-height: 5000px; /* Generous max boundary for your natural layout state */
+    }
+
     .section_picture .div-block {
-      transition: transform 0.4s ease-in-out, max-height 0.4s ease-in-out !important;
+      transition: transform 0.4s ease-in-out !important;
       transform-origin: center top;
     }
     
-    /* When zoomed out, scale the images AND collapse the structural height */
+    /* Active Zoom-Out: Shinks both the grid items and the physical height boundaries */
     body.is-zoomed-out .section_picture .div-block {
       transform: scale(0.5) !important; 
     }
     
     body.is-zoomed-out .section_picture {
-      /* Forces the outer section container to shrink its layout footprint by half */
-      margin-bottom: -25% !important; 
-      transition: margin-bottom 0.4s ease-in-out !important;
+      /* Scales down the calculated layout viewport constraint perfectly by half */
+      max-height: 50vh !important; 
+      padding-bottom: 0px !important;
+      overflow: visible !important; /* Ensures the images are visible while scaled out */
     }
 
     #button-zoom, .button-2 {
