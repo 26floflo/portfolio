@@ -208,5 +208,36 @@
     });
   </script>
 
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      const burgerMenu = document.querySelector(".navbar3_menu-button");
+      const navMenu = document.querySelector(".navbar3_menu");
+      const navOverlay = document.querySelector(".w-nav-overlay");
+
+      if (burgerMenu && navMenu) {
+        burgerMenu.addEventListener("click", function() {
+          // A tiny 50ms delay lets Webflow open the menu first...
+          setTimeout(function() {
+            if (navMenu.classList.contains("w--open")) {
+              // FIXES THE NAVBAR DISTORTION: Stops full-screen stretching
+              navMenu.style.setProperty("height", "auto", "important");
+              navMenu.style.setProperty("max-height", "none", "important");
+              navMenu.style.setProperty("min-height", "auto", "important");
+              navMenu.style.setProperty("position", "absolute", "important");
+              
+              // FIXES THE GREY BOX: Makes it completely transparent
+              if (navOverlay) {
+                navOverlay.style.setProperty("background", "transparent", "important");
+                navOverlay.style.setProperty("background-color", "transparent", "important");
+                navOverlay.style.setProperty("backdrop-filter", "none", "important");
+                navOverlay.style.setProperty("-webkit-backdrop-filter", "none", "important");
+              }
+            }
+          }, 50);
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
