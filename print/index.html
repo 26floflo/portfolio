@@ -1,5 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Jun 09 2026 11:09:48 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="6961cb30fe8d7f02ccc6af6b" data-wf-site="6961cb2ffe8d7f02ccc6af58">
+<!DOCTYPE html><html data-wf-page="6961cb30fe8d7f02ccc6af6b" data-wf-site="6961cb2ffe8d7f02ccc6af58">
 <head>
   <meta charset="utf-8">
   <title>Florence Allison | Freelance Graphic Designer &amp; Brand Designer</title>
@@ -188,6 +187,13 @@
     #button-zoom, .button-2 {
       z-index: 9999 !important;
     }
+
+    /* Target the standalone fixed/sticky background LinkedIn icon specifically when dropbar is open */
+    .navbar3_component.w--open .image-social.b {
+      opacity: 0 !important;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
   </style>
 
   <script type="text/javascript">
@@ -195,6 +201,7 @@
       // Fetch your exact burger layout button and green card class names from your canvas
       const burgerButton = document.querySelector('.navbar3_menu-button');
       const greenMenuCard = document.querySelector('.navbar3_menu');
+      const closeMenuX = document.querySelector('.image-14'); // Targets x.svg
       
       if (burgerButton && greenMenuCard) {
         burgerButton.addEventListener('click', function(event) {
@@ -219,6 +226,14 @@
           }
         });
       }
+
+      // Explicit trigger event for the x.svg close button
+      if (closeMenuX && burgerButton) {
+        closeMenuX.addEventListener('click', function(e) {
+          e.preventDefault();
+          burgerButton.click(); // Programmatically clicks Webflow's trigger to run native layout close rules safely
+        });
+      }
     });
   </script>
 
@@ -239,8 +254,6 @@
       }
     });
   </script>
-
-</script>
 
   <script type="text/javascript">
     function adjustMenuForWindowSize() {
