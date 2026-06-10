@@ -1797,3 +1797,7 @@ textarea.w-select {
   grid-template-rows: auto auto;
   grid-row-gap: 16px;
   grid-column-gap: 16px;
+  .w-nav-overlay {
+    background: transparent !important;
+    background-color: transparent !important;
+}
