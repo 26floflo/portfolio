@@ -309,7 +309,7 @@ button,
   display: none;
   padding: 20px;
   text-align: center;
-  background-color: #dddddd;
+  background-color: #FFFFFF00;
 }
 .w-form-fail {
   display: none;
@@ -923,7 +923,7 @@ textarea.w-select {
   position: relative;
   height: 300px;
   text-align: center;
-  background: #dddddd;
+  background: #FFFFFF00;
   clear: both;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   tap-highlight-color: rgba(0, 0, 0, 0);
@@ -1103,7 +1103,7 @@ textarea.w-select {
 }
 .w-dropdown-list {
   position: absolute;
-  background: #dddddd;
+  background: #FFFFFF00;
   display: none;
   min-width: 100%;
 }
@@ -1563,7 +1563,7 @@ textarea.w-select {
 }
 .w-nav {
   position: relative;
-  background: #dddddd;
+  background: #FFFFFF00;
   z-index: 1000;
 }
 .w-nav:before,
@@ -1738,7 +1738,7 @@ textarea.w-select {
   text-align: left;
   cursor: pointer;
   color: #222222;
-  background-color: #dddddd;
+  background-color: #FFFFFF00;
 }
 .w-tab-link.w--current {
   background-color: #C8C8C8;
@@ -1776,7 +1776,7 @@ textarea.w-select {
 }
 .w-dyn-empty {
   padding: 10px;
-  background-color: #dddddd;
+  background-color: #FFFFFF00;
 }
 .w-dyn-hide {
   display: none !important;
