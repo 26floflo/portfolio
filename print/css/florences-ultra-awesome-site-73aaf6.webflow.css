@@ -2698,5 +2698,34 @@
     order: -9999;
   }
 }
+/* --- CUSTOM FLOATING NAVBAR MOBILE CONTROL --- */
+@media screen and (max-width: 991px) {
+  /* Completely hide Webflow's default dark overlay tracker background */
+  .w-nav-overlay {
+    display: none !important;
+    visibility: hidden !important;
+  }
 
+  /* Force your custom menu block to stay closed by default on phones */
+  #custom-mobile-menu {
+    display: none !important;
+  }
+
+  /* Instantly pop open your floating green card ONLY when clicked */
+  #custom-mobile-menu.is-open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: auto !important;
+    background-color: #1e5a53 !important; /* Preserves your exact brand green */
+    border-radius: 20px !important;
+    padding: 30px !important;
+    z-index: 99999 !important;
+  }
+}
 
