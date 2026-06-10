@@ -179,14 +179,17 @@
       -webkit-backdrop-filter: none !important;
     }
 
-    /* FIX 2: Prevents Webflow from forcing the menu to fill 100vh height on phones */
+   /* FIX 2: Force the card layout ONLY when the menu is actually toggled open */
     @media screen and (max-width: 991px) {
-      .navbar3_menu.w-nav-menu {
+      .navbar3_menu.w-nav-menu.w--open {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
         height: auto !important;
         max-height: none !important;
         min-height: auto !important;
         position: absolute !important;
-        background-color: #1e5a53 !important; /* Locks your clean green background color */
+        background-color: #1e5a53 !important; 
         box-shadow: none !important;
       }
     }
