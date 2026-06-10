@@ -196,46 +196,36 @@
     }
   </style>
 
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-      // Fetch your exact burger layout button and green card class names from your canvas
-      const burgerButton = document.querySelector('.navbar3_menu-button');
-      const greenMenuCard = document.querySelector('.navbar3_menu');
-      const closeMenuX = document.querySelector('.image-14'); // Targets x.svg
-      
-      if (burgerButton && greenMenuCard) {
-        burgerButton.addEventListener('click', function(event) {
-          // Check if the menu is opening or slamming shut on this click execution
-          const isOpeningState = !greenMenuCard.classList.contains('w--open');
-          
-          if (!isOpeningState) {
-            // The 100ms / 1000ms delay logic: forces the system variables to yield
-            setTimeout(function() {
-              greenMenuCard.style.display = 'none';
-            }, 1000); // Wait for the close slide transition to complete
-            
-            setTimeout(function() {
-              const automaticOverlay = document.querySelector('.w-nav-overlay');
-              if (automaticOverlay) {
-                // Clear the layout fallback calculations right out of active browser memory
-                automaticOverlay.style.setProperty('display', 'none', 'important');
-                automaticOverlay.style.setProperty('background', 'transparent', 'important');
-                automaticOverlay.style.setProperty('background-color', 'transparent', 'important');
-              }
-            }, 100); // Reset the background shield before it locks up the screen grid
-          }
-        });
-      }
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const burger = document.querySelector('.navbar3_menu-button');
+  const closeX = document.querySelector('.image-14');
 
-      // Explicit trigger event for the x.svg close button
-      if (closeMenuX && burgerButton) {
-        closeMenuX.addEventListener('click', function(e) {
-          e.preventDefault();
-          burgerButton.click(); // Programmatically clicks Webflow's trigger to run native layout close rules safely
-        });
+  // Handle the 'X' button inside the menu
+  if (closeX && burger) {
+    closeX.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Only click the burger if the menu is actually open
+      if (burger.classList.contains('w--open')) {
+        burger.click();
       }
     });
-  </script>
+  }
+
+  // Monitor the menu to ensure the transparent grey fix remains applied
+  const navObserver = new MutationObserver(() => {
+    const overlay = document.querySelector('.w-nav-overlay');
+    if (overlay) {
+      overlay.style.backgroundColor = 'transparent';
+      overlay.style.background = 'transparent';
+    }
+  });
+
+  if (burger) {
+    navObserver.observe(burger, { attributes: true });
+  }
+});
+</script>
 
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
@@ -255,48 +245,7 @@
     });
   </script>
 
-  <script type="text/javascript">
-    function adjustMenuForWindowSize() {
-      // Safely fetch your exact Webflow layout components via their class names
-      let navOverlay = document.querySelector('.w-nav-overlay'); 
-      let burgerMenu = document.querySelector('.navbar3_menu-button');
-      let menu = document.querySelector('.navbar3_menu');
-      let menuVisible;
-
-      if (!burgerMenu || !menu) return;
-
-      if (window.innerWidth <= 991) { 
-          menu.style.display = 'none';
-          menuVisible = false;
-      } else {
-          menu.style.display = 'flex';
-          menuVisible = true;
-      }
-
-      burgerMenu.addEventListener('click', function() {
-          if (!menuVisible) {
-              menu.style.display = 'block';
-              if (navOverlay) navOverlay.style.display = 'block';
-              menuVisible = true;
-          } else {
-              // His exact delay trick: waits for your Webflow close transition to finish
-              setTimeout(function() { 
-                menu.style.display = 'none'; 
-              }, 1000); 
-              
-              // Slams the overlay box layout shut a split second after clicking
-              setTimeout(function() { 
-                if (navOverlay) navOverlay.style.display = 'none'; 
-              }, 100); 
-              
-              menuVisible = false;   
-          }
-      });
-    }  
-        
-    window.addEventListener('load', adjustMenuForWindowSize);  
-    window.addEventListener('resize', adjustMenuForWindowSize); 
-  </script>
+  
 
 </body>
 </html>
