@@ -208,5 +208,50 @@
     });
   </script>
 
+</script>
+
+  <script type="text/javascript">
+    function adjustMenuForWindowSize() {
+      // Safely fetch your exact Webflow layout components via their class names
+      let navOverlay = document.querySelector('.w-nav-overlay'); 
+      let burgerMenu = document.querySelector('.navbar3_menu-button');
+      let menu = document.querySelector('.navbar3_menu');
+      let menuVisible;
+
+      if (!burgerMenu || !menu) return;
+
+      if (window.innerWidth <= 991) { 
+          menu.style.display = 'none';
+          menuVisible = false;
+      } else {
+          menu.style.display = 'flex';
+          menuVisible = true;
+      }
+
+      burgerMenu.addEventListener('click', function() {
+          if (!menuVisible) {
+              menu.style.display = 'block';
+              if (navOverlay) navOverlay.style.display = 'block';
+              menuVisible = true;
+          } else {
+              // His exact delay trick: waits for your Webflow close transition to finish
+              setTimeout(function() { 
+                menu.style.display = 'none'; 
+              }, 1000); 
+              
+              // Slams the overlay box layout shut a split second after clicking
+              setTimeout(function() { 
+                if (navOverlay) navOverlay.style.display = 'none'; 
+              }, 100); 
+              
+              menuVisible = false;   
+          }
+      });
+    }  
+        
+    window.addEventListener('load', adjustMenuForWindowSize);  
+    window.addEventListener('resize', adjustMenuForWindowSize); 
+  </script>
+
 </body>
 </html>
