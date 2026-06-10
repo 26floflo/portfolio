@@ -192,6 +192,38 @@
 
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
+      // Fetch your exact burger layout button and green card class names from your canvas
+      const burgerButton = document.querySelector('.navbar3_menu-button');
+      const greenMenuCard = document.querySelector('.navbar3_menu');
+      
+      if (burgerButton && greenMenuCard) {
+        burgerButton.addEventListener('click', function(event) {
+          // Check if the menu is opening or slamming shut on this click execution
+          const isOpeningState = !greenMenuCard.classList.contains('w--open');
+          
+          if (!isOpeningState) {
+            // The 100ms / 1000ms delay logic: forces the system variables to yield
+            setTimeout(function() {
+              greenMenuCard.style.display = 'none';
+            }, 1000); // Wait for the close slide transition to complete
+            
+            setTimeout(function() {
+              const automaticOverlay = document.querySelector('.w-nav-overlay');
+              if (automaticOverlay) {
+                // Clear the layout fallback calculations right out of active browser memory
+                automaticOverlay.style.setProperty('display', 'none', 'important');
+                automaticOverlay.style.setProperty('background', 'transparent', 'important');
+                automaticOverlay.style.setProperty('background-color', 'transparent', 'important');
+              }
+            }, 100); // Reset the background shield before it locks up the screen grid
+          }
+        });
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
       const zoomButton = document.getElementById("button-zoom");
       
       if (zoomButton) {
