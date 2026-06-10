@@ -2698,5 +2698,10 @@
     order: -9999;
   }
 }
-
+/* --- Custom Mobile Navigation Fix --- */
+@media screen and (max-width: 991px) {
+  .mobile-nav-link_wrap {
+    display: none !important;
+  }
+}
 
