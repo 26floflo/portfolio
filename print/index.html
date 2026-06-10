@@ -229,5 +229,23 @@
     });
   </script>
 
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuButton = document.querySelector(".navbar3_menu-button");
+      const navMenu = document.querySelector(".navbar3_menu");
+
+      if (menuButton && navMenu) {
+        menuButton.addEventListener("click", function() {
+          // A tiny 50ms delay gives Webflow's native script time to open the menu first...
+          setTimeout(function() {
+            // ...then we step in and strip away the forced full-height inline styles!
+            navMenu.style.removeProperty("height");
+            navMenu.style.height = "auto";
+          }, 50);
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
