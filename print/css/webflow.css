@@ -1797,7 +1797,24 @@ textarea.w-select {
   grid-template-rows: auto auto;
   grid-row-gap: 16px;
   grid-column-gap: 16px;
-  .w-nav-overlay {
+  /* Close the previous grid block correctly */
+.w-layout-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+
+/* Correctly defined overlay fix */
+.w-nav-overlay {
     background: transparent !important;
     background-color: transparent !important;
+}
+
+/* Also target the custom background class found in your JS */
+.navbar3_menu-background {
+    background-color: transparent !important;
+    background: transparent !important;
 }
