@@ -41,7 +41,7 @@
                 <div class="menu-icon3_line-bottom"></div>
               </div>
             </div>
-            <nav role="navigation" id="w-node-_193868dc-e6ca-908a-811f-17090a1670ed-0a1670e4" class="navbar3_menu w-nav-menu">
+            <div id="custom-mobile-menu" class="navbar3_menu">
               <a href="#" class="navbar3_logo-link-menu w-nav-brand"><img loading="eager" src="images/Flourish-Graphics-White.svg" alt="" class="navbar3_logo-copy"></a>
               <a href="http://www.flourish-graphics.com/" class="navbar3_link w-inline-block">
                 <div><span class="home-2 text-span-6 g l">●</span></div>
@@ -67,7 +67,27 @@
                   <div><strong class="bold-text-3">CONTACT</strong></div>
                 </a>
               </div><img src="images/x.svg" loading="lazy" alt="" class="image-14">
-            </nav>
+            </div>
+            ```
+
+#### 3. Add the Toggle Script
+Scroll to the absolute bottom of `index-5.html`. Paste this tiny layout trigger script directly above your closing `</body>` tag (around line 163):
+
+```html
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      const burgerButton = document.querySelector(".navbar3_menu-button");
+      const customMenu = document.getElementById("custom-mobile-menu");
+
+      if (burgerButton && customMenu) {
+        burgerButton.addEventListener("click", function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          customMenu.classList.toggle("is-open");
+        });
+      }
+    });
+  </script>
             <a href="#" id="w-node-_193868dc-e6ca-908a-811f-17090a167111-0a1670e4" class="navbar3_logo-link w-nav-brand"><img loading="lazy" src="images/Flourish-Graphics-White.svg" alt="" class="navbar3_logo"></a>
             <div class="right-nav-link_wrap">
               <a href="http://www.flourish-graphics.com/about" class="navbar3_link d w-inline-block">
@@ -206,60 +226,6 @@
         });
       }
     });
-  </script>
-
- <script type="text/javascript">
-    function adjustMenuForWindowSize() {
-      let navOverlay = document.querySelector('.w-nav-overlay'); 
-      let burgerMenu = document.querySelector('.navbar3_menu-button');
-      let menu = document.querySelector('.navbar3_menu');
-      let menuVisible = false;
-
-      if (!burgerMenu || !menu) return;
-
-      // Handle the viewport state rules precisely
-      if (window.innerWidth <= 991) { 
-          menu.style.display = 'none';
-          menuVisible = false;
-      } else {
-          menu.style.display = 'flex';
-          menuVisible = true;
-      }
-
-      burgerMenu.addEventListener('click', function() {
-          if (!menuVisible) {
-              // 1. Force everything to drop its default hidden state
-              menu.style.setProperty('display', 'flex', 'important');
-              if (navOverlay) navOverlay.style.setProperty('display', 'block', 'important');
-              
-              // 2. Clear out the dynamic layout stretching
-              setTimeout(function() {
-                  menu.style.setProperty('height', 'auto', 'important');
-                  menu.style.setProperty('max-height', 'none', 'important');
-                  menu.style.setProperty('min-height', 'auto', 'important');
-                  menu.style.setProperty('position', 'absolute', 'important');
-                  if (navOverlay) {
-                      navOverlay.style.setProperty('background', 'transparent', 'important');
-                      navOverlay.style.setProperty('background-color', 'transparent', 'important');
-                  }
-              }, 50);
-              menuVisible = true;
-          } else {
-              // 3. Close handling using the forum's specific timeouts
-              setTimeout(function() { 
-                  menu.style.display = 'none'; 
-              }, 400); // Matches your 400ms Webflow animation transition speed
-              
-              setTimeout(function() { 
-                  if (navOverlay) navOverlay.style.display = 'none'; 
-              }, 100); // Instantly kills the grey box overlay calculation
-              menuVisible = false;   
-          }
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", adjustMenuForWindowSize);
-    window.addEventListener('resize', adjustMenuForWindowSize);
   </script>
 
 </body>
