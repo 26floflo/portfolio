@@ -197,24 +197,7 @@
       background-color: transparent !important; /* Forces it back to your contact background layout */
     }
 
-    /* 2. Force the correct dark/light text color visibility on contact page links when closed */
-    .body-2.c .navbar3_link:not(.w--open) .text-block-2,
-    .body-2.c .navbar3_link:not(.w--open) .text-block-3,
-    .body-2.c .navbar3_link:not(.w--open) .text-block-4,
-    .body-2.c .navbar3_link:not(.w--open) .text-block-5 {
-      color: #333333 !important; /* Swaps your nav text link colors to stay readable on the contact background */
-    }
-
-    /* 3. Hide the fallback white menu logo copy when the navbar is closed */
-    .body-2.c .navbar3_logo-link-menu {
-      display: none !important;
-    }
-    /* Show it beautifully only when Webflow adds the open state class */
-    .body-2.c .navbar3_component.w--open .navbar3_logo-link-menu {
-      display: block !important;
-    }
-
-    /* 4. Hide the background LinkedIn icon when the dropdown is open */
+    /* 2. Hide the background LinkedIn icon when the dropdown is open */
     .body-2.c .navbar3_component.w--open .image-social.b,
     .body-2.c .navbar3_component.w--open .link-block-2 {
       opacity: 0 !important;
@@ -222,13 +205,12 @@
       transition: opacity 0.25s ease-in-out;
     }
 
-    /* 5. Strip the automatic blue highlight and underline from phone numbers */
+    /* 3. Strip the automatic blue highlight and underline from phone numbers */
     a[href^="tel"] {
       color: inherit !important;
       text-decoration: none !important;
     }
   </style>
-
   <script>
   document.addEventListener("DOMContentLoaded", function() {
     const burger = document.querySelector('.navbar3_menu-button');
