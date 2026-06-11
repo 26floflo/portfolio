@@ -192,5 +192,53 @@
   <script src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/js/webflow.schunk.c42549641b7d4501.js" type="text/javascript" integrity="sha384-EeGd0MuCSKO1a60JtC5HSnHq/C4KrtHuH4qImMGUQIlIox5ZJ0y/b+zo9WWvnaty" crossorigin="anonymous"></script>
   <script src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/js/webflow.schunk.71175e99d0aeecd2.js" type="text/javascript" integrity="sha384-Dq8/Jjf1Y16Lx66wLeERsYPzHkvCxqW11jAwti+e3Uo9VfDDu4nEoxD4yBQ9e8pC" crossorigin="anonymous"></script>
   <script src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/js/webflow.faf3d6db.36963eb4db17894c.js" type="text/javascript" integrity="sha384-5e6WDYU5NxlX40B63vRCLwNvPtgxQ0l30ijTFc9Sz+H0em3ks54okebQTkcxqRQ4" crossorigin="anonymous"></script>
+
+  <style>
+    .navbar3_component.w--open .image-social.b,
+    .navbar3_component.w--open .link-block-2 {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transition: opacity 0.25s ease-in-out;
+    }
+  </style>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const burger = document.querySelector('.navbar3_menu-button');
+    const closeX = document.querySelector('.image-14');
+
+    // Natively trigger Webflow's close toggle when clicking custom 'X'
+    if (closeX && burger) {
+      closeX.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (burger.classList.contains('w--open')) {
+          burger.click();
+        }
+      });
+    }
+
+    // Function to strip Webflow's default grey overlay background
+    function makeOverlayTransparent() {
+      const overlays = document.querySelectorAll('.w-nav-overlay');
+      overlays.forEach(overlay => {
+        if (overlay) {
+          overlay.style.backgroundColor = 'transparent';
+          overlay.style.background = 'transparent';
+        }
+      });
+    }
+
+    // Execute immediately to correct contact.html's hardcoded overlay layout
+    makeOverlayTransparent();
+
+    // Watch for toggle state shifts to keep the layout pinned correctly
+    if (burger) {
+      const navObserver = new MutationObserver(() => {
+        makeOverlayTransparent();
+      });
+      navObserver.observe(burger, { attributes: true });
+    }
+  });
+  </script>
 </body>
 </html>
