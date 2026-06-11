@@ -27,14 +27,16 @@
   <link href="images/webclip.png" rel="icon" type="image/png" sizes="512x512">
 
   <style>
-    /* --- DESKTOP STYLES (Default) --- */
+    /* ==========================================================================
+       DESKTOP DEFAULT STYLES (D)
+       ========================================================================== */
     .image-6 {
       position: absolute;
       top: 4.5vw;
       padding-left: 53vw;
       height: 3.47vw;
       max-width: 100%;
-      left: 0; right: 0; bottom: 0;
+      left: 0; right: 0; bottom: 0; margin: 0;
     }
     .image-4 {
       position: absolute;
@@ -42,7 +44,7 @@
       padding-left: 10.9vw;
       height: 3.47vw;
       max-width: 100%;
-      left: 0; right: 0; bottom: 0;
+      left: 0; right: 0; bottom: 0; margin: 0;
     }
     .image-5 {
       position: absolute;
@@ -50,7 +52,7 @@
       padding-left: 32vw;
       height: 3.47vw;
       max-width: 100%;
-      left: 0; right: 0; bottom: 0;
+      left: 0; right: 0; bottom: 0; margin: 0;
     }
     .text-block-6-copy.base {
       position: static;
@@ -59,7 +61,8 @@
     }
     .text-block-6-copy.b {
       position: static;
-      margin-top: -4.5vw;
+      margin: -4.5vw 0 0 0;
+      padding: 0;
     }
     .text-block-6-copy.c {
       position: static;
@@ -70,34 +73,43 @@
       position: static;
       height: 52vw;
       padding-top: 1.7vw;
+      margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0;
     }
     .field-label-2 {
       position: static;
       padding-left: 2vw;
       margin-bottom: 4vw;
+      margin-top: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-right: 0; padding-bottom: 0;
     }
     .field-label-2.p {
       position: static;
       padding-left: 30.8vw;
       margin-bottom: 4vw;
+      margin-top: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-right: 0; padding-bottom: 0;
     }
     .text-block-18 {
       position: static;
       padding-top: 2.3vw;
       padding-left: 4.9vw;
+      margin: 0; padding-bottom: 0; padding-right: 0;
     }
     .text-block-19 {
-      position: static;
-      margin-top: -1.5vw;
+      position: relative;
+      top: -1.5vw;
       padding-left: 43.4vw;
+      margin: -1.5vw 0 0 0;
+      left: 0; right: 0; bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0;
     }
     .text-block-20 {
       position: static;
       padding-top: 7.7vw;
       padding-left: 5vw;
+      margin: 0; padding-bottom: 0; padding-right: 0;
     }
 
-    /* --- TABLET & LANDSCAPE STYLES --- */
+    /* ==========================================================================
+       TABLET & LANDSCAPE STYLES (T & L) - Max-width 991px
+       ========================================================================== */
     @media screen and (max-width: 991px) {
       .image-4 {
         top: 4.5vw;
@@ -117,6 +129,7 @@
       }
       .text-block-6-copy.b {
         margin-top: -4.5vw;
+        padding: 0;
       }
       .text-block-6-copy.c {
         margin: 0;
@@ -125,6 +138,10 @@
       .form {
         height: 52vw;
         padding-top: 1.7vw;
+      }
+      .field-label-2 {
+        padding-left: 2vw;
+        margin-bottom: 4vw;
       }
       .field-label-2.p {
         padding-left: 30.8vw;
@@ -140,7 +157,9 @@
       }
     }
 
-    /* --- MOBILE PHONE STYLES --- */
+    /* ==========================================================================
+       PHONE STYLES (P) - Max-width 479px
+       ========================================================================== */
     @media screen and (max-width: 479px) {
       .image-4 {
         top: 1.2vw;
@@ -157,25 +176,33 @@
       .text-block-6-copy.base {
         position: static;
         padding-left: 19vw;
+        padding-top: 0; margin: 0;
       }
       .text-block-6-copy.b {
         position: relative;
-        margin-top: -7.5vw;
-        padding-left: 26vw;
         top: 1.9vw;
         left: -7vw;
+        margin-top: -7.5vw;
+        padding-left: 26vw;
       }
       .text-block-6-copy.c {
         position: relative;
-        margin-top: -3.5vw;
-        margin-left: -4.6vw;
         top: -0.7vw;
         left: 23.2vw;
+        margin-top: -3.5vw;
+        margin-bottom: -4.6vw;
+        margin-left: -4.6vw;
+        margin-right: -4.6vw;
       }
       .form {
+        position: static;
         margin: 0.5vw;
         padding-top: 3vw;
         height: 72vw;
+      }
+      .field-label-2 {
+        padding-left: 2vw;
+        margin-bottom: 4vw;
       }
       .field-label-2.p {
         padding-left: 24.3vw;
@@ -185,10 +212,9 @@
         padding-left: 4.9vw;
       }
       .text-block-19 {
-        position: relative;
         padding-left: 43.4vw;
-        top: -1.5vw;
         margin: 0;
+        top: -1.5vw;
       }
       .text-block-20 {
         padding-top: 12.5vw;
@@ -251,4 +277,54 @@
             </div>
             <div style="opacity:0" class="navbar3_menu-background"></div><img loading="lazy" src="images/dots.svg" alt="" class="image-13 b">
           </div><img loading="lazy" src="images/LinkedIn_icon_circle-2.svg" alt="" class="image-social b contact">
-          <a href="https://www.linkedin.com/in/florence-allison-1701631a1" class="link-block-2 w-inline-
+          <a href="https://www.linkedin.com/in/florence-allison-1701631a1" class="link-block-2 w-inline-block"></a>
+          <a href="#" class="link_nav-social b w-inline-block"></a>
+        </div>
+        <h1 class="heading_print b contact">Contact</h1>
+      </div>
+    </section>
+    <section class="section_picture">
+      <div>
+        <img src="images/location.svg" loading="lazy" alt="" class="image-4">
+        <img src="images/phone.svg" loading="lazy" alt="" class="image-5">
+        <img src="images/email.svg" loading="lazy" alt="" class="image-6">
+        
+        <div data-wf--text-block-6-copy--variant="base" class="text-block-6-copy base">New York, NY</div>
+        <div class="text-block-6-copy b">718-905-6343</div>
+        <div class="text-block-6-copy c">florence@flourish-graphics.com</div>
+        
+        <div class="text-block-8">You can also contact me by using this form:</div>
+      </div>
+      <div class="form-block w-form">
+        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="6a14bcf44a6165b2e7a3c9dd" data-wf-element-id="c52d735f-f996-a073-0972-837da1dbfb92"><label for="name" class="field-label-2"><br>        First Name</label><label for="name" class="field-label-2 p"><br>Last Name</label>
+          <div class="text-block-18">Number</div>
+          <div class="text-block-19">Email</div>
+          <div class="text-block-20">Message</div><input class="text-field e w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field e2 w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field e3 w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field e4 w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input type="submit" data-wait="Please wait..." class="submit-button w-button" value="Submit">
+          <div class="div-block-15"></div>
+        </form>
+        <div class="success-message w-form-done">
+          <div>Thank you! Your submission has been received!</div>
+        </div>
+        <div class="error-message w-form-fail">
+          <div>Oops! Something went wrong while submitting the form.</div>
+        </div>
+      </div>
+      <div class="lottie-animation" data-w-id="690889e1-7643-5f4f-ec51-452a2b021439" data-animation-type="lottie" data-src="documents/Plant-Office-Desk.lottie" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="6" data-loading="lazy"></div>
+    </section>
+    <div></div><img src="images/Mountain2.svg" loading="lazy" alt="" class="image-12">
+    <section class="section_client">
+      <div class="w-layout-blockcontainer container-large w-container">
+        <div class="padding-global">
+          <div class="client_comp">
+            <div class="client_content_wrap">
+              <h1 class="heading-client"><strong class="bold-text-2 contact">Clients</strong></h1>
+              <div class="divider-line contact"></div>
+              <div class="client_wrap">
+                <div class="client_logo_wrap">
+                  <a href="https://g.co/kgs/dEib2cc" class="w-inline-block"><img loading="lazy" src="images/Logo---1.svg" alt="" class="logo_client"></a>
+                  <div class="social-client_comp">
+                    <a href="https://www.instagram.com/beautystateofmind_bygina?igsh=MWlyZ20xcGNsaDc0Zg==" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/Instagram.svg" alt="" class="client_logo_social-media"></a>
+                    <a href="https://www.tiktok.com/place/Genius-Beauty-Bar-21568226289847202?lang=my-MM" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/TikTok.svg" alt="" class="client_logo_social-media"></a>
+                  </div>
+                </div>
+                <div class="
