@@ -194,11 +194,18 @@
   <script src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/js/webflow.faf3d6db.36963eb4db17894c.js" type="text/javascript" integrity="sha384-5e6WDYU5NxlX40B63vRCLwNvPtgxQ0l30ijTFc9Sz+H0em3ks54okebQTkcxqRQ4" crossorigin="anonymous"></script>
 
   <style>
+    /* Hide the standalone background LinkedIn icon when the dropbar expands open */
     .navbar3_component.w--open .image-social.b,
     .navbar3_component.w--open .link-block-2 {
       opacity: 0 !important;
       pointer-events: none !important;
       transition: opacity 0.25s ease-in-out;
+    }
+
+    /* Strip the automatic blue highlight and underline from phone numbers */
+    a[href^="tel"] {
+      color: inherit !important;
+      text-decoration: none !important;
     }
   </style>
 
