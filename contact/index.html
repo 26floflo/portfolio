@@ -256,11 +256,18 @@
       border-color: transparent !important;
     }
 
-    /* 3. Maintain the Dropdown background when OPEN */
-    /* This ensures that when the menu is actually open, it still has its green background */
-    .body-2.c .navbar3_component.w--open .navbar3_menu {
-      background-color: #2b6560 !important;
-    }
+   /* 3. Change Dropdown background to WHITE and text to GREEN when OPEN */
+.body-2.c .navbar3_component.w--open .navbar3_menu {
+  background-color: #ffffff !important;
+}
+
+/* Force all mobile menu links, bullet points, and text blocks to green when open */
+.body-2.c .navbar3_component.w--open .navbar3_menu a,
+.body-2.c .navbar3_component.w--open .navbar3_menu div,
+.body-2.c .navbar3_component.w--open .navbar3_menu span,
+.body-2.c .navbar3_component.w--open .navbar3_menu strong {
+  color: #2b6560 !important;
+}
 
     /* 4. Hide the background LinkedIn icon and dots when dropdown is open */
     .body-2.c .navbar3_component.w--open .image-social.b,
