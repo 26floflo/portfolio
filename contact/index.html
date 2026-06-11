@@ -109,12 +109,22 @@
   <form id="email-form" name="email-form" data-name="Email Form" method="POST" class="form" aria-label="Email Form" action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" style="font-family: 'Quicksand', sans-serif;">
     
     <style>
-      /* Responsive sizing for the message box */
+      /* Responsive sizing for the message box across all screens */
       .custom-message-box {
-        height: 130px !important;
-        min-height: 130px !important;
+        height: 220px !important; /* Generous height for Desktop screens */
+        min-height: 220px !important;
       }
+      
+      @media screen and (max-width: 991px) {
+        /* Medium/Tablet screens - steps down to keep it looking clean */
+        .custom-message-box {
+          height: 130px !important;
+          min-height: 130px !important;
+        }
+      }
+      
       @media screen and (max-width: 479px) {
+        /* Mobile screens - compact layout so it fits nicely on phones */
         .custom-message-box {
           height: 75px !important;
           min-height: 75px !important;
