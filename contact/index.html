@@ -106,11 +106,20 @@
       </div>
       
      <div class="form-block w-form">
-  <form id="email-form" name="email-form" data-name="Email Form" method="POST" class="form" aria-label="Email Form" action="https://api.web3forms.com/submit" style="font-family: 'Quicksand', sans-serif;">
+  <form id="email-form" name="email-form" data-name="Email Form" method="POST" class="form" aria-label="Email Form" action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" style="font-family: 'Quicksand', sans-serif;">
     
-    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-    <input type="hidden" name="subject" value="New Contact Form Submission - Flourish Graphics">
-    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+    <style>
+      #email-form input:-webkit-autofill,
+      #email-form input:-webkit-autofill:hover, 
+      #email-form input:-webkit-autofill:focus,
+      #email-form textarea:-webkit-autofill,
+      #email-form textarea:-webkit-autofill:hover,
+      #email-form textarea:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+        -webkit-text-fill-color: #333333 !important;
+        transition: background-color 9999s ease-in-out 0s;
+      }
+    </style>
 
     <label for="first-name" class="field-label-2" style="font-family: 'Quicksand', sans-serif;"><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;First Name</label>
     <label for="last-name" class="field-label-2 p" style="font-family: 'Quicksand', sans-serif;"><br>Last Name</label>
@@ -124,20 +133,13 @@
     
     <input class="text-field e w-input" maxlength="256" name="phone" data-name="Phone" placeholder="" type="tel" id="phone" autocomplete="tel" style="font-family: 'Quicksand', sans-serif;">
     
-    <input class="text-field e2 w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" id="email" autocomplete="email" required style="font-family: 'Quicksand', sans-serif;">
+    <input class="text-field e2 w-input" maxlength="256" name="email" data-name="_replyto" placeholder="" type="email" id="email" autocomplete="email" required style="font-family: 'Quicksand', sans-serif;">
     
-    <textarea class="text-field e4 w-input" maxlength="5000" name="message" data-name="Message" placeholder="" id="message" required style="font-family: 'Quicksand', sans-serif; padding-top: 8px; height: 50px; min-height: 50px; vertical-align: top; resize: none;"></textarea>
+    <textarea class="text-field e4 w-input" maxlength="5000" name="message" data-name="Message" placeholder="" id="message" required style="font-family: 'Quicksand', sans-serif; padding-top: 8px; height: 62px; min-height: 62px; vertical-align: top; resize: none;"></textarea>
     
     <input type="submit" data-wait="Please wait..." class="submit-button w-button" value="Submit" name="field_submit" style="font-family: 'Quicksand', sans-serif;">
     <div class="div-block-15"></div>
   </form>
-  
-  <div class="success-message w-form-done" tabindex="-1" role="region" aria-label="Email Form success" style="font-family: 'Quicksand', sans-serif;">
-    <div>Thank you! Your submission has been received!</div>
-  </div>
-  <div class="error-message w-form-fail" tabindex="-1" role="region" aria-label="Email Form failure" style="font-family: 'Quicksand', sans-serif;">
-    <div>Oops! Something went wrong while submitting the form.</div>
-  </div>
 </div>
 
       <div class="lottie-animation" data-w-id="690889e1-7643-5f4f-ec51-452a2b021439" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/6a26b36190ceaa25d47b20a3_Plant%2C%20Office%2C%20Desk.lottie" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="6" data-loading="lazy"></div>
