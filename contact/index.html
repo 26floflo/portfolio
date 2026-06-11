@@ -163,18 +163,15 @@
   <script src="js/webflow.js" type="text/javascript"></script>
 
   <style>
-    /* Hide the text info component on Desktop & Tablets; Only activate/show on Mobile screens */
+    /* Hide the text info component entirely on screen widths 768px and up (Desktop, Tablet, Landscape breakpoints) */
     @media screen and (min-width: 768px) {
       .text-block-6-copy {
         display: none !important;
       }
     }
     
-    @media screen and (max-width: 767px) {
-      .text-block-6-copy {
-        display: block !important;
-      }
-    }
+    /* Notice: No display rules are set here for mobile screen widths (< 768px). 
+       This completely ensures Webflow's native positioning rules for your layout remain untouched. */
 
     /* Hide the floating landscape LinkedIn icons when the mobile dropdown menu is open */
     .navbar3_component.w--open .image-social.b.contact,
