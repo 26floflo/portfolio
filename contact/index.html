@@ -27,7 +27,14 @@
   <link href="images/webclip.png" rel="icon" type="image/png" sizes="512x512">
 
   <style>
-    /* --- DESKTOP (D) STYLES (Default / min-width: 992px) --- */
+    /* --- CONTACT INFO WRAPPER TO PREVENT SCREEN COLLAPSE --- */
+    .contact-info-container {
+      position: relative !important;
+      width: 100%;
+      min-height: 12vw;
+    }
+
+    /* --- DESKTOP (D) STYLES --- */
     .image-6 {
       position: absolute !important;
       margin: 0;
@@ -56,22 +63,25 @@
       max-width: 100% !important;
     }
     .text-block-6-copy {
-      position: static !important;
+      position: absolute !important;
       margin: 0;
       padding: 0;
-      margin-top: -55.6vw !important;
-      padding-top: 5.5vw !important;
+      top: 5.5vw !important;
+      left: 14vw !important;
     }
     .text-block-6-copy.b {
-      position: static !important;
+      position: absolute !important;
       margin: 0;
       padding: 0;
-      margin-top: -4.5vw !important;
+      top: 5.5vw !important;
+      left: 35.5vw !important;
     }
     .text-block-6-copy.c {
-      position: static !important;
+      position: absolute !important;
       margin: 0 !important;
       padding: 0 !important;
+      top: 5.5vw !important;
+      left: 56.5vw !important;
     }
     .form {
       position: static !important;
@@ -114,7 +124,7 @@
       padding-left: 5vw !important;
     }
 
-    /* --- TABLET & LANDSCAPE (T & L) STYLES (max-width: 991px) and (min-width: 480px) --- */
+    /* --- TABLET & LANDSCAPE (T & L) STYLES --- */
     @media screen and (max-width: 991px) {
       .image-4 {
         margin-top: 4.5vw !important;
@@ -138,7 +148,7 @@
       }
     }
 
-    /* --- PHONE (P) STYLES (max-width: 479px) --- */
+    /* --- PHONE (P) STYLES --- */
     @media screen and (max-width: 479px) {
       .image-4 {
         margin-top: 1.2vw !important;
@@ -153,6 +163,7 @@
         padding-left: 13.5vw !important;
       }
       .text-block-6-copy {
+        position: static !important;
         margin: 0 !important;
         padding: 0 !important;
         padding-left: 19vw !important;
@@ -178,4 +189,151 @@
       .form {
         margin: 0.5vw !important;
         padding-top: 3vw !important;
-        height: 72vw !important
+        height: 72vw !important;
+      }
+      .field-label-2.p {
+        padding-left: 24.3vw !important;
+      }
+      .text-block-19 {
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-left: 43.4vw !important;
+        padding-top: -1.5vw !important;
+      }
+      .text-block-20 {
+        padding-top: 12.5vw !important;
+        padding-left: 6vw !important;
+      }
+    }
+
+    /* Keep dropdown navigation overlay transparent */
+    .navbar3_component.w--open .image-social.b.contact,
+    .navbar3_component.w--open .link-block-2 {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transition: opacity 0.25s ease-in-out;
+    }
+  </style>
+</head>
+<body class="body-2 c">
+  <div class="page-wrapper">
+    <section id="section_navbar" class="section_navbar">
+      <div class="navbar_comp contact">
+        <div data-animation="default" class="navbar3_component contact w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="fc98069a-43b9-714d-d98d-0c3e54357fa8" role="banner" data-duration="400" data-doc-height="1">
+          <div class="navbar3_container">
+            <div class="navbar3_menu-button w-nav-button">
+              <div data-wf--menu-icon3--variant="variant" class="menu-icon3 w-variant-0e2802ff-6682-7ab7-bdd2-626277a29ab0">
+                <div class="menu-icon3_line-top w-variant-0e2802ff-6682-7ab7-bdd2-626277a29ab0"></div>
+                <div class="menu-icon3_line-middle w-variant-0e2802ff-6682-7ab7-bdd2-626277a29ab0"></div>
+                <div class="menu-icon3_line-bottom w-variant-0e2802ff-6682-7ab7-bdd2-626277a29ab0 contact"></div>
+              </div>
+            </div>
+            <nav role="navigation" id="w-node-fc98069a-43b9-714d-d98d-0c3e54357faf-e7a3c9dd" class="navbar3_menu contact w-nav-menu">
+              <a href="#" class="navbar3_logo-link-menu w-nav-brand"><img loading="eager" src="images/Flourish-Graphics-White.svg" alt="" class="navbar3_logo-copy"></a>
+              <a href="http://www.flourish-graphics.com/home" class="navbar3_link w-inline-block">
+                <div><span class="home-2 text-span-6 g l">●</span></div>
+                <div class="text-block-2 contact">HOME</div>
+              </a>
+              <a href="http://www.flourish-graphics.com/branding" class="navbar3_link w-inline-block">
+                <div><span class="text-span-3 g l">●</span></div>
+                <div class="text-block-3 contact">BRANDING</div>
+              </a>
+              <a href="http://www.flourish-graphics.com/about" class="navbar3_link t w-inline-block">
+                <div><span class="text-span-4 l">●</span></div>
+                <div class="text-block-4">ABOUT</div>
+              </a>
+              <a href="http://www.flourish-graphics.com/contact" class="navbar3_link t w-inline-block">
+                <div><span class="text-span-5 l">●</span></div>
+                <div class="text-block-5">CONTACT</div>
+              </a>
+              <div class="mobile-nav-link_wrap">
+                <a href="#" class="navbar3_link w-inline-block">
+                  <div class="text-block-9"><strong class="bold-text-4">ABOUT</strong></div>
+                </a>
+                <a href="#" class="navbar3_link w-inline-block">
+                  <div><strong class="bold-text-3">CONTACT</strong></div>
+                </a>
+              </div><img loading="lazy" src="images/x.svg" alt="" class="image-14">
+            </nav>
+            <a href="#" id="w-node-fc98069a-43b9-714d-d98d-0c3e54357fd4-e7a3c9dd" class="navbar3_logo-link w-nav-brand"><img loading="lazy" src="images/Flourish-Graphics-3.svg" alt="" class="navbar3_logo contact"></a>
+            <div class="right-nav-link_wrap">
+              <a href="http://www.flourish-graphics.com/print" class="navbar3_link d w-inline-block">
+                <div><span class="text-span-4">●</span></div>
+                <div class="text-block-4 contact">PRINT</div>
+              </a>
+              <a href="http://www.flourish-graphics.com/about" class="navbar3_link d w-inline-block">
+                <div><span class="text-span-5">●</span></div>
+                <div class="text-block-5 contact">ABOUT</div>
+              </a>
+              <a href="https://www.linkedin.com/in/florence-allison-1701631a1" class="link-block-2 v w-inline-block"><img loading="lazy" src="images/LinkedIn_icon_circle-2.svg" alt="" class="image-social contact"></a>
+            </div>
+            <div style="opacity:0" class="navbar3_menu-background"></div><img loading="lazy" src="images/dots.svg" alt="" class="image-13 b">
+          </div><img loading="lazy" src="images/LinkedIn_icon_circle-2.svg" alt="" class="image-social b contact">
+          <a href="https://www.linkedin.com/in/florence-allison-1701631a1" class="link-block-2 w-inline-block"></a>
+          <a href="#" class="link_nav-social b w-inline-block"></a>
+        </div>
+        <h1 class="heading_print b contact">Contact</h1>
+      </div>
+    </section>
+    
+    <section class="section_picture">
+      <div class="contact-info-container">
+        <img src="images/location.svg" loading="lazy" alt="" class="image-4">
+        <img src="images/phone.svg" loading="lazy" alt="" class="image-5">
+        <img src="images/email.svg" loading="lazy" alt="" class="image-6">
+        
+        <div data-wf--text-block-6-copy--variant="base" class="text-block-6-copy">New York, NY</div>
+        <div class="text-block-6-copy b">718-905-6343</div>
+        <div class="text-block-6-copy c">florence@flourish-graphics.com</div>
+      </div>
+      
+      <div>
+        <div class="text-block-8"><br><br>You can also contact me by using this form:</div>
+      </div>
+      <div class="form-block w-form">
+        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="6a14bcf44a6165b2e7a3c9dd" data-wf-element-id="c52d735f-f996-a073-0972-837da1dbfb92">
+          <label for="name" class="field-label-2"><br>First Name</label>
+          <label for="name" class="field-label-2 p"><br>Last Name</label>
+          <div class="text-block-18">Number</div>
+          <div class="text-block-19">Email</div>
+          <div class="text-block-20">Message</div>
+          <input class="text-field e w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field e2 w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field e3 w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field e4 w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input type="submit" data-wait="Please wait..." class="submit-button w-button" value="Submit">
+          <div class="div-block-15"></div>
+        </form>
+        <div class="success-message w-form-done">
+          <div>Thank you! Your submission has been received!</div>
+        </div>
+        <div class="error-message w-form-fail">
+          <div>Oops! Something went wrong while submitting the form.</div>
+        </div>
+      </div>
+      <div class="lottie-animation" data-w-id="690889e1-7643-5f4f-ec51-452a2b021439" data-animation-type="lottie" data-src="documents/Plant-Office-Desk.lottie" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="6" data-loading="lazy"></div>
+    </section>
+    <div></div><img src="images/Mountain2.svg" loading="lazy" alt="" class="image-12">
+    <section class="section_client">
+      <div class="w-layout-blockcontainer container-large w-container">
+        <div class="padding-global">
+          <div class="client_comp">
+            <div class="client_content_wrap">
+              <h1 class="heading-client"><strong class="bold-text-2 contact">Clients</strong></h1>
+              <div class="divider-line contact"></div>
+              <div class="client_wrap">
+                <div class="client_logo_wrap">
+                  <a href="https://g.co/kgs/dEib2cc" class="w-inline-block"><img loading="lazy" src="images/Logo---1.svg" alt="" class="logo_client"></a>
+                  <div class="social-client_comp">
+                    <a href="https://www.instagram.com/beautystateofmind_bygina?igsh=MWlyZ20xcGNsaDc0Zg==" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/Instagram.svg" alt="" class="client_logo_social-media"></a>
+                    <a href="https://www.tiktok.com/place/Genius-Beauty-Bar-21568226289847202?lang=my-MM" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/TikTok.svg" alt="" class="client_logo_social-media"></a>
+                  </div>
+                </div>
+                <div class="client_logo_wrap">
+                  <a href="http://www.versagym.com" class="w-inline-block"><img loading="lazy" src="images/Logo---2.svg" alt="" class="logo_client"></a>
+                  <div class="social-client_comp">
+                    <a href="https://www.instagram.com/versagymusa?igsh=MTV2czR1azZ0ODdhMA==" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/Instagram.svg" alt="" class="client_logo_social-media"></a>
+                    <a href="https://www.tiktok.com/@versagym?_r=1&amp;_t=ZT-931FxcOBRzp" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/TikTok.svg" alt="" class="client_logo_social-media"></a>
+                  </div>
+                </div>
+                <div class="client_logo_wrap">
+                  <a href="https://www.blackpeoplewillswim.com" class="w-inline-block"><img loading="lazy" src="images/Logo---3.svg" alt="" class="logo_client"></a>
+                  <div class="social-client_comp">
+                    <a href="https://www.instagram.com/blackpeoplewillswim_?igsh=eXAzdDQ5OGlxYnow" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/Instagram.svg" alt="" class="client_logo_social-media"></a>
+                    <a href="https://www.tiktok.com/@blackpeoplewillswim?_r=1&amp;_t=ZT-931GDiJYvLp" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/TikTok.svg" alt="" class="client_logo_social-media"></a>
