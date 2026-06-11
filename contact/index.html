@@ -6,7 +6,7 @@
   <meta content="Contact | Florence Allison | Freelance Graphic Designer &amp; Brand Designer" property="og:title">
   <meta content="Freelance graphic designer specializing in logo design, brand identity, marketing materials, social media graphics, and digital design solutions." property="og:description">
   <meta content="Contact | Florence Allison | Freelance Graphic Designer &amp; Brand Designer" name="twitter:title">
-  <meta content="Contact | Florence Allison | Freelance Graphic Designer &amp; Brand Designer" name="twitter:description">
+  <meta content="Freelance graphic designer specializing in logo design, brand identity, marketing materials, social media graphics, and digital design solutions." name="twitter:description">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -27,191 +27,173 @@
   <link href="images/webclip.png" rel="icon" type="image/png" sizes="512x512">
 
   <style>
-    /* --- CONTACT INFO WRAPPER TO PREVENT SCREEN COLLAPSE --- */
-    .contact-info-container {
-      position: relative !important;
-      width: 100%;
-      min-height: 12vw;
-    }
-
-    /* --- DESKTOP (D) STYLES --- */
+    /* --- DESKTOP STYLES (Default) --- */
     .image-6 {
-      position: absolute !important;
-      margin: 0;
-      padding: 0;
-      margin-top: 4.5vw !important;
-      padding-left: 53vw !important;
-      height: 3.47vw !important;
-      max-width: 100% !important;
+      position: absolute;
+      top: 4.5vw;
+      padding-left: 53vw;
+      height: 3.47vw;
+      max-width: 100%;
+      left: 0; right: 0; bottom: 0;
     }
     .image-4 {
-      position: absolute !important;
-      margin: 0;
-      padding: 0;
-      margin-top: 4.5vw !important;
-      padding-left: 10.9vw !important;
-      height: 3.47vw !important;
-      max-width: 100% !important;
+      position: absolute;
+      top: 4.5vw;
+      padding-left: 10.9vw;
+      height: 3.47vw;
+      max-width: 100%;
+      left: 0; right: 0; bottom: 0;
     }
     .image-5 {
-      position: absolute !important;
-      margin: 0;
-      padding: 0;
-      margin-top: 4.5vw !important;
-      padding-left: 32vw !important;
-      height: 3.47vw !important;
-      max-width: 100% !important;
+      position: absolute;
+      top: 4.5vw;
+      padding-left: 32vw;
+      height: 3.47vw;
+      max-width: 100%;
+      left: 0; right: 0; bottom: 0;
     }
-    .text-block-6-copy {
-      position: absolute !important;
-      margin: 0;
-      padding: 0;
-      top: 5.5vw !important;
-      left: 14vw !important;
+    .text-block-6-copy.base {
+      position: static;
+      padding-top: 5.5vw;
+      margin: -55.6vw 0 0 0;
     }
     .text-block-6-copy.b {
-      position: absolute !important;
-      margin: 0;
-      padding: 0;
-      top: 5.5vw !important;
-      left: 35.5vw !important;
+      position: static;
+      margin-top: -4.5vw;
     }
     .text-block-6-copy.c {
-      position: absolute !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      top: 5.5vw !important;
-      left: 56.5vw !important;
+      position: static;
+      margin: 0;
+      padding: 0;
     }
     .form {
-      position: static !important;
-      height: 52vw !important;
-      padding-top: 1.7vw !important;
+      position: static;
+      height: 52vw;
+      padding-top: 1.7vw;
     }
     .field-label-2 {
-      position: static !important;
-      padding: 0;
-      margin: 0;
-      padding-left: 2vw !important;
-      margin-bottom: 4vw !important;
+      position: static;
+      padding-left: 2vw;
+      margin-bottom: 4vw;
     }
     .field-label-2.p {
-      position: static !important;
-      padding: 0;
-      margin: 0;
-      padding-left: 30.8vw !important;
-      margin-bottom: 4vw !important;
+      position: static;
+      padding-left: 30.8vw;
+      margin-bottom: 4vw;
     }
     .text-block-18 {
-      position: static !important;
-      padding: 0;
-      margin: 0;
-      padding-top: 2.3vw !important;
-      padding-left: 4.9vw !important;
+      position: static;
+      padding-top: 2.3vw;
+      padding-left: 4.9vw;
     }
     .text-block-19 {
-      position: relative !important;
-      padding: 0;
-      margin: 0;
-      margin-top: -1.5vw !important;
-      padding-left: 43.4vw !important;
+      position: static;
+      margin-top: -1.5vw;
+      padding-left: 43.4vw;
     }
     .text-block-20 {
-      position: static !important;
-      padding: 0;
-      margin: 0;
-      padding-top: 7.7vw !important;
-      padding-left: 5vw !important;
+      position: static;
+      padding-top: 7.7vw;
+      padding-left: 5vw;
     }
 
-    /* --- TABLET & LANDSCAPE (T & L) STYLES --- */
+    /* --- TABLET & LANDSCAPE STYLES --- */
     @media screen and (max-width: 991px) {
       .image-4 {
-        margin-top: 4.5vw !important;
-        padding-left: 10.9vw !important;
+        top: 4.5vw;
+        padding-left: 10.9vw;
       }
       .image-5 {
-        margin-top: 4.5vw !important;
-        padding-left: 32vw !important;
+        top: 4.5vw;
+        padding-left: 32vw;
       }
       .image-6 {
-        margin-top: 4.5vw !important;
-        padding-left: 53vw !important;
+        top: 4.5vw;
+        padding-left: 53vw;
       }
-      .text-block-18 {
-        padding-top: 3.1vw !important;
-        padding-left: 4.9vw !important;
-      }
-      .text-block-20 {
-        padding-top: 7vw !important;
-        padding-left: 5vw !important;
-      }
-    }
-
-    /* --- PHONE (P) STYLES --- */
-    @media screen and (max-width: 479px) {
-      .image-4 {
-        margin-top: 1.2vw !important;
-        padding-left: 13.5vw !important;
-      }
-      .image-5 {
-        margin-top: 7.2vw !important;
-        padding-left: 13.5vw !important;
-      }
-      .image-6 {
-        margin-top: 12.8vw !important;
-        padding-left: 13.5vw !important;
-      }
-      .text-block-6-copy {
-        position: static !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        padding-left: 19vw !important;
+      .text-block-6-copy.base {
+        padding-top: 5.5vw;
+        margin-top: -55.6vw;
       }
       .text-block-6-copy.b {
-        position: relative !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        margin-top: -7.5vw !important;
-        padding-left: 26vw !important;
-        top: 1.9vw !important;
-        left: -7vw !important;
+        margin-top: -4.5vw;
       }
       .text-block-6-copy.c {
-        position: relative !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        margin-top: -3.5vw !important;
-        margin-left: -4.6vw !important;
-        top: -0.7vw !important;
-        left: 23.2vw !important;
+        margin: 0;
+        padding: 0;
       }
       .form {
-        margin: 0.5vw !important;
-        padding-top: 3vw !important;
-        height: 72vw !important;
+        height: 52vw;
+        padding-top: 1.7vw;
       }
       .field-label-2.p {
-        padding-left: 24.3vw !important;
+        padding-left: 30.8vw;
+        margin-bottom: 4vw;
       }
-      .text-block-19 {
-        margin: 0 !important;
-        padding: 0 !important;
-        padding-left: 43.4vw !important;
-        padding-top: -1.5vw !important;
+      .text-block-18 {
+        padding-top: 3.1vw;
+        padding-left: 4.9vw;
       }
       .text-block-20 {
-        padding-top: 12.5vw !important;
-        padding-left: 6vw !important;
+        padding-top: 7vw;
+        padding-left: 5vw;
       }
     }
 
-    /* Keep dropdown navigation overlay transparent */
-    .navbar3_component.w--open .image-social.b.contact,
-    .navbar3_component.w--open .link-block-2 {
-      opacity: 0 !important;
-      pointer-events: none !important;
-      transition: opacity 0.25s ease-in-out;
+    /* --- MOBILE PHONE STYLES --- */
+    @media screen and (max-width: 479px) {
+      .image-4 {
+        top: 1.2vw;
+        padding-left: 13.5vw;
+      }
+      .image-5 {
+        top: 7.2vw;
+        padding-left: 13.5vw;
+      }
+      .image-6 {
+        top: 12.8vw;
+        padding-left: 13.5vw;
+      }
+      .text-block-6-copy.base {
+        position: static;
+        padding-left: 19vw;
+      }
+      .text-block-6-copy.b {
+        position: relative;
+        margin-top: -7.5vw;
+        padding-left: 26vw;
+        top: 1.9vw;
+        left: -7vw;
+      }
+      .text-block-6-copy.c {
+        position: relative;
+        margin-top: -3.5vw;
+        margin-left: -4.6vw;
+        top: -0.7vw;
+        left: 23.2vw;
+      }
+      .form {
+        margin: 0.5vw;
+        padding-top: 3vw;
+        height: 72vw;
+      }
+      .field-label-2.p {
+        padding-left: 24.3vw;
+      }
+      .text-block-18 {
+        padding-top: 3.1vw;
+        padding-left: 4.9vw;
+      }
+      .text-block-19 {
+        position: relative;
+        padding-left: 43.4vw;
+        top: -1.5vw;
+        margin: 0;
+      }
+      .text-block-20 {
+        padding-top: 12.5vw;
+        padding-left: 6vw;
+      }
     }
   </style>
 </head>
@@ -269,71 +251,4 @@
             </div>
             <div style="opacity:0" class="navbar3_menu-background"></div><img loading="lazy" src="images/dots.svg" alt="" class="image-13 b">
           </div><img loading="lazy" src="images/LinkedIn_icon_circle-2.svg" alt="" class="image-social b contact">
-          <a href="https://www.linkedin.com/in/florence-allison-1701631a1" class="link-block-2 w-inline-block"></a>
-          <a href="#" class="link_nav-social b w-inline-block"></a>
-        </div>
-        <h1 class="heading_print b contact">Contact</h1>
-      </div>
-    </section>
-    
-    <section class="section_picture">
-      <div class="contact-info-container">
-        <img src="images/location.svg" loading="lazy" alt="" class="image-4">
-        <img src="images/phone.svg" loading="lazy" alt="" class="image-5">
-        <img src="images/email.svg" loading="lazy" alt="" class="image-6">
-        
-        <div data-wf--text-block-6-copy--variant="base" class="text-block-6-copy">New York, NY</div>
-        <div class="text-block-6-copy b">718-905-6343</div>
-        <div class="text-block-6-copy c">florence@flourish-graphics.com</div>
-      </div>
-      
-      <div>
-        <div class="text-block-8"><br><br>You can also contact me by using this form:</div>
-      </div>
-      <div class="form-block w-form">
-        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="6a14bcf44a6165b2e7a3c9dd" data-wf-element-id="c52d735f-f996-a073-0972-837da1dbfb92">
-          <label for="name" class="field-label-2"><br>First Name</label>
-          <label for="name" class="field-label-2 p"><br>Last Name</label>
-          <div class="text-block-18">Number</div>
-          <div class="text-block-19">Email</div>
-          <div class="text-block-20">Message</div>
-          <input class="text-field e w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field e2 w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field e3 w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input class="text-field e4 w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name"><input type="submit" data-wait="Please wait..." class="submit-button w-button" value="Submit">
-          <div class="div-block-15"></div>
-        </form>
-        <div class="success-message w-form-done">
-          <div>Thank you! Your submission has been received!</div>
-        </div>
-        <div class="error-message w-form-fail">
-          <div>Oops! Something went wrong while submitting the form.</div>
-        </div>
-      </div>
-      <div class="lottie-animation" data-w-id="690889e1-7643-5f4f-ec51-452a2b021439" data-animation-type="lottie" data-src="documents/Plant-Office-Desk.lottie" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="6" data-loading="lazy"></div>
-    </section>
-    <div></div><img src="images/Mountain2.svg" loading="lazy" alt="" class="image-12">
-    <section class="section_client">
-      <div class="w-layout-blockcontainer container-large w-container">
-        <div class="padding-global">
-          <div class="client_comp">
-            <div class="client_content_wrap">
-              <h1 class="heading-client"><strong class="bold-text-2 contact">Clients</strong></h1>
-              <div class="divider-line contact"></div>
-              <div class="client_wrap">
-                <div class="client_logo_wrap">
-                  <a href="https://g.co/kgs/dEib2cc" class="w-inline-block"><img loading="lazy" src="images/Logo---1.svg" alt="" class="logo_client"></a>
-                  <div class="social-client_comp">
-                    <a href="https://www.instagram.com/beautystateofmind_bygina?igsh=MWlyZ20xcGNsaDc0Zg==" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/Instagram.svg" alt="" class="client_logo_social-media"></a>
-                    <a href="https://www.tiktok.com/place/Genius-Beauty-Bar-21568226289847202?lang=my-MM" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/TikTok.svg" alt="" class="client_logo_social-media"></a>
-                  </div>
-                </div>
-                <div class="client_logo_wrap">
-                  <a href="http://www.versagym.com" class="w-inline-block"><img loading="lazy" src="images/Logo---2.svg" alt="" class="logo_client"></a>
-                  <div class="social-client_comp">
-                    <a href="https://www.instagram.com/versagymusa?igsh=MTV2czR1azZ0ODdhMA==" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/Instagram.svg" alt="" class="client_logo_social-media"></a>
-                    <a href="https://www.tiktok.com/@versagym?_r=1&amp;_t=ZT-931FxcOBRzp" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/TikTok.svg" alt="" class="client_logo_social-media"></a>
-                  </div>
-                </div>
-                <div class="client_logo_wrap">
-                  <a href="https://www.blackpeoplewillswim.com" class="w-inline-block"><img loading="lazy" src="images/Logo---3.svg" alt="" class="logo_client"></a>
-                  <div class="social-client_comp">
-                    <a href="https://www.instagram.com/blackpeoplewillswim_?igsh=eXAzdDQ5OGlxYnow" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/Instagram.svg" alt="" class="client_logo_social-media"></a>
-                    <a href="https://www.tiktok.com/@blackpeoplewillswim?_r=1&amp;_t=ZT-931GDiJYvLp" class="link_clinet-logo_social w-inline-block"><img loading="lazy" src="images/TikTok.svg" alt="" class="client_logo_social-media"></a>
+          <a href="https://www.linkedin.com/in/florence-allison-1701631a1" class="link-block-2 w-inline-
