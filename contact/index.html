@@ -242,15 +242,35 @@
   </script>
 
   <style>
-    /* Hide the standalone background LinkedIn icon when the dropbar expands open */
-    .navbar3_component.w--open .image-social.b,
-    .navbar3_component.w--open .link-block-2 {
-      opacity: 0 !important;
-      pointer-events: none !important;
-      transition: opacity 0.25s ease-in-out;
+    /* 1. Fix the Navbar Container (Closed State) */
+    .body-2.c .navbar_comp {
+      background-image: linear-gradient(#fff 50%, transparent 50%) !important; /* Top: White, Bottom: Transparent */
+      background-color: transparent !important;
+      border-color: #ffffff !important; /* Force border to White */
     }
 
-    /* Strip the automatic blue highlight and underline from phone numbers */
+    /* 2. Ensure the inner component background doesn't block the transparency */
+    .body-2.c .navbar3_component {
+      background-image: none !important;
+      background-color: transparent !important;
+      border-color: transparent !important;
+    }
+
+    /* 3. Maintain the Dropdown background when OPEN */
+    /* This ensures that when the menu is actually open, it still has its green background */
+    .body-2.c .navbar3_component.w--open .navbar3_menu {
+      background-color: #2b6560 !important;
+    }
+
+    /* 4. Hide the background LinkedIn icon and dots when dropdown is open */
+    .body-2.c .navbar3_component.w--open .image-social.b,
+    .body-2.c .navbar3_component.w--open .link-block-2,
+    .body-2.c .navbar3_component.w--open .image-13.b {
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* 5. Strip the automatic blue highlight from phone numbers */
     a[href^="tel"] {
       color: inherit !important;
       text-decoration: none !important;
