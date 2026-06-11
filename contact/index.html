@@ -109,6 +109,19 @@
   <form id="email-form" name="email-form" data-name="Email Form" method="POST" class="form" aria-label="Email Form" action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" style="font-family: 'Quicksand', sans-serif;">
     
     <style>
+      /* Responsive sizing for the message box */
+      .custom-message-box {
+        height: 130px !important;
+        min-height: 130px !important;
+      }
+      @media screen and (max-width: 479px) {
+        .custom-message-box {
+          height: 75px !important;
+          min-height: 75px !important;
+        }
+      }
+
+      /* Removes the default browser yellow autofill background tint */
       #email-form input:-webkit-autofill,
       #email-form input:-webkit-autofill:hover, 
       #email-form input:-webkit-autofill:focus,
@@ -135,7 +148,7 @@
     
     <input class="text-field e2 w-input" maxlength="256" name="email" data-name="_replyto" placeholder="" type="email" id="email" autocomplete="email" required style="font-family: 'Quicksand', sans-serif;">
     
-    <textarea class="text-field e4 w-input" maxlength="5000" name="message" data-name="Message" placeholder="" id="message" required style="font-family: 'Quicksand', sans-serif; padding-top: 8px; height: 62px; min-height: 62px; vertical-align: top; resize: none;"></textarea>
+    <textarea class="text-field e4 w-input custom-message-box" maxlength="5000" name="message" data-name="Message" placeholder="" id="message" required style="font-family: 'Quicksand', sans-serif; padding-top: 10px; vertical-align: top; resize: none;"></textarea>
     
     <input type="submit" data-wait="Please wait..." class="submit-button w-button" value="Submit" name="field_submit" style="font-family: 'Quicksand', sans-serif;">
     <div class="div-block-15"></div>
