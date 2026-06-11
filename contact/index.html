@@ -88,7 +88,7 @@
     </section>
     <section class="section_picture">
       <div><img src="images/location.svg" loading="lazy" alt="" class="image-4"><img src="images/phone.svg" loading="lazy" alt="" class="image-5"><img src="images/email.svg" loading="lazy" alt="" class="image-6">
-        <div data-wf--text-block-6-copy--variant="base" class="text-block-6-copy">New York, NY              718-905-6343             florence@flourish-graphics.com<br><br>‍</div>
+        <div data-wf--text-block-6-copy--variant="base" class="text-block-6-copy">New York, NY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;718-905-6343&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;florence@flourish-graphics.com<br><br>‍</div>
         <div class="text-block-8">You can also contact me by using this form:</div>
       </div>
       <div class="form-block w-form">
@@ -177,7 +177,7 @@
     const burger = document.querySelector('.navbar3_menu-button');
     const closeX = document.querySelector('.image-14');
 
-    // Make the close 'X' button shut the menu
+    // Make the close 'X' button shut the menu smoothly
     if (closeX && burger) {
       closeX.addEventListener('click', function(e) {
         e.preventDefault();
@@ -187,7 +187,7 @@
       });
     }
 
-    // Keep dropdown navigation overlay transparent to prevent duplicate visual overlays
+    // Keep dropdown navigation overlay transparent to avoid duplication visual layers
     const navObserver = new MutationObserver(() => {
       const overlay = document.querySelector('.w-nav-overlay');
       if (overlay) {
