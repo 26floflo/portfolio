@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html data-wf-domain="florences-ultra-awesome-site-73aaf6.webflow.io" data-wf-page="6a14bcf44a6165b2e7a3c9dd" data-wf-site="6961cb2ffe8d7f02ccc6af58" data-wf-status="1">
 <head>
@@ -48,21 +49,21 @@
             </div>
             <nav role="navigation" id="w-node-fc98069a-43b9-714d-d98d-0c3e54357faf-e7a3c9dd" class="navbar3_menu contact w-nav-menu">
               <a href="#" class="navbar3_logo-link-menu w-nav-brand"><img loading="eager" src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/69680476258cec55d9dfa9be_Flourish%20Graphics%20White.svg" alt="" class="navbar3_logo-copy"></a>
-              <a href="http://www.flourish-graphics.com/home" class="navbar3_link w-inline-block">
+              <a href="http://www.flourish-graphics.com/" class="navbar3_link w-inline-block">
                 <div><span class="home-2 text-span-6 g l">●</span></div>
                 <div class="text-block-2 contact">HOME</div>
               </a>
-              <a href="http://www.flourish-graphics.com/branding" class="navbar3_link w-inline-block">
+              <a href="http://www.flourish-graphics.com/branding/" class="navbar3_link w-inline-block">
                 <div><span class="text-span-3 g l">●</span></div>
                 <div class="text-block-3 contact">BRANDING</div>
               </a>
-              <a href="http://www.flourish-graphics.com/about" class="navbar3_link t w-inline-block">
+              <a href="http://www.flourish-graphics.com/print/" class="navbar3_link t w-inline-block">
                 <div><span class="text-span-4 l">●</span></div>
-                <div class="text-block-4">ABOUT</div>
+                <div class="text-block-4">PRINT</div>
               </a>
-              <a href="http://www.flourish-graphics.com/contact" class="navbar3_link t w-inline-block">
+              <a href="http://www.flourish-graphics.com/about/" class="navbar3_link t w-inline-block">
                 <div><span class="text-span-5 l">●</span></div>
-                <div class="text-block-5">CONTACT</div>
+                <div class="text-block-5">ABOUT</div>
               </a>
               <div class="mobile-nav-link_wrap">
                 <a href="#" class="navbar3_link w-inline-block"><div class="text-block-9"><strong class="bold-text-4">ABOUT</strong></div></a>
@@ -72,11 +73,11 @@
             </nav>
             <a href="#" id="w-node-fc98069a-43b9-714d-d98d-0c3e54357fd4-e7a3c9dd" class="navbar3_logo-link w-nav-brand"><img loading="lazy" src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/6a1b22d3b939ef8e3690728e_Flourish%20Graphics%203.svg" alt="" class="navbar3_logo contact"></a>
             <div class="right-nav-link_wrap">
-              <a href="http://www.flourish-graphics.com/print" class="navbar3_link d w-inline-block">
+              <a href="http://www.flourish-graphics.com/print/" class="navbar3_link d w-inline-block">
                 <div><span class="text-span-4">●</span></div>
                 <div class="text-block-4 contact">PRINT</div>
               </a>
-              <a href="http://www.flourish-graphics.com/about" class="navbar3_link d w-inline-block">
+              <a href="http://www.flourish-graphics.com/about/" class="navbar3_link d w-inline-block">
                 <div><span class="text-span-5">●</span></div>
                 <div class="text-block-5 contact">ABOUT</div>
               </a>
@@ -192,5 +193,35 @@
   <script src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/js/webflow.schunk.c42549641b7d4501.js" type="text/javascript" integrity="sha384-EeGd0MuCSKO1a60JtC5HSnHq/C4KrtHuH4qImMGUQIlIox5ZJ0y/b+zo9WWvnaty" crossorigin="anonymous"></script>
   <script src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/js/webflow.schunk.71175e99d0aeecd2.js" type="text/javascript" integrity="sha384-Dq8/Jjf1Y16Lx66wLeERsYPzHkvCxqW11jAwti+e3Uo9VfDDu4nEoxD4yBQ9e8pC" crossorigin="anonymous"></script>
   <script src="https://cdn.prod.website-files.com/6961cb2ffe8d7f02ccc6af58/js/webflow.faf3d6db.36963eb4db17894c.js" type="text/javascript" integrity="sha384-5e6WDYU5NxlX40B63vRCLwNvPtgxQ0l30ijTFc9Sz+H0em3ks54okebQTkcxqRQ4" crossorigin="anonymous"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const burger = document.querySelector('.navbar3_menu-button');
+    const closeX = document.querySelector('.image-14');
+
+    // Make the custom 'X' graphic trigger Webflow's wrapper click natively 
+    if (closeX && burger) {
+      closeX.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (burger.classList.contains('w--open')) {
+          burger.click();
+        }
+      });
+    }
+
+    // Keep background overlays fully transparent to avoid duplicate grey layouts
+    const navObserver = new MutationObserver(() => {
+      const overlay = document.querySelector('.w-nav-overlay');
+      if (overlay) {
+        overlay.style.backgroundColor = 'transparent';
+        overlay.style.background = 'transparent';
+      }
+    });
+
+    if (burger) {
+      navObserver.observe(burger, { attributes: true });
+    }
+  });
+  </script>
 </body>
 </html>
