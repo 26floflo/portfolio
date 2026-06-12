@@ -802,7 +802,6 @@
     max-width: none;
     height: auto;
     margin: 0;
-    padding: 5vw 49.2vw;
     display: flex;
     left: auto;
     right: auto;
@@ -973,7 +972,6 @@
 
   .bold-text-3 {
     margin-top: 0;
-    margin-left: -32vw;
     padding-left: 0;
     font-size: 3vw;
     line-height: 4vw;
@@ -981,7 +979,6 @@
   }
 
   .bold-text-4, .bold-text-5, .bold-text-6 {
-    margin-left: -32vw;
     padding-left: 0;
     font-size: 3vw;
     line-height: 4vw;
@@ -1014,4 +1011,53 @@
     min-width: 0 !important;
   }
 
+}
+/* Strict Mobile Portrait Fix (Max-width: 479px) */
+@media screen and (max-width: 479px) {
+  
+  /* 1. Ensure the parent wrap acts as the coordinate anchor */
+  .div-block-2 {
+    position: relative !important;
+  }
+
+  /* 2. Overhaul the dropdown container so it fits the viewport */
+  .nav-menu[data-nav-menu-open] {
+    position: absolute !important;
+    top: calc(100% + 10px) !important; /* Positions it cleanly right below the capsule navbar */
+    right: 0 !important;
+    left: auto !important;
+    width: 220px !important;            /* Give it a predictable, clean width */
+    max-width: 85vw !important;
+    height: auto !important;
+    background-color: #2b6661 !important;
+    border-radius: 14px !important;
+    padding: 1.5rem !important;         /* Reset the blowout padding to a standard spacing */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: flex !important;
+    flex-flow: column !important;       /* Clean vertical list stack */
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    z-index: 1000 !important;
+  }
+
+  /* 3. Kill the huge margins pulling links off-center */
+  .bold-text-3, 
+  .bold-text-4, 
+  .bold-text-5, 
+  .bold-text-6 {
+    margin-left: 0 !important;          /* Eliminates the -32vw layout offset */
+    padding-left: 0 !important;
+    font-size: 4vw !important;          /* Slightly larger for clear touch targets on phones */
+    line-height: 2.5rem !important;     /* Creates comfortable vertical spacing between taps */
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  /* 4. Keeps links from inheriting hidden/transparent text fill values */
+  .nav-link {
+    width: 100% !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+  }
 }
