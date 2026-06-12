@@ -996,3 +996,22 @@
   font-style: normal;
   font-display: swap;
 }
+
+@media screen and (max-width: 991px) {
+
+  .w-nav-overlay {
+    display: contents !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+
+  [data-nav-menu-open] {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
+}
