@@ -4813,3 +4813,12 @@ textarea.w-input, textarea.w-select {
     order: -9999;
   }
 }
+/* Deep target every link, div wrapper, text block, and span explicitly within the open menu drawer */
+.body-2.c .navbar3_component.w--open .navbar3_menu a,
+.body-2.c .navbar3_component.w--open .navbar3_menu div,
+.body-2.c .navbar3_component.w--open .navbar3_menu span,
+.body-2.c .navbar3_component.w--open .navbar3_menu strong,
+.body-2.c .navbar3_component.w--open .navbar3_menu [class*="text-block-"] {
+  color: #2b6560 !important;
+  -webkit-text-fill-color: #2b6560 !important;
+}
