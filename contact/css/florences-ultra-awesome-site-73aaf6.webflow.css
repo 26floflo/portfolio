@@ -4461,6 +4461,8 @@ textarea.w-input, textarea.w-select {
   }
 
   .text-block-4, .text-block-5 {
+    margin-top: -8vw;
+    padding-bottom: 0;
     font-size: 5.7vw;
     line-height: 3vw;
   }
