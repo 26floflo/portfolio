@@ -2146,7 +2146,7 @@ textarea.w-input, textarea.w-select {
 .nav-link-2 {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  color: #fff;
+  color: #bf9d86;
   justify-content: flex-start;
   align-items: center;
   padding: 1.25rem;
@@ -3922,7 +3922,7 @@ textarea.w-input, textarea.w-select {
   }
 
   .navbar3_component.contact {
-    color: #fff;
+    color: #bf9d86;
   }
 
   .navbar3_container {
@@ -4333,8 +4333,8 @@ textarea.w-input, textarea.w-select {
   }
 
   .heading_print.b.contact {
-    margin-top: 3vw;
-    padding-bottom: 0;
+    margin-top: 3vw !important;              
+        padding-top: 1vw !important;
     font-size: 8vw;
   }
 
