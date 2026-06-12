@@ -47,7 +47,7 @@
 .section_navbar {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border: 1px #2b3d2d;
+  border: 1px #ffffff;
   justify-content: center;
   align-items: center;
   padding: 3px 7.8% 10px;
@@ -148,9 +148,9 @@
 }
 
 .navbar3_component {
-  color: #2b6560;
-  background-image: linear-gradient(#2b6560, #2b6560);
-  border: 1px #2b6560;
+  color: #ffffff;
+  background-image: linear-gradient(#ffffff, #ffffff);
+  border: 1px #ffffff;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   flex-flow: wrap;
@@ -167,14 +167,14 @@
 }
 
 .navbar3_component.c {
-  color: #2b6560;
-  background-image: linear-gradient(#fff, #fff);
+  color: #ffffff;
+  background-image: linear-gradient(#2b6560, #2b6560);
 }
 
 .navbar3_component.contact {
-  color: #2b6560;
-  background-image: linear-gradient(#fff, #fff);
-  border-color: #fff;
+  color: #ffffff;
+  background-image: linear-gradient(#2b6560, #2b6560);
+  border-color: #2b6560;
 }
 
 .navbar3_container {
@@ -303,7 +303,7 @@
 .navbar_comp {
   grid-column-gap: 1.39vw;
   grid-row-gap: 1.39vw;
-  border: 2px solid #2b3d2d;
+  border: 2px solid #ffffff;
   border-radius: 2.2rem;
   flex-flow: column;
   flex: 0 auto;
