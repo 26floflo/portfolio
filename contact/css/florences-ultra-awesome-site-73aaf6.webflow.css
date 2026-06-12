@@ -4433,7 +4433,7 @@ textarea.w-input, textarea.w-select {
   }
 
   .text-block-2 {
-    margin-top: -6vw;
+    margin-top: -10vw;
     margin-bottom: 0;
     margin-right: 0;
     padding-top: 0;
@@ -4444,7 +4444,7 @@ textarea.w-input, textarea.w-select {
 
   .text-block-2.contact {
     color: #2b6560;
-    margin-top: -6vw;
+    margin-top: -10vw;
     margin-bottom: 0;
     padding-top: 0;
   }
