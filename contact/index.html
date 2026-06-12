@@ -204,6 +204,18 @@
       color: inherit !important;
       text-decoration: none !important;
     }
+
+    /* Desktop and Tablet: Nudge the X close button higher */
+    .image-14 {
+      transform: translateY(-20px) !important; 
+    }
+
+    /* Mobile Phone Only: Specific adjustment */
+    @media screen and (max-width: 479px) {
+      .image-14 {
+        transform: translateY(-40px) !important; /* Adjust this number to move it higher or lower on phones */
+      }
+    }
   </style>
 
   <script>
