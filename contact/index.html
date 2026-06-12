@@ -235,17 +235,27 @@
     }
 
     /* 2. Hide the background LinkedIn icon when the dropdown is open */
-    .body-2.c .navbar3_component.w--open .image-social.b,
-    .body-2.c .navbar3_component.w--open .link-block-2 {
-      opacity: 0 !important;
-      pointer-events: none !important;
-      transition: opacity 0.25s ease-in-out;
-    }
+    /* 3. Change Dropdown background to WHITE and text to GREEN when OPEN */
+   .body-2.c .navbar3_component.w--open .navbar3_menu,
+   .body-2.c [data-nav-menu-open],
+   .body-2.c .w--nav-menu-open {
+     background-color: #ffffff !important;
+     background-image: none !important;
+     border: none !important; /* Removes the green border */
+     box-shadow: none !important;
+   }
 
-    /* 3. Strip the automatic blue highlight and underline from phone numbers */
-    a[href^="tel"] {
-      color: inherit !important;
-      text-decoration: none !important;
+   /* Deep target the links and text layers to force your brand green */
+   .body-2.c .navbar3_component.w--open .navbar3_menu a.navbar3_link,
+   .body-2.c .navbar3_component.w--open .navbar3_menu a.navbar3_link *,
+   .body-2.c .navbar3_component.w--open .navbar3_menu .text-block-2,
+   .body-2.c .navbar3_component.w--open .navbar3_menu .text-block-3,
+   .body-2.c .navbar3_component.w--open .navbar3_menu .text-block-4,
+   .body-2.c .navbar3_component.w--open .navbar3_menu .text-block-5,
+   .body-2.c .navbar3_component.w--open .navbar3_menu strong {
+     color: #2b6560 !important;
+     -webkit-text-fill-color: #2b6560 !important;
+   }
     }
   </style>
   <script>
