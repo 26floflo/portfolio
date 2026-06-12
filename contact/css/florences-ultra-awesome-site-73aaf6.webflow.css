@@ -149,7 +149,7 @@
 
 .navbar3_component {
   color: #2b6560;
-  background-image: linear-gradient#fff, #fff);
+  background-image: linear-gradient (#fff, #fff);
   border: 1px #2b6560;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
