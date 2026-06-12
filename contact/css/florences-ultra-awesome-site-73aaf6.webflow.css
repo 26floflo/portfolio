@@ -2068,10 +2068,10 @@
   }
 
   .navbar3_component {
-    -webkit-text-stroke-color: #2b6560;
-    background-color: #2b656000;
+    -webkit-text-stroke-color: #ffffff;
+    background-color: #ffffff;
     background-image: none;
-    border-color: #2b656000;
+    border-color: #ffffff;
     border-radius: 17px;
     padding-bottom: 2.4rem;
   }
@@ -2124,7 +2124,7 @@
   }
 
   .navbar3_menu {
-    border: 1px solid #2b6560;
+    border: 1px solid #ffffff;
     border-radius: 2rem;
     width: 84.48vw;
     height: 98vw;
@@ -2183,7 +2183,7 @@
   .navbar_comp {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    background-image: linear-gradient(#2b6560 50%, #fff 50%);
+    background-image: linear-gradient(#ffffff 50%, #ffffff00 50%);
     border-width: 1px;
     border-radius: 1.1rem;
     justify-content: flex-start;
