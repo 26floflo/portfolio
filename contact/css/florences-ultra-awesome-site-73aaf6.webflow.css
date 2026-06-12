@@ -4267,14 +4267,17 @@ textarea.w-input, textarea.w-select {
   .navbar3_logo.contact {
     margin-top: -.5vw;
   }
-
-  .navbar3_link {
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    text-align: left;
-    padding-top: 0;
-    padding-bottom: .125rem;
-  }
+.navbar3_link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+  margin-top: 3vw;     /* Adds your clean 3vw space above the link layout */
+  padding-top: 1vw;    /* Adds your clean 1vw top padding constraint */
+  padding-bottom: 1vw;
+}
 
   .navbar3_logo-link {
     margin-bottom: 0;
@@ -4440,7 +4443,7 @@ textarea.w-input, textarea.w-select {
   }
 
   .text-block-2 {
-    margin-top: -8.4vw;
+    margin-top: 0vw;
     margin-bottom: 0;
     margin-right: 0;
     padding-top: 0;
