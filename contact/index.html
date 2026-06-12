@@ -322,31 +322,47 @@
       border-color: transparent !important;
     }
 
-/* 1. Force the dropdown overlay wrapper to be completely transparent */
-.body-2.c .w-nav-overlay {
-  background-color: transparent !important;
-  background: transparent !important;
-}
+/* 3. Change Dropdown background to WHITE and text to GREEN when OPEN */
+   .body-2.c .navbar3_component.w--open .navbar3_menu,
+   .body-2.c [data-nav-menu-open],
+   .body-2.c .w--nav-menu-open {
+     background-color: #ffffff !important;
+     background-image: none !important;
+     border: none !important;
+     box-shadow: none !important;
+   }
 
-/* 2. Force the mobile pop-out menu container to be solid white */
-.body-2.c .navbar3_component.w--open .navbar3_menu,
-.body-2.c [data-nav-menu-open],
-.body-2.c .w--nav-menu-open {
-  background-color: #ffffff !important;
-  background-image: none !important;
-  border: 1px solid #2b6560 !important;
-}
+   /* Force all links, divs, text blocks, and letters inside the open menu drawer to Green */
+   .body-2.c .navbar3_component.w--open .navbar3_menu a,
+   .body-2.c .navbar3_component.w--open .navbar3_menu div,
+   .body-2.c .navbar3_component.w--open .navbar3_menu span,
+   .body-2.c .navbar3_component.w--open .navbar3_menu strong,
+   .body-2.c .navbar3_component.w--open .navbar3_menu .contact {
+     color: #2b6560 !important;
+     -webkit-text-fill-color: #2b6560 !important;
+   }
 
-/* 3. Deep target every single element inside the open menu to turn brand green */
-.body-2.c .navbar3_component.w--open .navbar3_menu,
-.body-2.c .navbar3_component.w--open .navbar3_menu *,
-.body-2.c .navbar3_component.w--open .navbar3_menu a,
-.body-2.c .navbar3_component.w--open .navbar3_menu div,
-.body-2.c .navbar3_component.w--open .navbar3_menu span,
-.body-2.c .navbar3_component.w--open .navbar3_menu strong {
-  color: #2b6560 !important;
-  -webkit-text-fill-color: #2b6560 !important;
-}
+   /* 4. Correctly force the mobile CONTACT link to match the layout on small phones */
+   @media screen and (max-width: 479px) {
+     .body-2.c .navbar3_component.w--open .navbar3_menu .navbar3_link.t {
+       display: flex !important;
+       justify-content: flex-start !important;
+       align-items: center !important;
+       width: 100% !important;
+       text-align: left !important;
+       margin-left: 0 !important;
+       padding: .75rem 0 !important;
+       font-size: 1.125rem !important;
+     }
+     
+     /* Forces the inner text wrapper to drop inline neatly */
+     .body-2.c .navbar3_component.w--open .navbar3_menu .navbar3_link.t .text-block-5 {
+       display: block !important;
+       margin: 0 !important;
+       padding: 0 !important;
+       font-size: 1.125rem !important;
+     }
+   }
     
 /* Realignment override for the contact layout on mobile viewports */
 @media screen and (max-width: 479px) {
