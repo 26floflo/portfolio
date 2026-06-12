@@ -294,12 +294,12 @@
   });
   </script>
 
-  <style>
+<style>
     /* 1. Fix the Navbar Container (Closed State) */
     .body-2.c .navbar_comp {
-      background-image: linear-gradient(#fff 50%, transparent 50%) !important; /* Top: White, Bottom: Transparent */
+      background-image: linear-gradient(#fff 50%, transparent 50%) !important; 
       background-color: transparent !important;
-      border-color: #ffffff !important; /* Force border to White */
+      border-color: #ffffff !important; 
     }
 
     /* 2. Ensure the inner component background doesn't block the transparency */
@@ -309,35 +309,60 @@
       border-color: transparent !important;
     }
 
-/* 1. Force the dropdown overlay wrapper to be completely transparent */
-.body-2.c .w-nav-overlay {
-  background-color: transparent !important;
-  background: transparent !important;
-}
+    /* 3. Change Dropdown background to WHITE when OPEN */
+    .body-2.c .w-nav-overlay {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
 
-/* 2. Force the mobile pop-out menu container to be solid white */
-.body-2.c .navbar3_component.w--open .navbar3_menu,
-.body-2.c [data-nav-menu-open],
-.body-2.c .w--nav-menu-open {
-  background-color: #ffffff !important;
-  background-image: none !important;
-  border: 1px solid #2b6560 !important;
-}
+    .body-2.c .navbar3_component.w--open .navbar3_menu,
+    .body-2.c [data-nav-menu-open],
+    .body-2.c .w--nav-menu-open {
+      background-color: #ffffff !important;
+      background-image: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
 
-/* 3. Deep target every single element inside the open menu to turn brand green */
-.body-2.c .navbar3_component.w--open .navbar3_menu,
-.body-2.c .navbar3_component.w--open .navbar3_menu *,
-.body-2.c .navbar3_component.w--open .navbar3_menu a,
-.body-2.c .navbar3_component.w--open .navbar3_menu div,
-.body-2.c .navbar3_component.w--open .navbar3_menu span,
-.body-2.c .navbar3_component.w--open .navbar3_menu strong {
-  color: #2b6560 !important;
-  -webkit-text-fill-color: #2b6560 !important;
-}
-    
-  }
-}
-    /* 4. Hide the background LinkedIn icon and dots when dropdown is open */
+    /* Direct targeted selectors to overwrite hardcoded white colors (.contact, .c) inside the menu */
+    .body-2.c .navbar3_component.w--open .navbar3_menu .text-block-2,
+    .body-2.c .navbar3_component.w--open .navbar3_menu .text-block-3,
+    .body-2.c .navbar3_component.w--open .navbar3_menu .text-block-4,
+    .body-2.c .navbar3_component.w--open .navbar3_menu .text-block-5,
+    .body-2.c .navbar3_component.w--open .navbar3_menu .navbar3_link,
+    .body-2.c .navbar3_component.w--open .navbar3_menu span,
+    .body-2.c .navbar3_component.w--open .navbar3_menu strong,
+    .body-2.c .navbar3_component.w--open .navbar3_menu a {
+      color: #2b6560 !important;
+      -webkit-text-fill-color: #2b6560 !important;
+    }
+
+    /* 4. Fix mobile spacing constraints exclusively for the Contact link component */
+    @media screen and (max-width: 479px) {
+      .body-2.c .navbar3_component.w--open .navbar3_menu .navbar3_link.t {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        width: 100% !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-top: 3vw !important;    /* 3vw top margin requested */
+        padding-top: 1vw !important;   /* 1vw top padding requested */
+        padding-bottom: .125rem !important;
+        font-size: 1.125rem !important;
+      }
+      
+      .body-2.c .navbar3_component.w--open .navbar3_menu .navbar3_link.t .text-block-5 {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 1.125rem !important;
+        color: #2b6560 !important;
+        -webkit-text-fill-color: #2b6560 !important;
+      }
+    }
+
+    /* 5. Hide the background LinkedIn icon, custom close X, and dots ONLY when dropdown is open */
     .body-2.c .navbar3_component.w--open .image-social.b,
     .body-2.c .navbar3_component.w--open .link-block-2,
     .body-2.c .navbar3_component.w--open .image-13.b {
@@ -345,7 +370,7 @@
       pointer-events: none !important;
     }
 
-    /* 5. Strip the automatic blue highlight from phone numbers */
+    /* 6. Strip the automatic blue highlight from phone numbers */
     a[href^="tel"] {
       color: inherit !important;
       text-decoration: none !important;
