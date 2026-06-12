@@ -4267,17 +4267,7 @@ textarea.w-input, textarea.w-select {
   .navbar3_logo.contact {
     margin-top: -.5vw;
   }
-.navbar3_link {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  text-align: left;
-  margin-left: 0;
-  margin-top: 3vw;     /* Adds your clean 3vw space above the link layout */
-  padding-top: 1vw;    /* Adds your clean 1vw top padding constraint */
-  padding-bottom: 1vw;
-}
+
 
   .navbar3_logo-link {
     margin-bottom: 0;
