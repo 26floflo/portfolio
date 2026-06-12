@@ -293,19 +293,44 @@
       border-color: transparent !important;
     }
 
-   /* 3. Change Dropdown background to WHITE and text to GREEN when OPEN */
-.body-2.c .navbar3_component.w--open .navbar3_menu {
-  background-color: #ffffff !important;
+/* 1. Force the dropdown overlay wrapper to be completely transparent */
+.body-2.c .w-nav-overlay {
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
-/* Force all mobile menu links, bullet points, and text blocks to green when open */
+/* 2. Force the mobile pop-out menu container to be solid white */
+.body-2.c .navbar3_component.w--open .navbar3_menu,
+.body-2.c [data-nav-menu-open],
+.body-2.c .w--nav-menu-open {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border: 1px solid #2b6560 !important;
+}
+
+/* 3. Deep target every single element inside the open menu to turn brand green */
+.body-2.c .navbar3_component.w--open .navbar3_menu,
+.body-2.c .navbar3_component.w--open .navbar3_menu *,
 .body-2.c .navbar3_component.w--open .navbar3_menu a,
 .body-2.c .navbar3_component.w--open .navbar3_menu div,
 .body-2.c .navbar3_component.w--open .navbar3_menu span,
 .body-2.c .navbar3_component.w--open .navbar3_menu strong {
   color: #2b6560 !important;
+  -webkit-text-fill-color: #2b6560 !important;
 }
-
+    
+/* Realignment override for the contact layout on mobile viewports */
+@media screen and (max-width: 479px) {
+  .body-2.c .navbar3_menu a[href*="contact"].navbar3_link.t {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding-left: 0.75rem !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
+}
     /* 4. Hide the background LinkedIn icon and dots when dropdown is open */
     .body-2.c .navbar3_component.w--open .image-social.b,
     .body-2.c .navbar3_component.w--open .link-block-2,
