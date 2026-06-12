@@ -220,16 +220,47 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
+    // 1. Native X Button Close Logic
     const burger = document.querySelector('.navbar3_menu-button');
-    const closeX = document.querySelector('.image-14'); // Still targets class "image-14", which holds your greenx.svg
+    const closeX = document.querySelector('.image-14'); 
 
-    // Natively trigger Webflow's close toggle when clicking custom 'X'
     if (closeX && burger) {
       closeX.addEventListener('click', function(e) {
         e.preventDefault();
         if (burger.classList.contains('w--open')) {
           burger.click();
         }
+      });
+    }
+
+    // 2. Silent Formspree Submission Logic
+    const form = document.getElementById('email-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Stops the Formspree redirect
+        
+        const data = new FormData(form);
+        
+        // Send the data silently in the background
+        fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            // Success: Hide form, show Webflow's green Thank You block
+            form.style.display = 'none';
+            document.querySelector('.w-form-done').style.display = 'block';
+          } else {
+            // Formspree Error: Show Webflow's red Error block
+            document.querySelector('.w-form-fail').style.display = 'block';
+          }
+        }).catch(error => {
+          // Network Error: Show Webflow's red Error block
+          document.querySelector('.w-form-fail').style.display = 'block';
+        });
       });
     }
   });
