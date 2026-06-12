@@ -4433,18 +4433,18 @@ textarea.w-input, textarea.w-select {
   }
 
   .text-block-2 {
-    margin-top: -8.4vw;
+    margin-top: -6vw;
     margin-bottom: 0;
     margin-right: 0;
     padding-top: 0;
     padding-bottom: 0;
     font-size: 5.7vw;
-    line-height: 4vw;
+    line-height: 3vw;
   }
 
   .text-block-2.contact {
     color: #2b6560;
-    margin-top: -8.4vw;
+    margin-top: -6vw;
     margin-bottom: 0;
     padding-top: 0;
   }
@@ -4452,7 +4452,7 @@ textarea.w-input, textarea.w-select {
   .text-block-3 {
     padding-bottom: 0;
     font-size: 5.7vw;
-    line-height: 4vw;
+    line-height: 3vw;
   }
 
   .text-block-3.contact {
@@ -4461,7 +4461,7 @@ textarea.w-input, textarea.w-select {
 
   .text-block-4, .text-block-5 {
     font-size: 5.7vw;
-    line-height: 4vw;
+    line-height: 3vw;
   }
 
   ._1 {
