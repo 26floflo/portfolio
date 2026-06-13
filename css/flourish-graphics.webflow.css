@@ -1061,3 +1061,41 @@
     color: #ffffff !important;
   }
 }
+/* ==========================================================================
+   Custom Absolute Two-Image Reveal Override
+   ========================================================================== */
+.reveal-wrapper {
+  position: relative;
+  width: 100%;
+  /* This forces the container box to be a perfect square box */
+  padding-bottom: 100%; 
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  /* object-fit: contain makes sure your SVG canvas doesn't get clipped or cropped */
+  object-fit: contain; 
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Layer Sorting: Stacks them identically to your other Webflow overlays */
+.img-bottom {
+  z-index: 1;
+}
+
+.img-top {
+  z-index: 2;
+  opacity: 1;
+}
+
+/* The Absolute Switch: Instantly drops the cover layer out of view */
+.reveal-wrapper:hover .img-top,
+.reveal-wrapper.active .img-top {
+  opacity: 0 !important;
+}
