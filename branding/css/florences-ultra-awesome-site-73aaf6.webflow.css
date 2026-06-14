@@ -2730,8 +2730,7 @@
   opacity: 1 !important;
 }
 
-/* Drops the PNG cover visibility to 0% to reveal the SVG underneath */
-.reveal-wrapper:hover .img-top,
+/* AFTER: Change it to look exactly like this */
 .reveal-wrapper.active .img-top {
   opacity: 0 !important;
 }
