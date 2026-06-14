@@ -235,5 +235,18 @@
       }
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealWrappers = document.querySelectorAll('.reveal-wrapper');
+      
+      revealWrappers.forEach(wrapper => {
+        wrapper.addEventListener('click', function() {
+          // This safely adds the 'active' class on click, and removes it on the next click
+          this.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
 </body>
 </html>
