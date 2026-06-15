@@ -2701,37 +2701,40 @@
 /* ==========================================================================
    Custom Absolute Two-Image Reveal Override
    ========================================================================== */
-.reveal-wrapper {
-  position: relative !important;
+.portfolio-card-entry {
+  position: absolute !important; /* Rips the box out of the document flow to delete the empty space gap */
   width: 100% !important;
-  padding-bottom: 100% !important; /* Forces a perfect responsive square layout box */
+  height: 100% !important;
   overflow: hidden !important;
   display: block !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 1 !important;
 }
 
-.reveal-wrapper img {
+.portfolio-card-entry img {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important; /* Ensures your PNG and SVG fill the square box perfectly */
+  object-fit: cover !important; /* Ensures your PNG and SVG assets scale together flawlessly */
   padding: 0 !important;
   transition: opacity 0.5s ease-in-out !important;
 }
 
-/* Stacking Order: .img-top sits on top as the cover layer */
-.img-bottom {
+/* Layer Sorting: Forces your SVG case details under your PNG project cover */
+.portfolio-card-entry img:first-child {
   z-index: 1 !important;
 }
 
-.img-top {
+.portfolio-card-entry .img-cover-layer {
   z-index: 2 !important;
   opacity: 1 !important;
 }
 
-/* AFTER: Change it to look exactly like this */
-.reveal-wrapper.active .img-top {
+/* The Toggle Switch: Melts away the top cover view when the element is clicked */
+.portfolio-card-entry.active .img-cover-layer {
   opacity: 0 !important;
 }
-
