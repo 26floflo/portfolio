@@ -2738,3 +2738,13 @@ body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
     margin-bottom: 1rem !important;
   }
 }
+/* ==========================================================================
+   Text Span Fluid Scaling Validation
+   ========================================================================== */
+.text-span-3, 
+.text-span-4, 
+.text-span-5, 
+.text-span-6 {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
