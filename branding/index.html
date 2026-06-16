@@ -274,15 +274,14 @@
   </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Targets your brand new portfolio card container
-      const portfolioCard = document.querySelector('.portfolio-card-entry');
+      // Sweeps through all matching portfolio elements on the page
+      const portfolioCards = document.querySelectorAll('.portfolio-card-entry');
       
-      if (portfolioCard) {
-        portfolioCard.addEventListener('click', function() {
-          // Finds the top PNG image layer inside it
+      portfolioCards.forEach(card => {
+        card.addEventListener('click', function() {
+          // Finds the local cover image specifically inside the clicked card
           const topImage = this.querySelector('.img-cover-layer');
           if (topImage) {
-            // Toggles the opacity between 0 (hidden) and 1 (visible) cleanly on every click
             if (topImage.style.opacity === '0') {
               topImage.style.opacity = '1';
             } else {
@@ -290,7 +289,7 @@
             }
           }
         });
-      }
+      });
     });
   </script>
 </body>
