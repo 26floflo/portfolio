@@ -2698,42 +2698,6 @@
     order: -9999;
   }
 }
-/* ==========================================================================
-   Custom Absolute Two-Image Reveal Override
-   ========================================================================== */
-.reveal-wrapper {
-  position: relative !important;
-  width: 100% !important;
-  padding-bottom: 100% !important; /* Forces a perfect responsive square layout box */
-  overflow: hidden !important;
-  display: block !important;
-}
-
-.reveal-wrapper img {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; /* Ensures your PNG and SVG fill the square box perfectly */
-  padding: 0 !important;
-  transition: opacity 0.5s ease-in-out !important;
-}
-
-/* Stacking Order: .img-top sits on top as the cover layer */
-.img-bottom {
-  z-index: 1 !important;
-}
-
-.img-top {
-  z-index: 2 !important;
-  opacity: 1 !important;
-}
-
-/* AFTER: Change it to look exactly like this */
-.reveal-wrapper.active .img-top {
-  opacity: 0 !important;
-}
 /* Base settings for smooth scaling */
 .portfolio-card-container {
   box-sizing: border-box !important;
@@ -2745,8 +2709,23 @@
   transform-origin: center top;
 }
 
+/* Appends the custom requested space directly to the base of your final asset module */
+.portfolio-card-container.last-card {
+  margin-bottom: 3rem !important;
+}
+
 /* Zoom Out State: Scales the wrapper layout down smoothly */
 body.is-zoomed-out .section_picture .portfolio-card-container {
   transform: scale(0.5) !important; 
   margin-bottom: -50% !important; 
+}
+
+/* Responsive Overrides: Forces all vertical spaces to 1rem on mobile devices */
+@media screen and (max-width: 479px) {
+  .portfolio-card-container {
+    margin-top: 1rem !important;
+  }
+  .portfolio-card-container.last-card {
+    margin-bottom: 1rem !important;
+  }
 }
