@@ -2714,10 +2714,19 @@
   margin-bottom: 3rem !important;
 }
 
-/* Zoom Out State: Scales the wrapper layout down smoothly */
+/* Zoom Out State: Scales the layout elements down cleanly without overlapping */
 body.is-zoomed-out .section_picture .portfolio-card-container {
   transform: scale(0.5) !important; 
-  margin-bottom: -50% !important; 
+  /* Shifting the transform origin ensures scaling starts from the top center */
+  transform-origin: top center !important;
+  /* Dynamically forces the rendering box to shrink its actual layout height by half */
+  max-height: 50% !important;
+  margin-bottom: 0 !important;
+}
+
+/* Specific fix for the last card's bottom margin when zoomed out */
+body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
+  margin-bottom: 1.5rem !important;
 }
 
 /* Responsive Overrides: Forces all vertical spaces to 1rem on mobile devices */
