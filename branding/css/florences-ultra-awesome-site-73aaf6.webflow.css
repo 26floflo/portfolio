@@ -2723,7 +2723,7 @@ body.is-zoomed-out .section_picture .portfolio-card-container {
 /* Responsive Overrides: Forces all vertical spaces to 1rem on mobile devices */
 @media screen and (max-width: 479px) {
   .portfolio-card-container {
-    margin-top: 1rem !important;
+    margin-top: 1.5rem !important;
   }
   .portfolio-card-container.last-card {
     margin-bottom: 1rem !important;
