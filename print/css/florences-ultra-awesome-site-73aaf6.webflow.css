@@ -2,6 +2,21 @@
   --white: #fff;
 }
 
+/* Base settings for smooth scaling */
+.portfolio-card-container {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  margin-top: 3rem !important;
+  padding-left: 7.8% !important;
+  padding-right: 7.8% !important;
+  transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out !important;
+  transform-origin: center top;
+}
+
+/* Appends the custom requested space directly to the base of your final asset module */
+.portfolio-card-container.last-card {
+  margin-bottom: 3rem !important;
+}
 .w-layout-blockcontainer {
   max-width: 940px;
   margin-left: auto;
@@ -2686,20 +2701,7 @@
     color: #fff;
   }
 
-/* Base settings for smooth scaling */
-.portfolio-card-container {
-  box-sizing: border-box !important;
-  width: 100% !important;
-  margin-top: 3rem !important;
-  padding-left: 7.8% !important;
-  padding-right: 7.8% !important;
-  transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out !important;
-  transform-origin: center top;
-}
 
-/* Appends the custom requested space directly to the base of your final asset module */
-.portfolio-card-container.last-card {
-  margin-bottom: 3rem !important;
 }
 
 @media screen and (max-width: 991px) {
