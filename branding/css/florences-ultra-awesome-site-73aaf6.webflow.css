@@ -2697,7 +2697,7 @@
   #w-node-_193868dc-e6ca-908a-811f-17090a167111-0a1670e4, #w-node-f649f588-9bcd-5a5a-4d3e-d59eff1bb11f-8e396ad6, #w-node-fc98069a-43b9-714d-d98d-0c3e54357fd4-e7a3c9dd, #w-node-_88f57bee-0e38-1364-0546-1269d38385c7-5cd56e72 {
     order: -9999;
   }
-}
+
 /* Base settings for smooth scaling */
 .portfolio-card-container {
   box-sizing: border-box !important;
@@ -2726,7 +2726,7 @@ body.is-zoomed-out .section_picture .portfolio-card-container {
 
 /* Specific fix for the last card's bottom margin when zoomed out */
 body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 2rem !important;
 }
 
 /* Responsive Overrides: Forces all vertical spaces to 1rem on mobile devices */
