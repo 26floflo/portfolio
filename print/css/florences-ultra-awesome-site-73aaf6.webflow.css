@@ -2699,4 +2699,43 @@
   }
 }
 
+/* Base settings for smooth scaling */
+.portfolio-card-container {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  margin-top: 3rem !important;
+  padding-left: 7.8% !important;
+  padding-right: 7.8% !important;
+  transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out !important;
+  transform-origin: center top;
+}
 
+/* Appends the custom requested space directly to the base of your final asset module */
+.portfolio-card-container.last-card {
+  margin-bottom: 3rem !important;
+}
+
+/* Zoom Out State: Scales the layout elements down cleanly without overlapping */
+body.is-zoomed-out .section_picture .portfolio-card-container {
+  transform: scale(0.5) !important; 
+  /* Shifting the transform origin ensures scaling starts from the top center */
+  transform-origin: top center !important;
+  /* Dynamically forces the rendering box to shrink its actual layout height by half */
+  max-height: 50% !important;
+  margin-bottom: 0 !important;
+}
+
+/* Specific fix for the last card's bottom margin when zoomed out */
+body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Responsive Overrides: Forces all vertical spaces to 1rem on mobile devices */
+@media screen and (max-width: 479px) {
+  .portfolio-card-container {
+    margin-top: 2rem !important;
+  }
+  .portfolio-card-container.last-card {
+    margin-bottom: 1rem !important;
+  }
+}
