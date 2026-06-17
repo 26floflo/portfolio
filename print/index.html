@@ -310,7 +310,39 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
   </script>
-  
+
+<style>
+  /* Desktop Fix */
+  .portfolio-card-container {
+    padding-left: 7.8% !important;
+    padding-right: 7.8% !important;
+    margin-top: 3rem !important;
+  }
+
+  /* Tablet Fix */
+  @media screen and (max-width: 991px) {
+    .portfolio-card-container {
+      /* Keep or adjust mobile padding here if needed */
+    }
+  }
+
+  /* Mobile Landscape Fix */
+  @media screen and (max-width: 767px) {
+    .portfolio-card-container {
+      margin-top: 1.5rem !important;
+    }
+  }
+
+  /* Mobile Portrait Fix */
+  @media screen and (max-width: 479px) {
+    .portfolio-card-container {
+      margin-top: 1.5rem !important;
+    }
+    .portfolio-card-container.last-card {
+      margin-bottom: 1rem !important;
+    }
+  }
+</style>
 
 </body>
 </html>
