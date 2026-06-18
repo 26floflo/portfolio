@@ -270,15 +270,10 @@
     
     if (zoomButton) {
       zoomButton.addEventListener("click", function() {
+        // Toggles the layout engine shift
         document.body.classList.toggle("is-zoomed-out");
         
-        // Fix: Change the target from '.div-block' to '.portfolio-card-container'
-        const portfolioCards = document.querySelectorAll(".section_picture .portfolio-card-container");
-        
-        portfolioCards.forEach(card => {
-          card.classList.toggle("zoomed-out-state"); // If you're managing states manually via JS
-        });
-        
+        // Swaps the visual iconography cleanly
         if (document.body.classList.contains("is-zoomed-out")) {
           zoomButton.setAttribute("src", "images/zoomin.svg");
         } else {
