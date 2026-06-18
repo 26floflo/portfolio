@@ -265,22 +265,29 @@
   </script>
 
   <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-      const zoomButton = document.getElementById("button-zoom");
-      
-      if (zoomButton) {
-        zoomButton.addEventListener("click", function() {
-          document.body.classList.toggle("is-zoomed-out");
-          
-          if (document.body.classList.contains("is-zoomed-out")) {
-            zoomButton.setAttribute("src", "images/zoomin.svg");
-          } else {
-            zoomButton.setAttribute("src", "images/zoomout2.svg");
-          }
+  document.addEventListener("DOMContentLoaded", function() {
+    const zoomButton = document.getElementById("button-zoom");
+    
+    if (zoomButton) {
+      zoomButton.addEventListener("click", function() {
+        document.body.classList.toggle("is-zoomed-out");
+        
+        // Fix: Change the target from '.div-block' to '.portfolio-card-container'
+        const portfolioCards = document.querySelectorAll(".section_picture .portfolio-card-container");
+        
+        portfolioCards.forEach(card => {
+          card.classList.toggle("zoomed-out-state"); // If you're managing states manually via JS
         });
-      }
-    });
-  </script>
+        
+        if (document.body.classList.contains("is-zoomed-out")) {
+          zoomButton.setAttribute("src", "images/zoomin.svg");
+        } else {
+          zoomButton.setAttribute("src", "images/zoomout2.svg");
+        }
+      });
+    }
+  });
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
