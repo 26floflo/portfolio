@@ -206,18 +206,17 @@
   <script src="js/webflow.js" type="text/javascript"></script>
 
   <style>
-    /* Base settings for smooth scaling */
-    .section_picture .div-block {
-      transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out !important;
-      transform-origin: center top;
-    }
-    
-    /* Zoom Out State: Scale the elements to exactly half size */
-    body.is-zoomed-out .section_picture .div-block {
+    /* Zoom Out State: Scales the layout elements down cleanly without overlapping */
+    body.is-zoomed-out .section_picture .portfolio-card-container {
       transform: scale(0.5) !important; 
-      
-      /* Safely signals the layout engine to close the empty space from the bottom up */
-      margin-bottom: -50% !important; 
+      transform-origin: top center !important;
+      max-height: 50% !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Specific fix for the last card's bottom margin when zoomed out */
+    body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
+      margin-bottom: 2rem !important;
     }
 
     #button-zoom, .button-2 {
@@ -232,7 +231,7 @@
       transition: opacity 0.25s ease-in-out;
     }
   </style>
-
+  
   <script>
   document.addEventListener("DOMContentLoaded", function() {
     const burger = document.querySelector('.navbar3_menu-button');
