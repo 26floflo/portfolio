@@ -1391,14 +1391,13 @@
 }
 
 .button-zoom {
-  z-index: 1;
+  z-index: 9999;       /* Forces it to layer cleanly on top of portfolio images */
   width: 3vw;
-  height: 3vw;
-  margin-top: 45vw;
-  padding-top: 0;
+  min-width: 40px;     /* Prevents it from shrinking on smaller desktops */
+  height: auto;
   position: fixed;
-  top: 5vw;
-  right: 2vw;
+  top: 7rem;           /* Holds the button cleanly at your lowered position */
+  right: 2rem;         /* Fixed spacing from the right side */
 }
 
 .image-14 {
