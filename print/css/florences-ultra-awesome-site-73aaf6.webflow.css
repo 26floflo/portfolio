@@ -1411,7 +1411,7 @@
   min-width: 40px;     /* Prevents it from shrinking into oblivion on smaller desktops */
   height: auto;
   position: fixed;
-  top: 2rem;           /* Clean, fixed spacing from the top */
+  top: 7rem;           /* Clean, fixed spacing from the top */
   right: 2rem;         /* Clean, fixed spacing from the right */
 }
 
