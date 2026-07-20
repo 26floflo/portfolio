@@ -1396,7 +1396,7 @@
   min-width: 40px;     /* Prevents it from shrinking on smaller desktops */
   height: auto;
   position: fixed;
-  top: 20rem;           /* Holds the button cleanly at your lowered position */
+  top: 30rem;           /* Holds the button cleanly at your lowered position */
   right: 2rem;         /* Fixed spacing from the right side */
 }
 
