@@ -228,20 +228,43 @@
   </style>
   
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const burger = document.querySelector('.navbar3_menu-button');
-    const closeX = document.querySelector('.image-14');
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('custom-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close');
+  const portfolioCards = document.querySelectorAll('.portfolio-card-entry');
 
-    // Handle the 'X' button inside the menu without duplicating layout structures
-    if (closeX && burger) {
-      closeX.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Only click the burger to close if the Webflow nav menu is actually open
-        if (burger.classList.contains('w--open')) {
-          burger.click();
-        }
-      });
+  const closeLightbox = () => {
+    overlay.classList.remove('active');
+    lightboxImg.src = '';
+  };
+
+  // Open Lightbox
+  portfolioCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const targetSrc = this.getAttribute('data-lightbox');
+      if (targetSrc) {
+        lightboxImg.src = targetSrc;
+        overlay.classList.add('active');
+      }
+    });
+  });
+
+  // Close on 'X' icon click
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
+
+  // Close when clicking outside the modal content
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      closeLightbox();
     }
+  });
+});
 
     // Monitor the menu to ensure the transparent background layout remains correctly styled
     const navObserver = new MutationObserver(() => {
