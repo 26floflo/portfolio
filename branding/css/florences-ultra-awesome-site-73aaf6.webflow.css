@@ -2804,21 +2804,20 @@ body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
   border-radius: 0;
 }
 
-/* Fixed Close Button - Pinned to the screen matching zoom button behavior */
+/* Fixed Close Button - Stays pinned on screen during scroll */
 .lightbox-close-btn {
   position: fixed !important;
   top: 5vw !important;
-  right: 2rem !important;
+  right: 2.5vw !important;
   width: 3vw !important;
-  min-width: 40px !important;
   height: auto !important;
   z-index: 10005 !important;
   cursor: pointer !important;
-  display: none !important;
+  display: none; /* Controlled by .active state */
   transition: transform 0.2s ease;
 }
 
-.lightbox-close-btn.active {
+.lightbox-overlay.active .lightbox-close-btn {
   display: block !important;
 }
 
@@ -2860,3 +2859,4 @@ body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
     right: 1.5vw !important;
     width: 5vw !important;
   }
+}
