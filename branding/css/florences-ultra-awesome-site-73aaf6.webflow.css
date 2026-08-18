@@ -2860,3 +2860,13 @@ body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
     width: 5vw !important;
   }
 }
+#lightbox-close,
+.lightbox-close-btn {
+  position: fixed !important;
+  top: 5vw !important;
+  right: 2rem !important;
+  width: 3vw !important;
+  min-width: 40px !important;
+  height: auto !important;
+  z-index: 99999 !important;
+}
