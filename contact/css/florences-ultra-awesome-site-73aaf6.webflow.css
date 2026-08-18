@@ -2977,7 +2977,7 @@ textarea.w-input, textarea.w-select {
   width: 35.2%;
   height: 5%;
   margin: 0 0 0 2vw;
-  padding: .56vw 0 0 0;
+  padding: .56vw 1vw 0.56vw 1vw;
   display: inline-flex;
   position: absolute;
   top: 22vw;
@@ -3013,11 +3013,11 @@ textarea.w-input, textarea.w-select {
   margin-right: 0;
 }
 
-.text-field.e4 {
+text-field.e4 {
   width: 74.1%;
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 15vw;
+  padding: 1vw 1.2vw; /* Replaces padding-top: 15vw */
   top: 40vw;
   bottom: 0;
 }
