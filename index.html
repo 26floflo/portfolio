@@ -187,12 +187,12 @@
   <script src="js/webflow.js" type="text/javascript"></script>
   
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    function initLottie() {
       const container = document.getElementById("flourish-lottie");
       if (!container) return;
 
       const animationPath = container.getAttribute("data-src");
-      const lottieEngine = window.bodymovin || (window.Webflow && window.Webflow.require('lottie').lottie);
+      const lottieEngine = window.bodymovin || (window.Webflow && window.Webflow.require && window.Webflow.require('lottie') && window.Webflow.require('lottie').lottie);
       
       if (lottieEngine) {
         const anim = lottieEngine.loadAnimation({
@@ -211,7 +211,14 @@
           }
         });
       }
+    }
+
+    // Defers loading until after the initial UI paint is completely finished
+    window.addEventListener("load", function() {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(initLottie, { timeout: 1500 });
+      } else {
+        setTimeout(initLottie, 200);
+      }
     });
   </script>
-</body>
-</html>
