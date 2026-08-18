@@ -345,6 +345,50 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   </script>
 
+ <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const burger = document.querySelector('.navbar3_menu-button');
+    const closeX = document.querySelector('.image-14');
+
+    if (closeX && burger) {
+      closeX.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (burger.classList.contains('w--open')) {
+          burger.click();
+        }
+      });
+    }
+
+    const navObserver = new MutationObserver(() => {
+      const overlay = document.querySelector('.w-nav-overlay');
+      if (overlay) {
+        overlay.style.backgroundColor = 'transparent';
+        overlay.style.background = 'transparent';
+      }
+    });
+
+    if (burger) {
+      navObserver.observe(burger, { attributes: true });
+    }
+  });
+  </script>
+
+  <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    const zoomButton = document.getElementById("button-zoom");
+    if (zoomButton) {
+      zoomButton.addEventListener("click", function() {
+        document.body.classList.toggle("is-zoomed-out");
+        if (document.body.classList.contains("is-zoomed-out")) {
+          zoomButton.setAttribute("src", "images/zoomin.svg");
+        } else {
+          zoomButton.setAttribute("src", "images/zoomout2.svg");
+        }
+      });
+    }
+  });
+  </script>
+
   <script>
   document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('custom-lightbox');
@@ -355,16 +399,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeLightbox() {
       overlay.classList.remove('active');
       lightboxImg.src = '';
-      document.body.style.overflow = '';
     }
 
     portfolioCards.forEach(function(card) {
-      card.addEventListener('click', function() {
+      card.addEventListener('click', function(e) {
+        e.stopPropagation();
         const targetSrc = this.getAttribute('data-lightbox');
         if (targetSrc) {
           lightboxImg.src = targetSrc;
+          overlay.scrollTop = 0;
           overlay.classList.add('active');
-          document.body.style.overflow = 'hidden';
         }
       });
     });
@@ -379,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (overlay) {
       overlay.addEventListener('click', function(e) {
-        if (e.target !== lightboxImg) {
+        if (e.target !== lightboxImg && e.target !== closeBtn) {
           closeLightbox();
         }
       });
