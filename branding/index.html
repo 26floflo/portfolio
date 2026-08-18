@@ -399,6 +399,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeLightbox() {
       overlay.classList.remove('active');
       lightboxImg.src = '';
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     }
 
     portfolioCards.forEach(function(card) {
@@ -409,6 +411,8 @@ document.addEventListener('DOMContentLoaded', () => {
           lightboxImg.src = targetSrc;
           overlay.scrollTop = 0;
           overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          document.documentElement.style.overflow = 'hidden';
         }
       });
     });
@@ -423,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (overlay) {
       overlay.addEventListener('click', function(e) {
-        if (e.target !== lightboxImg && e.target !== closeBtn) {
+        if (e.target === overlay) {
           closeLightbox();
         }
       });
