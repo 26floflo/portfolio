@@ -398,7 +398,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeLightbox() {
       overlay.classList.remove('active');
-      if (closeBtn) closeBtn.classList.remove('active');
       lightboxImg.src = '';
       document.body.style.overflow = '';
       document.documentElement.style.overflow = '';
@@ -412,7 +411,6 @@ document.addEventListener('DOMContentLoaded', () => {
           lightboxImg.src = targetSrc;
           overlay.scrollTop = 0;
           overlay.classList.add('active');
-          if (closeBtn) closeBtn.classList.add('active');
           document.body.style.overflow = 'hidden';
           document.documentElement.style.overflow = 'hidden';
         }
@@ -464,9 +462,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   </style>
 
-  <img src="images/greenx.svg" id="lightbox-close" class="lightbox-close-btn" alt="Close Lightbox">
-
   <div id="custom-lightbox" class="lightbox-overlay">
+    <img src="images/greenx.svg" id="lightbox-close" class="lightbox-close-btn" alt="Close Lightbox">
     <div class="lightbox-content">
       <img id="lightbox-img" src="" alt="Lightbox View">
     </div>
