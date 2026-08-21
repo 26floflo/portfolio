@@ -226,60 +226,6 @@
       transition: opacity 0.25s ease-in-out;
     }
   </style>
-  
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const overlay = document.getElementById('custom-lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.getElementById('lightbox-close');
-  const portfolioCards = document.querySelectorAll('.portfolio-card-entry');
-
-  const closeLightbox = () => {
-    overlay.classList.remove('active');
-    lightboxImg.src = '';
-  };
-
-  // Open Lightbox
-  portfolioCards.forEach(card => {
-    card.addEventListener('click', function() {
-      const targetSrc = this.getAttribute('data-lightbox');
-      if (targetSrc) {
-        lightboxImg.src = targetSrc;
-        overlay.classList.add('active');
-      }
-    });
-  });
-
-  // Close on 'X' icon click
-  if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closeLightbox();
-    });
-  }
-
-  // Close when clicking outside the modal content
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
-      closeLightbox();
-    }
-  });
-});
-
-    // Monitor the menu to ensure the transparent background layout remains correctly styled
-    const navObserver = new MutationObserver(() => {
-      const overlay = document.querySelector('.w-nav-overlay');
-      if (overlay) {
-        overlay.style.backgroundColor = 'transparent';
-        overlay.style.background = 'transparent';
-      }
-    });
-
-    if (burger) {
-      navObserver.observe(burger, { attributes: true });
-    }
-  });
-  </script>
 
   <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function() {
@@ -373,21 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   </script>
 
-  <script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function() {
-    const zoomButton = document.getElementById("button-zoom");
-    if (zoomButton) {
-      zoomButton.addEventListener("click", function() {
-        document.body.classList.toggle("is-zoomed-out");
-        if (document.body.classList.contains("is-zoomed-out")) {
-          zoomButton.setAttribute("src", "images/zoomin.svg");
-        } else {
-          zoomButton.setAttribute("src", "images/zoomout2.svg");
-        }
-      });
-    }
-  });
-  </script>
 
   <script>
   document.addEventListener('DOMContentLoaded', function() {
