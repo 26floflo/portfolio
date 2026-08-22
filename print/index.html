@@ -215,38 +215,32 @@
   <script src="js/webflow.js" type="text/javascript"></script>
 
 <style>
-  /* 1. Base transition for smooth scaling */
-  .section_picture {
-    transition: transform 0.4s ease-in-out;
-    transform-origin: top center;
+  #button-zoom, .button-2 {
+    z-index: 9999 !important;
   }
 
-  /* 2. Scaled-down state: shrinks layout box and removes dead space */
-  @supports (zoom: 0.5) {
-    body.is-zoomed-out .section_picture {
-      zoom: 0.5; /* Directly collapses document height */
-    }
+  #button-zoom {
+    cursor: pointer;
+    pointer-events: auto !important;
+    transition: transform 0.2s ease-in-out;
   }
 
-  /* Fallback for browsers that do not support zoom (e.g., Firefox) */
-  @supports not (zoom: 0.5) {
-    body.is-zoomed-out .section_picture {
-      transform: scale(0.5);
-      margin-bottom: calc(-1 * (var(--section-height, 100vh) * 0.5));
-    }
+  #button-zoom:hover { transform: scale(1.1); }
+  #button-zoom:active { transform: scale(0.95); }
+
+  .navbar3_component.w--open .image-social.b {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
 
-  /* Optional: Switch to a 2-column grid when zoomed out to cut vertical length further */
-  body.is-zoomed-out .section_picture {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.5rem !important;
-  }
-
+  /* --- CLEAN ZOOM OUT: Shrinks cards naturally in the DOM without ghost gaps --- */
   body.is-zoomed-out .portfolio-card-container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-top: 0 !important;
+    width: 50% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 1.5rem !important;
+    transition: width 0.3s ease, margin 0.3s ease !important;
   }
 </style>
 
