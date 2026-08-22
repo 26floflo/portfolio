@@ -301,9 +301,10 @@ document.addEventListener("DOMContentLoaded", function() {
             card.style.transformOrigin = "top center";
             card.style.transform = `scale(${scaleFactor})`;
             
-            // Multiplied by 0.6 to pull cards closer vertically
-            card.style.height = `${naturalHeight * 0.6}px`;
-            card.style.marginTop = "0.75rem";
+            // Pulls the cards even tighter together
+            card.style.height = `${naturalHeight * 0.48}px`;
+            card.style.marginTop = "0px";
+            
           } else {
             card.style.transform = "none";
             card.style.height = "auto";
