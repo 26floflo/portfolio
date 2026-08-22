@@ -233,6 +233,20 @@
       z-index: 9999 !important;
     }
 
+  /* Zoom button hover state */
+#button-zoom {
+  cursor: pointer;
+  pointer-events: auto !important;
+  transition: transform 0.2s ease-in-out;
+}
+
+#button-zoom:hover {
+  transform: scale(1.1);
+}
+
+#button-zoom:active {
+  transform: scale(0.95);
+}
     /* Target the standalone fixed/sticky background LinkedIn icon specifically when dropbar is open */
     .navbar3_component.w--open .image-social.b {
       opacity: 0 !important;
