@@ -215,38 +215,39 @@
   <script src="js/webflow.js" type="text/javascript"></script>
 
 <style>
-  #button-zoom, .button-2 {
-    z-index: 9999 !important;
-  }
+    /* Base settings for smooth scaling */
+    .section_picture .div-block {
+      transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out !important;
+      transform-origin: center top;
+    }
+    
 
-  #button-zoom {
-    cursor: pointer;
-    pointer-events: auto !important;
-    transition: transform 0.2s ease-in-out;
-  }
+    #button-zoom, .button-2 {
+      z-index: 9999 !important;
+    }
 
-  #button-zoom:hover { transform: scale(1.1); }
-  #button-zoom:active { transform: scale(0.95); }
+  /* Zoom button hover state */
+#button-zoom {
+  cursor: pointer;
+  pointer-events: auto !important;
+  transition: transform 0.2s ease-in-out;
+}
 
-  .navbar3_component.w--open .image-social.b {
-    opacity: 0 !important;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
+#button-zoom:hover {
+  transform: scale(1.1);
+}
 
-  /* True 70% scale without ghost space or double padding */
-  body.is-zoomed-out .portfolio-card-container {
-    width: 70% !important;
-    max-width: 70% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 1.5rem !important;
-    transition: width 0.3s ease, margin 0.3s ease !important;
-  }
-</style>
-  
+#button-zoom:active {
+  transform: scale(0.95);
+}
+    /* Target the standalone fixed/sticky background LinkedIn icon specifically when dropbar is open */
+    .navbar3_component.w--open .image-social.b {
+      opacity: 0 !important;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+  </style>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const burger = document.querySelector('.navbar3_menu-button');
@@ -278,19 +279,35 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-  <script type="text/javascript">
+<script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
       const zoomButton = document.getElementById("button-zoom");
-      
+      const cards = document.querySelectorAll(".portfolio-card-container");
+      const scaleFactor = 0.7; // Change to 0.65 (smaller) or 0.75 (larger) as desired
+
       if (zoomButton) {
         zoomButton.addEventListener("click", function() {
           document.body.classList.toggle("is-zoomed-out");
-          
-          if (document.body.classList.contains("is-zoomed-out")) {
-            zoomButton.setAttribute("src", "images/zoomin.svg");
-          } else {
-            zoomButton.setAttribute("src", "images/zoomout2.svg");
-          }
+          const isZoomed = document.body.classList.contains("is-zoomed-out");
+
+          // 1. Update zoom button icon
+          zoomButton.setAttribute("src", isZoomed ? "images/zoomin.svg" : "images/zoomout2.svg");
+
+          // 2. Adjust card scale and collapse height to eliminate dead gaps
+          cards.forEach(card => {
+            if (isZoomed) {
+              const naturalHeight = card.offsetHeight;
+              card.dataset.naturalHeight = naturalHeight;
+              
+              card.style.transition = "transform 0.35s ease, height 0.35s ease";
+              card.style.transformOrigin = "top center";
+              card.style.transform = `scale(${scaleFactor})`;
+              card.style.height = `${naturalHeight * scaleFactor}px`;
+            } else {
+              card.style.transform = "none";
+              card.style.height = "auto";
+            }
+          });
         });
       }
     });
