@@ -201,13 +201,6 @@
   <script src="js/webflow.js" type="text/javascript"></script>
 
   <style>
-    /* Zoom Out State: Scales the layout elements down cleanly without overlapping */
-    body.is-zoomed-out .section_picture .portfolio-card-container {
-      transform: scale(0.62) !important; 
-      transform-origin: top center !important;
-      max-height: 62% !important;
-      margin-bottom: 0 !important;
-    }
 
     /* Specific fix for the last card's bottom margin when zoomed out */
     body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
@@ -241,55 +234,43 @@
     }
   </style>
 
-  <script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function() {
-    const zoomButton = document.getElementById("button-zoom");
-    
-    if (zoomButton) {
-      zoomButton.addEventListener("click", function() {
-        // Toggles the layout engine shift
-        document.body.classList.toggle("is-zoomed-out");
-        
-        // Swaps the visual iconography cleanly
-        if (document.body.classList.contains("is-zoomed-out")) {
-          zoomButton.setAttribute("src", "images/zoomin.svg");
-        } else {
-          zoomButton.setAttribute("src", "images/zoomout2.svg");
-        }
-      });
-    }
-  });
-</script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      const zoomButton = document.getElementById("button-zoom");
+      const cards = document.querySelectorAll(".portfolio-card-container");
+      const scaleFactor = 0.7; // Visual card size
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const burger = document.querySelector('.navbar3_menu-button');
-    const closeX = document.querySelector('.image-14');
+      if (zoomButton) {
+        zoomButton.addEventListener("click", function() {
+          document.body.classList.toggle("is-zoomed-out");
+          const isZoomed = document.body.classList.contains("is-zoomed-out");
 
-    if (closeX && burger) {
-      closeX.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (burger.classList.contains('w--open')) {
-          burger.click();
-        }
-      });
-    }
+          zoomButton.setAttribute("src", isZoomed ? "images/zoomin.svg" : "images/zoomout2.svg");
 
-    const navObserver = new MutationObserver(() => {
-      const overlay = document.querySelector('.w-nav-overlay');
-      if (overlay) {
-        overlay.style.backgroundColor = 'transparent';
-        overlay.style.background = 'transparent';
+          cards.forEach(card => {
+            if (isZoomed) {
+              const naturalHeight = card.dataset.naturalHeight || card.offsetHeight;
+              card.dataset.naturalHeight = naturalHeight;
+              
+              card.style.transition = "transform 0.35s ease, height 0.35s ease, margin 0.35s ease";
+              card.style.transformOrigin = "top center";
+              card.style.transform = `scale(${scaleFactor})`;
+              
+              // Pulls the cards tighter together
+              card.style.height = `${naturalHeight * 0.52}px`;
+              card.style.marginTop = "0px";
+            } else {
+              card.style.transform = "none";
+              card.style.height = "auto";
+              card.style.marginTop = "";
+            }
+          });
+        });
       }
     });
-
-    if (burger) {
-      navObserver.observe(burger, { attributes: true });
-    }
-  });
   </script>
 
- <script>
+<script>
   document.addEventListener("DOMContentLoaded", function() {
     const burger = document.querySelector('.navbar3_menu-button');
     const closeX = document.querySelector('.image-14');
@@ -403,7 +384,7 @@
   <div id="custom-lightbox" class="lightbox-overlay">
     <img src="images/greenx.svg" id="lightbox-close" class="lightbox-close-btn" alt="Close Lightbox">
     <div class="lightbox-content">
-      <img id="lightbox-img"
+      <img id="lightbox-img">
     </div>
   </div>
 
