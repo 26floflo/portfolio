@@ -280,38 +280,40 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-      const zoomButton = document.getElementById("button-zoom");
-      const cards = document.querySelectorAll(".portfolio-card-container");
-      const scaleFactor = 0.7; // Change to 0.65 (smaller) or 0.75 (larger) as desired
+  document.addEventListener("DOMContentLoaded", function() {
+    const zoomButton = document.getElementById("button-zoom");
+    const cards = document.querySelectorAll(".portfolio-card-container");
+    const scaleFactor = 0.7; // Visual card size
 
-      if (zoomButton) {
-        zoomButton.addEventListener("click", function() {
-          document.body.classList.toggle("is-zoomed-out");
-          const isZoomed = document.body.classList.contains("is-zoomed-out");
+    if (zoomButton) {
+      zoomButton.addEventListener("click", function() {
+        document.body.classList.toggle("is-zoomed-out");
+        const isZoomed = document.body.classList.contains("is-zoomed-out");
 
-          // 1. Update zoom button icon
-          zoomButton.setAttribute("src", isZoomed ? "images/zoomin.svg" : "images/zoomout2.svg");
+        zoomButton.setAttribute("src", isZoomed ? "images/zoomin.svg" : "images/zoomout2.svg");
 
-          // 2. Adjust card scale and collapse height to eliminate dead gaps
-          cards.forEach(card => {
-            if (isZoomed) {
-              const naturalHeight = card.offsetHeight;
-              card.dataset.naturalHeight = naturalHeight;
-              
-              card.style.transition = "transform 0.35s ease, height 0.35s ease";
-              card.style.transformOrigin = "top center";
-              card.style.transform = `scale(${scaleFactor})`;
-              card.style.height = `${naturalHeight * scaleFactor}px`;
-            } else {
-              card.style.transform = "none";
-              card.style.height = "auto";
-            }
-          });
+        cards.forEach(card => {
+          if (isZoomed) {
+            const naturalHeight = card.dataset.naturalHeight || card.offsetHeight;
+            card.dataset.naturalHeight = naturalHeight;
+            
+            card.style.transition = "transform 0.35s ease, height 0.35s ease, margin 0.35s ease";
+            card.style.transformOrigin = "top center";
+            card.style.transform = `scale(${scaleFactor})`;
+            
+            // Multiplied by 0.6 to pull cards closer vertically
+            card.style.height = `${naturalHeight * 0.6}px`;
+            card.style.marginTop = "0.75rem";
+          } else {
+            card.style.transform = "none";
+            card.style.height = "auto";
+            card.style.marginTop = "";
+          }
         });
-      }
-    });
-  </script>
+      });
+    }
+  });
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
