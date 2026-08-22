@@ -234,16 +234,19 @@
     transition: opacity 0.3s ease;
   }
 
-  /* --- CLEAN ZOOM OUT: Shrinks cards naturally in the DOM without ghost gaps --- */
+  /* True 50% scale without ghost space or double padding */
   body.is-zoomed-out .portfolio-card-container {
     width: 50% !important;
+    max-width: 50% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-top: 1.5rem !important;
     transition: width 0.3s ease, margin 0.3s ease !important;
   }
 </style>
-
+  
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const burger = document.querySelector('.navbar3_menu-button');
