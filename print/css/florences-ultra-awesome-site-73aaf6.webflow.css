@@ -24,24 +24,26 @@
   display: block;
 }
 
-/* Permanent Desktop Zoom State & Spacing (Screens > 991px) */
+/* Desktop Only (992px and above) - Clean Zoomed-Out Spacing */
 @media screen and (min-width: 992px) {
   .section_picture .portfolio-card-container {
-    transform: scale(0.7) !important;
-    transform-origin: top center !important;
-    margin-top: -3.5rem !important;
-    margin-bottom: -3.5rem !important;
+    width: 70% !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 2rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
-  /* Extra top spacing specifically for the first card on desktop */
+  /* Extra top spacing for the first image on Desktop only */
   .section_picture .portfolio-card-container:first-of-type {
-    padding-top: 4rem !important;
-    margin-top: 1rem !important;
+    margin-top: 6rem !important;
   }
 
   /* Bottom spacing for the last card */
   .section_picture .portfolio-card-container.last-card {
-    margin-bottom: 2rem !important;
+    margin-bottom: 5rem !important;
   }
 }
 @media screen and (max-width: 991px) {
