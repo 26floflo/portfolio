@@ -24,6 +24,26 @@
   display: block;
 }
 
+/* Permanent Desktop Zoom State & Spacing (Screens > 991px) */
+@media screen and (min-width: 992px) {
+  .section_picture .portfolio-card-container {
+    transform: scale(0.7) !important;
+    transform-origin: top center !important;
+    margin-top: -3.5rem !important;
+    margin-bottom: -3.5rem !important;
+  }
+
+  /* Extra top spacing specifically for the first card on desktop */
+  .section_picture .portfolio-card-container:first-of-type {
+    padding-top: 4rem !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Bottom spacing for the last card */
+  .section_picture .portfolio-card-container.last-card {
+    margin-bottom: 2rem !important;
+  }
+}
 @media screen and (max-width: 991px) {
   .w-layout-blockcontainer {
     max-width: 728px;
@@ -1377,43 +1397,6 @@
   position: fixed;
 }
 
-.button-3 {
-  z-index: 1;
-  background-color: #3898ec00;
-  background-image: url('../images/zoomout.svg');
-  background-position: 0 0;
-  background-size: contain;
-  background-attachment: scroll;
-  width: 3%;
-  height: 5%;
-  padding: 0;
-  position: fixed;
-  top: 5vw;
-  right: 1vw;
-}
-
-.div-block-17 {
-  z-index: 1;
-  background-image: url('../images/zoomout_1.svg');
-  background-position: 0 0;
-  background-size: auto;
-  width: 5%;
-  height: 3.2%;
-  display: block;
-  position: fixed;
-  top: 5vw;
-  right: 1vw;
-}
-
-.button-zoom {
-  z-index: 9999;       /* Forces it to sit on top of your portfolio images */
-  width: 3vw;
-  min-width: 40px;     /* Prevents it from shrinking into oblivion on smaller desktops */
-  height: auto;
-  position: fixed;
-  top: 30rem;           /* Clean, fixed spacing from the top */
-  right: 2rem;         /* Clean, fixed spacing from the right */
-}
 
 .image-14 {
   display: none;
@@ -2715,20 +2698,6 @@
   }
 } /* <-- This bracket was missing! */
 
-/* Zoom Out State: Scales the layout elements down cleanly without overlapping */
-body.is-zoomed-out .section_picture .portfolio-card-container {
-  transform: scale(0.5) !important; 
-  /* Shifting the transform origin ensures scaling starts from the top center */
-  transform-origin: top center !important;
-  /* Dynamically forces the rendering box to shrink its actual layout height by half */
-  max-height: 50% !important;
-  margin-bottom: 0 !important;
-}
-
-/* Specific fix for the last card's bottom margin when zoomed out */
-body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
-  margin-bottom: 2rem !important;
-}
 
 /* Responsive Overrides: Forces all vertical spaces to 1rem on mobile devices */
 @media screen and (max-width: 767px) {
