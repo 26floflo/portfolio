@@ -2,21 +2,21 @@
   --white: #fff;
 }
 
-/* Base settings for smooth scaling */
+/* Base settings */
 .portfolio-card-container {
   box-sizing: border-box !important;
-  width: 100% !important;
-  margin-top: 3rem !important;
-  padding-left: 7.8% !important;
-  padding-right: 7.8% !important;
+  width: 100%;
+  padding-left: 7.8%;
+  padding-right: 7.8%;
+  margin-top: 3rem;
   transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out !important;
   transform-origin: center top;
 }
 
-/* Appends the custom requested space directly to the base of your final asset module */
 .portfolio-card-container.last-card {
-  margin-bottom: 3rem !important;
+  margin-bottom: 3rem;
 }
+
 .w-layout-blockcontainer {
   max-width: 940px;
   margin-left: auto;
@@ -39,6 +39,7 @@
   /* Extra top spacing for the first image on Desktop only */
   .section_picture .portfolio-card-container:first-of-type {
     margin-top: 6rem !important;
+    padding-top: 2rem !important;
   }
 
   /* Bottom spacing for the last card */
