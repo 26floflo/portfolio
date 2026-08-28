@@ -2752,7 +2752,7 @@
   pointer-events: auto;
 }
 
-/* White Box Container with 7.8% grid padding */
+/* Base Mobile/Tablet Lightbox Padding */
 .lightbox-content {
   width: 100%;
   max-width: 100%;
@@ -2762,11 +2762,19 @@
   padding-left: 7.8%;
   padding-right: 7.8%;
   padding-top: 5vw;
-  padding-bottom: 8rem; /* Extra room so mobile bottom bars don't cut off content */
+  padding-bottom: 8rem;
   display: block;
   box-sizing: border-box;
 }
 
+/* Desktop Only (992px and above) - 14% Lightbox Side Padding */
+@media screen and (min-width: 992px) {
+  .lightbox-content {
+    padding-left: 14% !important;
+    padding-right: 14% !important;
+    padding-top: 4rem !important;
+  }
+}
 /* Responsive SVG Artwork */
 .lightbox-content #lightbox-img {
   width: 100% !important;
