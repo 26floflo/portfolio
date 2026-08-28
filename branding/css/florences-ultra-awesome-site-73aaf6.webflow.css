@@ -2671,20 +2671,20 @@
     max-width: 1200px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-top: 2.5rem !important;
-    padding-left: 18% !important;
-    padding-right: 18% !important;
+    margin-top: 4rem !important;
+    padding-left: 15% !important;
+    padding-right: 15% !important;
   }
 
   /* Extra top spacing for the first image on Desktop only */
   .section_picture .portfolio-card-container:first-of-type {
-    margin-top: 8rem !important;
+    margin-top: 6rem !important;
     padding-top: 2rem !important;
   }
 
   /* Bottom spacing for the last card */
   .section_picture .portfolio-card-container.last-card {
-    margin-bottom: 6rem !important;
+    margin-bottom: 5rem !important;
   }
 }
 
