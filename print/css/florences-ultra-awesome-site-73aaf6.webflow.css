@@ -32,14 +32,14 @@
     max-width: 1200px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-top: 2.5rem !important;
-    padding-left: 18% !important;   /* Increases side spacing cleanly */
-    padding-right: 18% !important;  /* Increases side spacing cleanly */
+    margin-top: 5rem !important;
+    padding-left: 25% !important;   /* Increases side spacing cleanly */
+    padding-right: 25% !important;  /* Increases side spacing cleanly */
   }
 
   /* Extra top spacing for the first image on Desktop only */
   .section_picture .portfolio-card-container:first-of-type {
-    margin-top: 8rem !important;
+    margin-top: 5rem !important;
     padding-top: 2rem !important;
   }
 
