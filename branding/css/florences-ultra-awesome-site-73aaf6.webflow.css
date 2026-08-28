@@ -2767,11 +2767,11 @@
   box-sizing: border-box;
 }
 
-/* Desktop Only (992px and above) - 20% Lightbox Side Padding */
+/* Desktop Only (992px and above) - 25% Lightbox Side Padding */
 @media screen and (min-width: 992px) {
   .lightbox-content {
-    padding-left: 20% !important;
-    padding-right: 20% !important;
+    padding-left: 25% !important;
+    padding-right: 25% !important;
     padding-top: 4rem !important;
   }
 }
