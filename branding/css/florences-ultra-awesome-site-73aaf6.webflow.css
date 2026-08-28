@@ -1362,44 +1362,6 @@
   position: fixed;
 }
 
-.button-3 {
-  z-index: 1;
-  background-color: #3898ec00;
-  background-image: url('../images/zoomout.svg');
-  background-position: 0 0;
-  background-size: contain;
-  background-attachment: scroll;
-  width: 3%;
-  height: 5%;
-  padding: 0;
-  position: fixed;
-  top: 5vw;
-  right: 1vw;
-}
-
-.div-block-17 {
-  z-index: 1;
-  background-image: url('../images/zoomout_1.svg');
-  background-position: 0 0;
-  background-size: auto;
-  width: 5%;
-  height: 3.2%;
-  display: block;
-  position: fixed;
-  top: 5vw;
-  right: 1vw;
-}
-
-.button-zoom {
-  z-index: 9999;       /* Forces it to layer cleanly on top of portfolio images */
-  width: 3vw;
-  min-width: 40px;     /* Prevents it from shrinking on smaller desktops */
-  height: auto;
-  position: fixed;
-  top: 30rem;           /* Holds the button cleanly at your lowered position */
-  right: 2rem;         /* Fixed spacing from the right side */
-}
-
 .image-14 {
   display: none;
 }
@@ -2686,45 +2648,56 @@
   }
 }
 
-/* Base settings for smooth scaling */
+/* Base settings */
 .portfolio-card-container {
   box-sizing: border-box !important;
-  width: 100% !important;
-  margin-top: 3rem !important;
-  padding-left: 7.8% !important;
-  padding-right: 7.8% !important;
+  width: 100%;
+  padding-left: 7.8%;
+  padding-right: 7.8%;
+  margin-top: 3rem;
   transition: transform 0.4s ease-in-out, margin-bottom 0.4s ease-in-out !important;
   transform-origin: center top;
 }
 
-/* Appends the custom requested space directly to the base of your final asset module */
 .portfolio-card-container.last-card {
-  margin-bottom: 3rem !important;
+  margin-bottom: 3rem;
+}
+
+/* Desktop Only (992px and above) - Zoomed-Out Layout with Wide Side Padding */
+@media screen and (min-width: 992px) {
+  .section_picture .portfolio-card-container {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 2.5rem !important;
+    padding-left: 18% !important;
+    padding-right: 18% !important;
+  }
+
+  /* Extra top spacing for the first image on Desktop only */
+  .section_picture .portfolio-card-container:first-of-type {
+    margin-top: 8rem !important;
+    padding-top: 2rem !important;
+  }
+
+  /* Bottom spacing for the last card */
+  .section_picture .portfolio-card-container.last-card {
+    margin-bottom: 6rem !important;
+  }
 }
 
 @media screen and (max-width: 991px) {
   #w-node-_193868dc-e6ca-908a-811f-17090a1670ed-0a1670e4, #w-node-f649f588-9bcd-5a5a-4d3e-d59eff1bb0fa-8e396ad6, #w-node-fc98069a-43b9-714d-d98d-0c3e54357faf-e7a3c9dd, #w-node-_88f57bee-0e38-1364-0546-1269d38385a2-5cd56e72 {
     place-self: auto;
   }
-} /* <-- This bracket was missing! */
+}
 
 @media screen and (max-width: 767px) {
   #w-node-_193868dc-e6ca-908a-811f-17090a167111-0a1670e4, #w-node-f649f588-9bcd-5a5a-4d3e-d59eff1bb11f-8e396ad6, #w-node-fc98069a-43b9-714d-d98d-0c3e54357fd4-e7a3c9dd, #w-node-_88f57bee-0e38-1364-0546-1269d38385c7-5cd56e72 {
     order: -9999;
   }
-} /* <-- This bracket was missing! */
-
-/* Zoom Out State: Scales the layout elements down cleanly without overlapping */
-body.is-zoomed-out .section_picture .portfolio-card-container {
-  transform: scale(0.5) !important; 
-  transform-origin: top center !important;
-  max-height: 50% !important;
-  margin-bottom: 0 !important;
-}
-
-/* Specific fix for the last card's bottom margin when zoomed out */
-body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
-  margin-bottom: 2rem !important;
 }
 
 /* Responsive Overrides: Forces all vertical spaces to 1rem on mobile devices */
