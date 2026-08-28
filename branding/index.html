@@ -133,7 +133,6 @@
 
 
        <a href="#section_navbar" class="button-2 w-button"></a>
-      <img src="images/zoomout2.svg" loading="lazy" id="button-zoom" alt="" class="button-zoom">
       <section class="section_client">
         <div class="w-layout-blockcontainer container-large w-container">
           <div class="padding-global"></div>
@@ -202,29 +201,6 @@
 
   <style>
 
-    /* Specific fix for the last card's bottom margin when zoomed out */
-    body.is-zoomed-out .section_picture .portfolio-card-container.last-card {
-      margin-bottom: 2rem !important;
-    }
-
-    #button-zoom, .button-2 {
-      z-index: 9999 !important;
-    }
-
-    /* Zoom button hover state */
-#button-zoom {
-  cursor: pointer;
-  pointer-events: auto !important;
-  transition: transform 0.2s ease-in-out;
-}
-
-#button-zoom:hover {
-  transform: scale(1.1);
-}
-
-#button-zoom:active {
-  transform: scale(0.95);
-}
     /* Make the linkedin icon invisible only when the dropdown navbar is open */
     .navbar3_component.w--open .image-social.b,
     .navbar3_component.w--open .link-block-2 {
@@ -234,41 +210,6 @@
     }
   </style>
 
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-      const zoomButton = document.getElementById("button-zoom");
-      const cards = document.querySelectorAll(".portfolio-card-container");
-      const scaleFactor = 0.7; // Visual card size
-
-      if (zoomButton) {
-        zoomButton.addEventListener("click", function() {
-          document.body.classList.toggle("is-zoomed-out");
-          const isZoomed = document.body.classList.contains("is-zoomed-out");
-
-          zoomButton.setAttribute("src", isZoomed ? "images/zoomin.svg" : "images/zoomout2.svg");
-
-          cards.forEach(card => {
-            if (isZoomed) {
-              const naturalHeight = card.dataset.naturalHeight || card.offsetHeight;
-              card.dataset.naturalHeight = naturalHeight;
-              
-              card.style.transition = "transform 0.35s ease, height 0.35s ease, margin 0.35s ease";
-              card.style.transformOrigin = "top center";
-              card.style.transform = `scale(${scaleFactor})`;
-              
-              // Pulls the cards tighter together
-              card.style.height = `${naturalHeight * 0.52}px`;
-              card.style.marginTop = "0px";
-            } else {
-              card.style.transform = "none";
-              card.style.height = "auto";
-              card.style.marginTop = "";
-            }
-          });
-        });
-      }
-    });
-  </script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -360,26 +301,6 @@
 });
   </script>
     
-  <style>
-    .portfolio-card-container {
-      padding-left: 7.8% !important;
-      padding-right: 7.8% !important;
-      margin-top: 3rem !important;
-    }
-    @media screen and (max-width: 767px) {
-      .portfolio-card-container {
-        margin-top: 1.5rem !important;
-      }
-    }
-    @media screen and (max-width: 479px) {
-      .portfolio-card-container {
-        margin-top: 1.5rem !important;
-      }
-      .portfolio-card-container.last-card {
-        margin-bottom: 1rem !important;
-      }
-    }
-  </style>
 
   <div id="custom-lightbox" class="lightbox-overlay">
     <img src="images/greenx.svg" id="lightbox-close" class="lightbox-close-btn" alt="Close Lightbox">
