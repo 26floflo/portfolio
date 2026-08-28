@@ -32,7 +32,7 @@
     max-width: 1200px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-top: 5rem !important;
+    margin-top: 4rem !important;
     padding-left: 20% !important;   /* Increases side spacing cleanly */
     padding-right: 20% !important;  /* Increases side spacing cleanly */
   }
@@ -45,7 +45,7 @@
 
   /* Bottom spacing for the last card */
   .section_picture .portfolio-card-container.last-card {
-    margin-bottom: 5rem !important;
+    margin-bottom: 4rem !important;
   }
 }
 @media screen and (max-width: 991px) {
