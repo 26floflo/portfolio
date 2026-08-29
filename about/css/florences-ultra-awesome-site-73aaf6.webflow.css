@@ -400,6 +400,7 @@
   z-index: 1;
   width: 100%;
   height: auto;
+  min-height: 40vw; /* Reserves screen area immediately */
   position: relative;
 }
 
@@ -2699,4 +2700,9 @@
   }
 }
 
-
+.image-8,
+.image-9 {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 8;
+}
