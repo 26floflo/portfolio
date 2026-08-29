@@ -2699,10 +2699,13 @@
     order: -9999;
   }
 }
+.section_picture {
+  min-height: calc(100vw * 0.45);
+}
 
 .image-8,
 .image-9 {
   width: 100%;
   height: auto;
-  aspect-ratio: 5 / 8;
+  object-fit: contain;
 }
