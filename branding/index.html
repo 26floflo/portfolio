@@ -208,7 +208,7 @@
     transition: opacity 0.25s ease-in-out;
   }
 
-  /* Reset conflicting .home-2 properties so it aligns like the other dots */
+  /* Reset conflicting .home-2 properties */
   .navbar3_link .home-2 {
     width: auto !important;
     padding: 0 !important;
@@ -224,6 +224,16 @@
   /* Scale effect on hover */
   .navbar3_link:hover span[class*="text-span-"] {
     transform: scale(1.08);
+  }
+
+  /* Ensure the dots stay hidden on tablet and mobile */
+  @media screen and (max-width: 991px) {
+    .navbar3_link .text-span-3.g.l,
+    .navbar3_link .text-span-4.l,
+    .navbar3_link .text-span-5.l,
+    .navbar3_link .text-span-6.g.l {
+      display: none !important;
+    }
   }
 </style>
 
