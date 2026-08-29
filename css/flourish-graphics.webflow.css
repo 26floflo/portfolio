@@ -1099,3 +1099,19 @@
 .reveal-wrapper.active .img-top {
   opacity: 0 !important;
 }
+/* Enable smooth transition on the dot navigation links */
+.nav-link-4 {
+  transition: transform 0.2s ease;
+}
+
+/* Scale effect on hover */
+.nav-link-4:hover {
+  transform: scale(1.08);
+}
+
+/* Ensure the dot links stay hidden inside the mobile & tablet dropdown menu */
+@media screen and (max-width: 991px) {
+  .nav-link-4 {
+    display: none !important;
+  }
+}
