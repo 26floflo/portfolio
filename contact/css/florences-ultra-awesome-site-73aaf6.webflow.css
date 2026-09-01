@@ -3018,7 +3018,7 @@ textarea.w-input, textarea.w-select {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0.56vw 1vw; /* Matches the other input fields */
-  height: 10vw;        /* Or your desired explicit height */
+  height: 15vw;        /* Or your desired explicit height */
   top: 40vw;
   bottom: auto;
 }
