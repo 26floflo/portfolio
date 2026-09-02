@@ -399,7 +399,7 @@
 .section_picture {
   z-index: 1;
   width: 100%;
-  min-height: 70vw;
+  height: auto;
   position: relative;
 }
 
@@ -1545,10 +1545,13 @@
     flex-direction: column;
     justify-content: center;
     width: 85vw;
+    height: 62vw;
     margin-top: 0;
     margin-left: -8.1vw;
     margin-right: 0;
     padding: 0 0 0;
+    transition: height .5s;
+    display: block;
     position: absolute;
     inset: 0% auto 0% 0%;
     overflow: auto;
@@ -2124,6 +2127,7 @@
     border: 1px solid #2b6560;
     border-radius: 2rem;
     width: 84.48vw;
+    height: 98vw;
     margin-left: -8.14vw;
     margin-right: 0;
     padding-bottom: 0;
