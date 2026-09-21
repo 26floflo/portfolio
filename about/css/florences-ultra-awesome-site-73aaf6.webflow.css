@@ -2701,10 +2701,10 @@
 /* Custom fix for image layout collapse */
 .image-8 {
   width: 100%;
-  aspect-ratio: 1080 / 1920;
   height: auto;
+  aspect-ratio: 1080 / 1920;
+  object-fit: contain; /* Prevents visual stretching or distorting */
 }
-
 .section_picture {
   position: relative;
   width: 100%;
