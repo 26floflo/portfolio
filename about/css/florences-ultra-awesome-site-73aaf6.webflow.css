@@ -2698,16 +2698,17 @@
     order: -9999;
   }
 }
-/* Custom fix for image layout collapse */
-.image-8 {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
-}
-
 .section_picture {
   position: relative;
   width: 100%;
-  height: auto;
+  /* Reserves vertical space so the container cannot collapse */
+  aspect-ratio: 16 / 9; 
+  overflow: hidden;
+}
+
+.image-8 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills the reserved space perfectly */
+  display: block;
 }
