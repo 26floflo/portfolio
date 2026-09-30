@@ -2698,17 +2698,26 @@
     order: -9999;
   }
 }
+/* 1. Force the parent wrapper to expand around its contents */
 .section_picture {
-  position: relative;
-  width: 100%;
-  /* Reserves vertical space so the container cannot collapse */
-  aspect-ratio: 16 / 9; 
-  overflow: hidden;
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  overflow: visible !important; /* Prevents image cutoff */
 }
 
+/* 2. Force the image to maintain its true natural proportions without cropping */
 .image-8 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Fills the reserved space perfectly */
-  display: block;
+  position: static !important; /* Removes absolute positioning collapse */
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: unset !important; /* Disables cropping/cutting off */
+  aspect-ratio: auto !important; /* Clears hardcoded aspect ratio traps */
 }
