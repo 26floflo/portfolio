@@ -4,67 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Portfolio</title>
+    <!-- Google Font: Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #f9f9fb;
-            color: #333;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f9f9fb;
+            color: #333;
+        }
+
+        body {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            height: 100vh;
         }
+
+        /* Top Navigation Bar */
         nav {
             width: 100%;
+            height: 54px;
             background: #ffffff;
-            padding: 15px 30px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 0 24px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
             display: flex;
-            justify-content: flex-start;
             align-items: center;
-            box-sizing: border-box;
+            z-index: 10;
+            flex-shrink: 0;
         }
+
         nav a {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
             text-decoration: none;
-            color: #0366d6;
-            font-weight: 500;
+            color: #276661; /* Dark Green */
+            transition: color 0.2s ease, opacity 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
+
         nav a:hover {
+            color: #1e4f4b;
+            opacity: 0.85;
             text-decoration: underline;
         }
+
+        /* Main Container for Full-Screen PDF Display */
+        .pdf-container {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            height: calc(100vh - 54px);
+        }
+
         .pdf-frame-wrapper {
             width: 100%;
-            max-width: 900px;
-            flex-grow: 1;
-            margin: 20px;
-            background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            max-width: 960px;
+            height: 100%;
+            background: #ffffff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
             border-radius: 8px;
             overflow: hidden;
+            -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
         }
+
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            display: block;
+        }
+
+        /* Mobile Adjustments for Seamless Screen Fitting */
+        @media (max-width: 768px) {
+            nav {
+                height: 48px;
+                padding: 0 16px;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+            }
+
+            .pdf-container {
+                padding: 0; /* Maximize viewer area on small screens */
+                height: calc(100vh - 48px);
+            }
+
+            .pdf-frame-wrapper {
+                border-radius: 0;
+                box-shadow: none;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Simple Navigation Back to Your Main Site -->
+    <!-- Simple Navigation Back to Portfolio -->
     <nav>
         <a href="index.html">&larr; Back to Portfolio</a>
     </nav>
 
-    <!-- Pure PDF Viewer Container -->
-    <div class="pdf-frame-wrapper">
-        <iframe src="resume.pdf#toolbar=0" title="Resume PDF">
-            <p>Your browser doesn't support embedded PDFs. 
-               <a href="resume.pdf">Download the PDF</a> instead.
-            </p>
-        </iframe>
+    <!-- Full Screen PDF Viewer -->
+    <div class="pdf-container">
+        <div class="pdf-frame-wrapper">
+            <iframe src="resume.pdf#toolbar=0&navpanes=0" title="Resume PDF">
+                <p>Your browser doesn't support embedded PDFs. 
+                   <a href="resume.pdf" style="color: #276661; font-weight: bold;">View or download the PDF directly</a>.
+                </p>
+            </iframe>
+        </div>
     </div>
 
 </body>
