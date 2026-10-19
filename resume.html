@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume | Portfolio</title>
+    <title>Resume | Flourish Graphics</title>
     <!-- Google Font: Quicksand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,7 @@
         html, body {
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #f9f9fb;
             color: #333;
         }
@@ -30,7 +29,7 @@
             flex-direction: column;
         }
 
-        /* Top Navigation Bar */
+        /* Top Navigation */
         nav {
             width: 100%;
             height: 54px;
@@ -50,9 +49,6 @@
             text-decoration: none;
             color: #276661; /* Dark Green */
             transition: color 0.2s ease, opacity 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
         }
 
         nav a:hover {
@@ -61,7 +57,7 @@
             text-decoration: underline;
         }
 
-        /* Main Container for Full-Screen PDF Display */
+        /* PDF Viewer Container */
         .pdf-container {
             width: 100%;
             flex-grow: 1;
@@ -80,7 +76,6 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
             border-radius: 8px;
             overflow: hidden;
-            -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
         }
 
         iframe {
@@ -90,44 +85,34 @@
             display: block;
         }
 
-        /* Mobile Adjustments for Seamless Screen Fitting */
+        /* Responsive Mobile Handling */
         @media (max-width: 768px) {
-            nav {
-                height: 48px;
-                padding: 0 16px;
-            }
-
-            nav a {
-                font-size: 0.95rem;
-            }
-
             .pdf-container {
-                padding: 0; /* Maximize viewer area on small screens */
-                height: calc(100vh - 48px);
+                padding: 10px;
+                height: auto;
+                min-height: calc(100vh - 54px);
+                align-items: flex-start;
             }
 
             .pdf-frame-wrapper {
-                border-radius: 0;
-                box-shadow: none;
-                max-width: 100%;
+                height: 80vh; /* Scaled viewport height for mobile browsers */
+                border-radius: 6px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Simple Navigation Back to Portfolio -->
     <nav>
         <a href="index.html">&larr; Back to Portfolio</a>
     </nav>
 
-    <!-- Full Screen PDF Viewer -->
     <div class="pdf-container">
         <div class="pdf-frame-wrapper">
-            <iframe src="resume.pdf#toolbar=0&navpanes=0" title="Resume PDF">
-                <p>Your browser doesn't support embedded PDFs. 
-                   <a href="resume.pdf" style="color: #276661; font-weight: bold;">View or download the PDF directly</a>.
-                </p>
+            <!-- Google Docs PDF Viewer auto-scales and zooms out to fit phone screens -->
+            <iframe 
+                src="https://docs.google.com/gview?url=https://flourish-graphics.com/resume.pdf&embedded=true" 
+                title="Resume PDF">
             </iframe>
         </div>
     </div>
