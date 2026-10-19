@@ -14,6 +14,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: 100vh;
         }
         nav {
             width: 100%;
@@ -21,7 +22,7 @@
             padding: 15px 30px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             box-sizing: border-box;
         }
@@ -33,35 +34,11 @@
         nav a:hover {
             text-decoration: underline;
         }
-        .container {
-            width: 100%;
-            max-width: 850px;
-            margin: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .btn {
-            background-color: #0366d6;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            display: inline-block;
-            margin-top: 10px;
-            transition: background 0.2s;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
         .pdf-frame-wrapper {
             width: 100%;
-            height: 1100px;
+            max-width: 900px;
+            flex-grow: 1;
+            margin: 20px;
             background: white;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             border-radius: 8px;
@@ -79,24 +56,15 @@
     <!-- Simple Navigation Back to Your Main Site -->
     <nav>
         <a href="index.html">&larr; Back to Portfolio</a>
-        <a href="resume.pdf" download class="download-nav">Download PDF</a>
     </nav>
 
-    <div class="container">
-        <div class="header">
-            <h1>Curriculum Vitae</h1>
-            <p>View the interactive document below or grab a offline copy.</p>
-            <a href="resume.pdf" class="btn" download>Download PDF Copy</a>
-        </div>
-
-        <!-- Embedded PDF Viewer -->
-        <div class="pdf-frame-wrapper">
-            <iframe src="resume.pdf#toolbar=0" title="Resume PDF">
-                <p>Your browser doesn't support embedded PDFs. 
-                   <a href="resume.pdf">Download the PDF</a> instead.
-                </p>
-            </iframe>
-        </div>
+    <!-- Pure PDF Viewer Container -->
+    <div class="pdf-frame-wrapper">
+        <iframe src="resume.pdf#toolbar=0" title="Resume PDF">
+            <p>Your browser doesn't support embedded PDFs. 
+               <a href="resume.pdf">Download the PDF</a> instead.
+            </p>
+        </iframe>
     </div>
 
 </body>
