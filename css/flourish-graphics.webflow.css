@@ -1115,3 +1115,85 @@
     display: none !important;
   }
 }
+/* ==========================================================================
+   Infinite Client Logo Marquee (#309188)
+   ========================================================================== */
+.section_client {
+  background-color: #309188;
+  border: none !important;
+  padding: 1.5rem 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-marquee 22s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100vw;
+  gap: 4rem;
+  padding-right: 4rem;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.marquee-item:hover {
+  transform: scale(1.1);
+}
+
+.marquee-logo {
+  height: 3.5rem;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section_client {
+    padding: 1rem 0 !important;
+  }
+  .marquee-group {
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  .marquee-logo {
+    height: 2.5rem;
+  }
+}
