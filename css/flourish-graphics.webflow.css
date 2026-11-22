@@ -263,13 +263,6 @@
   inset: 0%;
 }
 
-.section_client {
-  border: 1px solid #fff;
-  flex: 1;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .container-large {
   width: 100%;
   max-width: 90rem;
@@ -835,12 +828,6 @@
     background-color: #fff0;
   }
 
-  .section_client {
-    margin-bottom: -9px;
-    padding-top: 1rem;
-    padding-bottom: 0;
-  }
-
   .padding-global {
     padding: .2rem 1.25rem;
   }
@@ -1119,11 +1106,13 @@
    Infinite Client Logo Marquee (#309188)
    ========================================================================== */
 .section_client {
-  background-color: #309188;
+  background-color: #309188 !important;
   border: none !important;
   padding: 1.5rem 0 !important;
   margin: 0 !important;
-  width: 100%;
+  width: 100% !important;
+  min-height: 90px;
+  flex: none !important;
   overflow: hidden;
   display: flex;
   align-items: center;
