@@ -1192,15 +1192,20 @@
   isolation: isolate !important;
 }
 
+.div-block-4 {
+  position: relative !important;
+  isolation: isolate !important;
+}
+
 .lottie-pause-icon {
   position: absolute !important;
   top: 15% !important;
   left: 0 !important;
-  width: 1.4rem !important;
+  width: 1.2rem !important; /* Mobile / base size */
   height: auto !important;
   z-index: 1 !important;
   pointer-events: none !important;
-  animation: pause-float-slow 35s linear infinite !important;
+  animation: pause-float-ultra-slow 65s linear infinite !important;
 }
 
 #flourish-lottie,
@@ -1210,12 +1215,19 @@
   z-index: 5 !important;
 }
 
-@keyframes pause-float-slow {
+/* ~3x larger on desktop (992px and up) */
+@media screen and (min-width: 992px) {
+  .lottie-pause-icon {
+    width: 3.6rem !important;
+  }
+}
+
+@keyframes pause-float-ultra-slow {
   0% {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(calc(100vw - 1.4rem));
+    transform: translateX(calc(100vw - 100%));
   }
   100% {
     transform: translateX(0);
