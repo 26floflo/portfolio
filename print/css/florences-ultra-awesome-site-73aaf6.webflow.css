@@ -2788,3 +2788,50 @@
     height: 2.5rem;
   }
 }
+/* Logo & LinkedIn icon instant hover scale */
+.navbar3_logo,
+.navbar3_logo-copy,
+.image-social {
+  transition: transform 0.15s ease-out !important;
+}
+
+.navbar3_logo-link:hover .navbar3_logo,
+.navbar3_logo-link-menu:hover .navbar3_logo-copy,
+.link-block-2:hover .image-social {
+  transform: scale(1.08);
+}
+
+/* Portfolio card overlay: appears right away, then fades out after 2s */
+.portfolio-card-entry {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-card-entry::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.portfolio-card-entry:hover::after {
+  animation: whiteOverlayAutoFade 2.2s ease-out forwards;
+}
+
+@keyframes whiteOverlayAutoFade {
+  0% {
+    opacity: 0.9; /* Quick appearance on hover */
+  }
+  15% {
+    opacity: 1;   /* Peak white transparency */
+  }
+  85% {
+    opacity: 1;   /* Stays visible through the ~2s window */
+  }
+  100% {
+    opacity: 0;   /* Goes away automatically after 2 seconds */
+  }
+}
