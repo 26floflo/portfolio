@@ -2520,17 +2520,6 @@ textarea.w-input, textarea.w-select {
   display: flex;
 }
 
-.section_client {
-  outline-offset: 0px;
-  border: 1px #fff;
-  outline: 3px #333;
-  flex: 1;
-  margin-bottom: 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  font-size: .97vw;
-  line-height: 1.39vw;
-}
 
 .section_client.bottom {
   background-image: linear-gradient(90deg, #6f9d82, #d6e8ce);
@@ -4835,4 +4824,88 @@ textarea.w-input, textarea.w-select {
 .body-2.c .w--nav-menu-open span[class^="text-span-"] {
   color: #2b6560 !important;
   -webkit-text-fill-color: #2b6560 !important;
+}
+/* ==========================================================================
+   Infinite Client Logo Marquee (#4E937F)
+   ========================================================================== */
+.section_client {
+  background-color: #4E937F !important;
+  border: none !important;
+  padding: 1.5rem 0 !important;
+  margin: -2.9rem 0 0 0 !important;
+  width: 100% !important;
+  min-height: 90px;
+  flex: none !important;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-marquee 22s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100vw;
+  gap: 4rem;
+  padding-right: 4rem;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.marquee-item:hover {
+  transform: scale(1.1);
+}
+
+.marquee-logo {
+  height: 3.5rem;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section_client {
+    padding: 1rem 0 !important;
+  }
+  .marquee-group {
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  .marquee-logo {
+    height: 2.5rem;
+  }
 }
