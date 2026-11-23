@@ -1187,30 +1187,30 @@
     height: 2.5rem;
   }
 }
-/* Keep .div-block-4 as the positioning context */
+/* Isolate stacking inside .div-block-4 so z-index layers behave predictably */
 .div-block-4 {
   position: relative;
+  isolation: isolate;
 }
 
-/* Keep the Lottie animation above the pause icon */
+/* Force Lottie onto its own higher layer */
 .lottie-animation-3 {
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
-/* 60% smaller icon (40% of 3.5rem = 1.4rem), positioned near the top and behind the Lottie */
+/* Much slower drift (28s) and strictly behind the Lottie */
 .lottie-pause-icon {
   position: absolute;
-  top: 18%; /* Adjust to move higher or lower near the top */
+  top: 18%;
   left: 0;
   width: 1.4rem;
   height: auto;
   z-index: 1;
   pointer-events: none;
-  animation: float-across-page 10s ease-in-out infinite;
+  animation: float-across-page 28s linear infinite;
 }
 
-/* Float from the left edge across the full width of the container */
 @keyframes float-across-page {
   0%, 100% {
     transform: translateX(0);
