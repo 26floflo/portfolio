@@ -2907,3 +2907,23 @@
     height: 2.5rem;
   }
 }
+/* Navbar logo hover scale */
+.navbar3_logo,
+.navbar3_logo-copy {
+  transition: transform 0.2s ease;
+}
+
+.navbar3_logo-link:hover .navbar3_logo,
+.navbar3_logo-link-menu:hover .navbar3_logo-copy {
+  transform: scale(1.08);
+}
+
+/* Portfolio card images hover scale */
+.portfolio-card-entry .img-cover-layer {
+  transition: transform 0.25s ease;
+  transform-origin: center center;
+}
+
+.portfolio-card-entry:hover .img-cover-layer {
+  transform: scale(1.03);
+}
