@@ -2907,23 +2907,39 @@
     height: 2.5rem;
   }
 }
-/* Navbar logo hover scale */
+/* 1. Logo & LinkedIn icon hover scale (matches ● dot behavior) */
 .navbar3_logo,
-.navbar3_logo-copy {
+.navbar3_logo-copy,
+.image-social {
   transition: transform 0.2s ease;
 }
 
 .navbar3_logo-link:hover .navbar3_logo,
-.navbar3_logo-link-menu:hover .navbar3_logo-copy {
+.navbar3_logo-link-menu:hover .navbar3_logo-copy,
+.link-block-2:hover .image-social {
   transform: scale(1.08);
 }
 
-/* Portfolio card images hover scale */
-.portfolio-card-entry .img-cover-layer {
-  transition: transform 0.25s ease;
-  transform-origin: center center;
+/* 2. Portfolio card white overlay that stays on for 2s when hovered */
+.portfolio-card-entry {
+  position: relative;
+  overflow: hidden;
 }
 
-.portfolio-card-entry:hover .img-cover-layer {
-  transform: scale(1.03);
+.portfolio-card-entry::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.45); /* Adjust white strength (0 to 1) */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  /* When leaving hover: fade out quickly */
+  transition: opacity 0.25s ease 0s;
+}
+
+.portfolio-card-entry:hover::after {
+  opacity: 1;
+  /* When entering hover: wait 2 seconds before showing the white overlay */
+  transition: opacity 0.25s ease 2s;
 }
