@@ -2907,12 +2907,11 @@
     height: 2.5rem;
   }
 }
-/* Instant hover response for logo & LinkedIn icon */
+/* Logo & LinkedIn icon instant hover scale */
 .navbar3_logo,
 .navbar3_logo-copy,
 .image-social {
-  transition: transform 0.12s ease-out 0s !important;
-  will-change: transform;
+  transition: transform 0.15s ease-out !important;
 }
 
 .navbar3_logo-link:hover .navbar3_logo,
@@ -2921,7 +2920,7 @@
   transform: scale(1.08);
 }
 
-/* Instant white overlay on portfolio card hover */
+/* Portfolio card overlay: appears right away, then fades out after 2s */
 .portfolio-card-entry {
   position: relative;
   overflow: hidden;
@@ -2935,11 +2934,23 @@
   opacity: 0;
   pointer-events: none;
   z-index: 3;
-  transition: opacity 0.12s ease-out 0s;
-  will-change: opacity;
 }
 
 .portfolio-card-entry:hover::after {
-  opacity: 1;
-  transition: opacity 0.12s ease-out 0s;
+  animation: whiteOverlayAutoFade 2.2s ease-out forwards;
+}
+
+@keyframes whiteOverlayAutoFade {
+  0% {
+    opacity: 0.9; /* Quick appearance on hover */
+  }
+  15% {
+    opacity: 1;   /* Peak white transparency */
+  }
+  85% {
+    opacity: 1;   /* Stays visible through the ~2s window */
+  }
+  100% {
+    opacity: 0;   /* Goes away automatically after 2 seconds */
+  }
 }
