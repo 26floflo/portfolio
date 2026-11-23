@@ -494,7 +494,7 @@
 
 .section_picture {
   position: relative;
-  top: 0;
+  top: -1.9rem;
   bottom: 0;
 }
 
@@ -1109,7 +1109,7 @@
   background-color: #4E937F !important;
   border: none !important;
   padding: 1.5rem 0 !important;
-  margin: 0 !important;
+  margin: -3.8rem 0 0 0 !important;
   width: 100% !important;
   min-height: 90px;
   flex: none !important;
