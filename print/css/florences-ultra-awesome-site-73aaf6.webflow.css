@@ -525,6 +525,61 @@
   color: #fff;
 }
 
+.logo_client {
+  width: 4rem;
+}
+
+.client_logo_wrap {
+  grid-column-gap: .75rem;
+  grid-row-gap: .75rem;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.divider-line {
+  color: #276661;
+  -webkit-text-stroke-width: 0px;
+  background-color: #276661;
+  width: 2px;
+}
+
+.divider-line.c, .divider-line.contact {
+  color: #fff;
+  background-color: #fff;
+}
+
+.social-client_comp {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.client_wrap {
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.container-large {
+  width: 100%;
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.client_comp {
+  grid-column-gap: 5rem;
+  grid-row-gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 
 .section_footer {
   color: #fff;
@@ -1845,6 +1900,21 @@
     line-height: 1.39px;
   }
 
+  .section_client.bottom {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: .97px;
+    line-height: 1.39px;
+  }
+
+  .client_comp {
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   .section_footer.c {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -2191,7 +2261,54 @@
     grid-template-columns: 1fr;
   }
 
-  
+  .heading-client {
+    font-size: 30px;
+  }
+
+  .client_logo_social-media {
+    width: .8rem;
+    margin-top: -3px;
+  }
+
+  .padding-global {
+    padding: .75vw 5.51vw;
+  }
+
+  .client_content_wrap {
+    grid-column-gap: 1.1rem;
+    grid-row-gap: 1.1rem;
+  }
+
+  .section_client {
+    padding-top: 3vw;
+    padding-bottom: 4.41vw;
+  }
+
+  .section_client.bottom {
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+  }
+
+  .bold-text-2 {
+    font-size: 17px;
+    line-height: 17px;
+  }
+
+  .divider-line {
+    width: 1.5px;
+    height: 2rem;
+    max-height: none;
+    margin-bottom: 0;
+    padding-bottom: 59px;
+  }
+
+  .client_wrap {
+    grid-column-gap: 2.644vw;
+    grid-row-gap: 2.644vw;
+    width: 60vw;
+  }
+
   .section_footer.c {
     color: #fff;
     height: 7.63vw;
@@ -2368,90 +2485,7 @@
     font-size: 1rem;
     line-height: 1.39rem;
   }
-/* ==========================================================================
-   Infinite Client Logo Marquee (#4E937F)
-   ========================================================================== */
-.section_client {
-  background-color: #4E937F !important;
-  border: none !important;
-  padding: 1.5rem 0 !important;
-  margin: 0rem 0 0 0 !important;
-  width: 100% !important;
-  min-height: 90px;
-  flex: none !important;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
 
-.marquee-container {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: scroll-marquee 22s linear infinite;
-}
-
-.marquee-container:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-.marquee-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  min-width: 100vw;
-  gap: 4rem;
-  padding-right: 4rem;
-}
-
-.marquee-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.25s ease;
-}
-
-.marquee-item:hover {
-  transform: scale(1.1);
-}
-
-.marquee-logo {
-  height: 3.5rem;
-  width: auto;
-  max-width: 140px;
-  object-fit: contain;
-  display: block;
-}
-
-@keyframes scroll-marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .section_client {
-    padding: 1rem 0 !important;
-  }
-  .marquee-group {
-    gap: 2.5rem;
-    padding-right: 2.5rem;
-  }
-  .marquee-logo {
-    height: 2.5rem;
-  }
-}
   .text-block-10 {
     font-size: 1rem;
   }
@@ -2668,5 +2702,88 @@
   }
   body .section_picture .portfolio-card-container.last-card {
     margin-bottom: 1rem !important;
+  }
+/* ==========================================================================
+   Infinite Client Logo Marquee (#4E937F)
+   ========================================================================== */
+.section_client {
+  background-color: #4E937F !important;
+  border: none !important;
+  padding: 1.5rem 0 !important;
+  margin: 0rem 0 0 0 !important;
+  width: 100% !important;
+  min-height: 90px;
+  flex: none !important;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-marquee 22s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100vw;
+  gap: 4rem;
+  padding-right: 4rem;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.marquee-item:hover {
+  transform: scale(1.1);
+}
+
+.marquee-logo {
+  height: 3.5rem;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section_client {
+    padding: 1rem 0 !important;
+  }
+  .marquee-group {
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  .marquee-logo {
+    height: 2.5rem;
   }
 }
