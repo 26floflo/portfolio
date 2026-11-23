@@ -397,6 +397,7 @@
 }
 
 .section_picture {
+  background-color: #ffffff;
   z-index: 1;
   width: 100%;
   height: auto;
