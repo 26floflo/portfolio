@@ -464,14 +464,6 @@
 }
 
 
-.section_client.bottom {
-  background-image: linear-gradient(90deg, #6f9d82, #d6e8ce);
-  margin-left: -3rem;
-  margin-right: -3rem;
-  padding-top: .25rem;
-  padding-bottom: .25rem;
-}
-
 .bold-text-2 {
   letter-spacing: .5px;
   font-family: Quicksand, sans-serif;
