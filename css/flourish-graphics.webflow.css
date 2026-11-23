@@ -237,7 +237,7 @@
 
 .body {
   grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-row-gap: 0px;
   flex-flow: column;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
@@ -494,7 +494,7 @@
 
 .section_picture {
   position: relative;
-  top: -1.9rem;
+  top: 0;
   bottom: 0;
 }
 
