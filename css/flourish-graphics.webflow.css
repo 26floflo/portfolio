@@ -1187,34 +1187,35 @@
     height: 2.5rem;
   }
 }
-/* 1. Make the Lottie wrapper the positioning anchor */
+/* Keep .div-block-4 as the positioning context */
 .div-block-4 {
   position: relative;
 }
 
-/* 2. Keep the Lottie animation in the foreground */
+/* Keep the Lottie animation above the pause icon */
 .lottie-animation-3 {
+  position: relative;
   z-index: 2;
 }
 
-/* 3. Position pause.svg behind the Lottie and towards the top */
+/* 60% smaller icon (40% of 3.5rem = 1.4rem), positioned near the top and behind the Lottie */
 .lottie-pause-icon {
   position: absolute;
-  top: 18%; /* Adjust this percentage to move it higher or lower near the top */
-  left: 50%;
-  width: 3.5rem; /* Adjust icon size as needed */
+  top: 18%; /* Adjust to move higher or lower near the top */
+  left: 0;
+  width: 1.4rem;
   height: auto;
-  z-index: 1; /* Sits behind .lottie-animation-3 (z-index: 2) */
-  pointer-events: none; /* Prevents the icon from blocking clicks on the Lottie */
-  animation: float-horizontal 4s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+  animation: float-across-page 10s ease-in-out infinite;
 }
 
-/* 4. Smooth horizontal floating motion */
-@keyframes float-horizontal {
+/* Float from the left edge across the full width of the container */
+@keyframes float-across-page {
   0%, 100% {
-    transform: translateX(calc(-50% - 15px));
+    transform: translateX(0);
   }
   50% {
-    transform: translateX(calc(-50% + 15px));
+    transform: translateX(calc(100vw - 1.4rem));
   }
 }
