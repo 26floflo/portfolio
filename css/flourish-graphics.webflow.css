@@ -345,6 +345,7 @@
   color: var(--blue);
   text-align: center;
   background-image: linear-gradient(90deg, #2b6661, #4e927f);
+  margin-top: -16px !important;
   padding-top: .375rem;
   padding-bottom: .375rem;
   font-family: Quicksand, sans-serif;
@@ -1109,7 +1110,7 @@
   background-color: #4E937F !important;
   border: none !important;
   padding: 1.5rem 0 !important;
-  margin: -2.8rem 0 0 0 !important;
+  margin: -2.9rem 0 0 0 !important;
   width: 100% !important;
   min-height: 90px;
   flex: none !important;
