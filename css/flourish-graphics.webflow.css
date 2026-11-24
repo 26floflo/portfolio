@@ -483,6 +483,7 @@
 }
 
 .div-block-4 {
+  position: relative;
   flex-flow: column;
   justify-content: center;
   align-items: center;
