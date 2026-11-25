@@ -2937,7 +2937,7 @@
 }
 
 .portfolio-card-entry:hover::after {
-  animation: whiteOverlayAutoFade 2.2s ease-out forwards;
+  animation: whiteOverlayAutoFade 1.5s ease-out forwards;
 }
 
 @keyframes whiteOverlayAutoFade {
