@@ -4835,20 +4835,3 @@ textarea.w-input, textarea.w-select {
 .link-block-2:hover .image-social {
   transform: scale(1.08);
 }
-@media screen and (max-width: 991px) {
-  .navbar3_menu {
-    position: relative !important;
-  }
-
-  .navbar3_menu .image-14 {
-    position: absolute !important;
-    top: 18px !important;
-    right: 18px !important;
-    left: auto !important;
-    width: 24px !important;
-    height: 24px !important;
-    margin: 0 !important;
-    transform: none !important;
-    display: block !important;
-  }
-}
