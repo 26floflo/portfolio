@@ -2894,7 +2894,7 @@ textarea.w-input, textarea.w-select {
   margin-bottom: 0;
   margin-left: 2.8vw;
   padding-top: .56vw;
-  padding-left: 0;
+  padding-left: 1vw;
   position: absolute;
   top: 27.2vw;
   bottom: auto;
